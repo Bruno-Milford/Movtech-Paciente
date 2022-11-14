@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  img {
+    width: 15%;
+    max-width: 500px;
+    margin-top: 1%;
+  }
+}
+
+.menu {
+  nav {
+    a {
+      text-decoration: none;
+      color: #0075BE;
+    }
+  }
+
+  .links {
+    margin-left: -80%;
+
+    display: flex;
+    justify-content: space-around;
+  }
+}
