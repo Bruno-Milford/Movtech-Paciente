@@ -1,0 +1,75 @@
+.infoPaciente {
+  margin-left: 17px;
+
+  .infoDados {
+    display: flex;
+    justify-content: space-between;
+
+    .codigo {
+      display: inline-flex;
+
+      .search {
+        cursor: pointer;
+      }
+    }
+
+    .nome {
+      width: 80%;
+    }
+
+    .nacionalidade {
+      width: 40%;
+      margin-left: 4%;
+    }
+
+    .naturalidade {
+      width: 40%;
+      margin-left: 5%;
+    }
+
+    .instrucao {
+      width: 49%;
+    }
+
+    .profissao {
+      width: 50%;
+    }
+
+    .endereco {
+      width: 23%;
+    }
+
+    .bairro {
+      width: 30%;
+    }
+
+    .cidade {
+      width: 20%;
+    }
+
+    .recado {
+      width: 30%;
+    }
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+
+    .success {
+      background-color: #28a745;
+      color: white;
+      margin-right: 1%;
+    }
+
+    .warning {
+      background-color: #ffc107;
+      color: white;
+      margin-right: 1%;
+    }
+  }
+}
