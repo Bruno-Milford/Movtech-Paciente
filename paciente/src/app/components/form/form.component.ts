@@ -11,4 +11,16 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  public recordPatient() {
+
+  }
+
+  public deletePatient() {
+
+  }
+
+  public hospitalizationPatient() {
+
+  }
 }

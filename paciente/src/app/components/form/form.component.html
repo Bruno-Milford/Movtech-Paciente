@@ -1,5 +1,5 @@
 <mat-card-content class="infoPaciente">
-  <div class="row">
+   <div class="row">
     <div class="infoDados">
       <div class="col-md-3 codigo">
         <mat-form-field class="input" appearance="fill">
@@ -191,9 +191,21 @@
     </div>
   </div>
 
+  <!--<table mat-table class="mat-elevation-z8">
+    <ng-container matColumnDef="user">
+      <th mat-header-cell *matHeaderCellDef>Usuário</th>
+      <td mat-cell>1</td>
+    </ng-container> 
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell>Bruno</td>
+    </ng-container>
+  </table>-->
+
   <div class="btn">
-    <button mat-raised-button class="success">Cadastrar</button>
-    <button mat-raised-button class="warning">Internar</button>
-    <button mat-raised-button color="warn">Excluir</button>
+    <button mat-raised-button class="success" (click)="recordPatient()">Cadastrar</button>
+    <button mat-raised-button class="warning" (click)="hospitalizationPatient()">Internar</button>
+    <button mat-raised-button color="warn" (click)="deletePatient()">Excluir</button>
   </div>
 </mat-card-content>
