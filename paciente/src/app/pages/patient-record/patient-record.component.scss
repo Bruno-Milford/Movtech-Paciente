@@ -3,13 +3,24 @@
 
   .cardPaciente {
     margin-left: 5%;
-  }
 
-  .infoPaciente {
-    margin-left: 17px;
-  }
+    .infoPaciente {
+      margin-left: 17px;
 
-  .nome {
-    width: 100%;
+      .input {
+        width: 100%;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: flex-end;
+
+        .success {
+          background-color: #28a745;
+          color: white;
+          margin-right: 1%;
+        }
+      }
+    }
   }
 }
