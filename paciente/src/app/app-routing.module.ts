@@ -5,11 +5,16 @@ import { PatientRecordComponent } from './pages/patient-record/patient-record.co
 import { HospitalizationComponent } from './pages/hospitalization/hospitalization.component';
 import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
+import { TableGridPatientComponent } from './pages/table-grid-patient/table-grid-patient.component';
 
 const routes: Routes = [
   {
     path: '',
     component: PatientRecordComponent
+  },
+  {
+    path: 'pacientes',
+    component: TableGridPatientComponent
   },
   {
     path: 'internacao',

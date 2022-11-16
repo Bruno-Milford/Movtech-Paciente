@@ -12,6 +12,7 @@ import { FormComponent } from './components/form/form.component';
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
 import { HospitalizationComponent } from './pages/hospitalization/hospitalization.component';
+import { TableGridPatientComponent } from './pages/table-grid-patient/table-grid-patient.component';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -25,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { MatTableModule } from '@angular/material/table';
     HospitalizationComponent,
     MovementComponent,
     PatientConsultationComponent,
-    FormComponent
+    FormComponent,
+    TableGridPatientComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
