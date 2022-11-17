@@ -27,6 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { FormHospitalizationComponent } from './components/form-hospitalization/form-hospitalization.component';
+import { TableGridHospitalizationComponent } from './pages/table-grid-hospitalization/table-grid-hospitalization.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MovementComponent,
     PatientConsultationComponent,
     FormComponent,
-    TableGridPatientComponent
+    TableGridPatientComponent,
+    FormHospitalizationComponent,
+    TableGridHospitalizationComponent
   ],
   imports: [
     BrowserModule,

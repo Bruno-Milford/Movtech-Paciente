@@ -9,12 +9,19 @@
       display: inline-flex;
 
       .search {
-        cursor: pointer;
+        margin-top: 6%;
+        margin-left: 6%;
+
+        button {
+          cursor: pointer;
+          background: none;
+          border: 0;
+        }
       }
     }
 
     .nome {
-      width: 80%;
+      width: 84%;
     }
 
     .nacionalidade {
@@ -73,3 +80,19 @@
     }
   }
 }
+
+/*@media screen and (min-width: 1024px) {
+  .infoPaciente {
+    .infoDados {
+      .nome {
+        width: 77%;
+      }
+    }
+  }
+
+  .infoCidade {
+    div {
+      width: 12%;
+    }
+  }
+}*/

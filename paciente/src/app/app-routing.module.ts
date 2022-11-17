@@ -6,6 +6,7 @@ import { HospitalizationComponent } from './pages/hospitalization/hospitalizatio
 import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
 import { TableGridPatientComponent } from './pages/table-grid-patient/table-grid-patient.component';
+import { TableGridHospitalizationComponent } from './pages/table-grid-hospitalization/table-grid-hospitalization.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'internacao',
     component: HospitalizationComponent
+  },
+  {
+    path: 'internacoes',
+    component: TableGridHospitalizationComponent
   },
   {
     path: 'movimentacao',

@@ -1,5 +1,5 @@
 <mat-card-content class="infoPaciente">
-   <div class="row">
+  <div class="row">
     <div class="infoDados">
       <div class="col-md-3 codigo">
         <mat-form-field class="input" appearance="fill">
@@ -7,11 +7,13 @@
           <input type="text" matInput>
         </mat-form-field>
 
-        <button class="search">
-          <mat-icon class="material-symbols-outlined">
-            search
-          </mat-icon>
-        </button>
+        <div class="search">
+          <button>
+            <mat-icon class="material-symbols-outlined">
+              search
+            </mat-icon>
+          </button>
+        </div>
       </div>
 
       <div class="col-md-3 nome">
@@ -106,7 +108,7 @@
     </div>
   </div>
 
-  <div class="row infoDados">
+  <div class="row infoDados infoCidade">
     <div class="col-md-4 cep">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CEP</mat-label>
