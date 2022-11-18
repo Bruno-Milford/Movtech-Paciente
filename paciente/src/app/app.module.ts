@@ -29,6 +29,11 @@ import { MatTableModule } from '@angular/material/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FormHospitalizationComponent } from './components/form-hospitalization/form-hospitalization.component';
 import { TableGridHospitalizationComponent } from './pages/table-grid-hospitalization/table-grid-hospitalization.component';
+import { FormMovementComponent } from './components/form-movement/form-movement.component';
+import { FormPatientConsultationComponent } from './components/form-patient-consultation/form-patient-consultation.component';
+import { ModelPatientRecordComponent } from './components/model-patient-record/model-patient-record.component';
+import { ModelPatientHospitalizationComponent } from './components/model-patient-hospitalization/model-patient-hospitalization.component';
+import { ModelPatientMovementComponent } from './components/model-patient-movement/model-patient-movement.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,12 @@ import { TableGridHospitalizationComponent } from './pages/table-grid-hospitaliz
     FormComponent,
     TableGridPatientComponent,
     FormHospitalizationComponent,
-    TableGridHospitalizationComponent
+    TableGridHospitalizationComponent,
+    FormMovementComponent,
+    FormPatientConsultationComponent,
+    ModelPatientRecordComponent,
+    ModelPatientHospitalizationComponent,
+    ModelPatientMovementComponent
   ],
   imports: [
     BrowserModule,

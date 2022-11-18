@@ -1,0 +1,46 @@
+.infoMov {
+  margin-left: 17px;
+
+  .infoDados {
+    display: flex;
+    justify-content: space-between;
+
+    .codMov {
+      display: inline-flex;
+
+      .search {
+        margin-top: 6%;
+        margin-left: 6%;
+
+        button {
+          cursor: pointer;
+          background: none;
+          border: 0;
+        }
+      }
+    }
+
+    .nomeMov {
+      width: 77%;
+    }
+
+    .medico {
+      width: 60%;
+    }
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+
+    .success {
+      background-color: #28a745;
+      color: white;
+      margin-right: 1%;
+    }
+  }
+}

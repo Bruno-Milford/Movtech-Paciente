@@ -21,7 +21,7 @@
     }
 
     .nome {
-      width: 84%;
+      width: 77%;
     }
 
     .nacionalidade {
@@ -59,6 +59,12 @@
     }
   }
 
+  .infoCidade {
+    div {
+      width: 12%;
+    }
+  }
+
   .input {
     width: 100%;
   }
@@ -80,19 +86,3 @@
     }
   }
 }
-
-/*@media screen and (min-width: 1024px) {
-  .infoPaciente {
-    .infoDados {
-      .nome {
-        width: 77%;
-      }
-    }
-  }
-
-  .infoCidade {
-    div {
-      width: 12%;
-    }
-  }
-}*/
