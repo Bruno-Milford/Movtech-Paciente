@@ -73,16 +73,33 @@
     display: flex;
     justify-content: flex-end;
 
-    .success {
-      background-color: #28a745;
+    > button {
       color: white;
       margin-right: 1%;
     }
 
+    .success {
+      background-color: #24963e;
+    }
+
+    .success:hover {
+      background-color: #28a745;
+
+      transition: all .4s;
+    }
+
     .warning {
       background-color: #ffc107;
-      color: white;
-      margin-right: 1%;
+    }
+
+    .warning:hover {
+      background-color: #ffc721;
+
+      transition: all .4s;
+    }
+
+    .warn:hover {
+      
     }
   }
 }

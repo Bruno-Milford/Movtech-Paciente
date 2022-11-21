@@ -11,5 +11,5 @@ export class FormPatientConsultationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }

@@ -19,11 +19,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-patient-consultation',
-  templateUrl: './patient-consultation.component.html',
-  styleUrls: ['./patient-consultation.component.scss']
+  selector: 'app-table-grid-consult',
+  templateUrl: './table-grid-consult.component.html',
+  styleUrls: ['./table-grid-consult.component.scss']
 })
-export class PatientConsultationComponent implements OnInit {
+export class TableGridConsulltComponent implements OnInit {
 
   constructor() { }
 
