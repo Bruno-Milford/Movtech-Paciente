@@ -1,22 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  Opções: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-];
+import { PatientsService } from 'src/services/patients/patients.service';
 
 @Component({
   selector: 'app-table-grid-patient',
@@ -25,11 +9,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TableGridPatientComponent implements OnInit {
 
-  constructor() { }
+  patients: Array<any> = new Array();
+
+  constructor(private patientsService: PatientsService) { }
 
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'Opções'];
-  dataSource = ELEMENT_DATA;
+  listPatients() {
+    this.patientsService.listPatients().subscribe(patients => {
+      this.patients = patients;
+    }, err => {
+      console.log('Erro ao lista os pacientes', err);
+    })
+  }
 }

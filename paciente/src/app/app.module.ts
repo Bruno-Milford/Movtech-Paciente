@@ -36,6 +36,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
+// service
+import { PatientsService } from '../services/patients/patients.service';
+
+// http
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,9 +72,13 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    PatientsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
