@@ -16,6 +16,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
 ];
 
 @Component({
