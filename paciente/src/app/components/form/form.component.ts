@@ -8,20 +8,9 @@ import { PatientsService } from 'src/services/patients/patients.service';
 })
 export class FormComponent implements OnInit {
 
-  patients: Array<any> = new Array();
-
   constructor(private patientsService: PatientsService) { }
 
-  ngOnInit(): void {
-  }
-
-  listPatients() {
-    this.patientsService.listPatients().subscribe(patients => {
-      this.patients = patients;
-    }, err => {
-      console.log('Erro ao lista os pacientes', err);
-    })
-  }
+  ngOnInit(): void {}
 
   public recordPatient() {
 

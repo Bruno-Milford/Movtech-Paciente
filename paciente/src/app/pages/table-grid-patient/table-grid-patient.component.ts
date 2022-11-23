@@ -1,26 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 
+import Patient from 'src/app/models/Patient';
 import { PatientsService } from 'src/services/patients/patients.service';
 
 @Component({
   selector: 'app-table-grid-patient',
   templateUrl: './table-grid-patient.component.html',
-  styleUrls: ['./table-grid-patient.component.scss']
+  styleUrls: ['./table-grid-patient.component.scss'],
+  providers: [
+    PatientsService
+  ]
 })
 export class TableGridPatientComponent implements OnInit {
 
-  patients: Array<any> = new Array();
+  dataSource: Patient[] = []
 
-  constructor(private patientsService: PatientsService) { }
+  // patients: Patient[] = [{
+  //   codPaciente: 0,
+  //   nomePaciente: '',
+  //   sexoPaciente: '',
+  //   dataNasciemto: ''
+  // }];
 
-  ngOnInit(): void {
+  displayedColumns: string[] = ['ID', 'Nome', 'Sexo', 'Nascimento'];
+
+  constructor(public patientsService: PatientsService) {
+    this.patientsService.getPatients().subscribe(data => {
+      console.log(data);
+      this.dataSource = data
+    });
   }
 
-  listPatients() {
-    this.patientsService.listPatients().subscribe(patients => {
-      this.patients = patients;
-    }, err => {
-      console.log('Erro ao lista os pacientes', err);
-    })
+  ngOnInit(): void {
+
   }
 }

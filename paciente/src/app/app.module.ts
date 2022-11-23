@@ -35,6 +35,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 // service
 import { PatientsService } from '../services/patients/patients.service';
@@ -73,6 +76,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatTableModule,
     ScrollingModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
     HttpClientModule
   ],
   providers: [

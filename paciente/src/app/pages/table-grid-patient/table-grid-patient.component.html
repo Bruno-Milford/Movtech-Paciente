@@ -1,8 +1,28 @@
-<table *ngFor="let patient of patients">
-  <p>{{ patient.codPaciente }}</p>
-  <p>{{ patient.nomePaciente }}</p>
-  <p>{{ patient.dataNasciemto }}</p>
+<mat-toolbar>
+  <span>Pacientes</span>
+</mat-toolbar>
 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *matCellDef="let patient">
+
+  <ng-container matColumnDef="codPaciente">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell>{{ patient.codPaciente }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="nomePaciente">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell>{{ patient.nomePaciente }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="sexoPaciente">
+    <th mat-header-cell *matHeaderCellDef>Sexo</th>
+    <td mat-cell>{{ patient.sexoPaciente }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataNasciemto">
+    <th mat-header-cell *matHeaderCellDef>Data de Nascimento</th>
+    <td mat-cell> {{ patient.dataNascimento }} </td>
+  </ng-container>
 
   <!-- <ng-container matColumnDef="Opções">
     <th mat-header-cell *matHeaderCellDef> Opções </th>
@@ -20,4 +40,7 @@
       </button>
     </td>
   </ng-container> -->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

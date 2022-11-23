@@ -199,28 +199,3 @@
     <button mat-raised-button color="warn" class="warn" (click)="deletePatient()">Excluir</button>
   </div>
 </mat-card-content>
-
-
-<table *ngFor="let patient of patients">
-  <p>{{ patient.codPaciente }}</p>
-  <p>{{ patient.nomePaciente }}</p>
-  <p>{{ patient.dataNasciemto }}</p>
-
-
-  <!-- <ng-container matColumnDef="Opções">
-    <th mat-header-cell *matHeaderCellDef> Opções </th>
-    <td mat-cell *matCellDef="let element">
-      <button class="edit">
-        <mat-icon class="material-symbols-outlined">
-          edit
-        </mat-icon>
-      </button>
-
-      <button class="delete">
-        <mat-icon class="material-symbols-outlined">
-          delete
-        </mat-icon>
-      </button>
-    </td>
-  </ng-container> -->
-</table>
