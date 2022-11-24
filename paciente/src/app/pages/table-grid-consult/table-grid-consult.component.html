@@ -1,6 +1,6 @@
-<div class="table">
-  <table mat-table [dataSource]="dataSource" class="tablePatient mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="tablePatient mat-elevation-z8">
 
+  <div class="table">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -43,8 +43,8 @@
         </button>
       </td>
     </ng-container>
+  </div>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

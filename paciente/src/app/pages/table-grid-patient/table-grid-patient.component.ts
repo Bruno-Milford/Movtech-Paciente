@@ -1,6 +1,6 @@
+import { Patient } from 'src/app/models/Patient';
 import { Component, OnInit } from '@angular/core';
 
-import Patient from 'src/app/models/Patient';
 import { PatientsService } from 'src/services/patients/patients.service';
 
 @Component({
@@ -11,27 +11,30 @@ import { PatientsService } from 'src/services/patients/patients.service';
     PatientsService
   ]
 })
+
 export class TableGridPatientComponent implements OnInit {
 
-  dataSource: Patient[] = []
+  constructor(public patientsService: PatientsService) { }
 
-  // patients: Patient[] = [{
-  //   codPaciente: 0,
-  //   nomePaciente: '',
-  //   sexoPaciente: '',
-  //   dataNasciemto: ''
-  // }];
+  ngOnInit(): void { }
 
-  displayedColumns: string[] = ['ID', 'Nome', 'Sexo', 'Nascimento'];
-
-  constructor(public patientsService: PatientsService) {
-    this.patientsService.getPatients().subscribe(data => {
-      console.log(data);
-      this.dataSource = data
-    });
+  ngAfterViewInit() {
+    this.loadPatients()
   }
 
-  ngOnInit(): void {
+  loadPatients() {
+    this.patientsService.getPatients().subscribe(patients => {
+      this.dataSource = patients;
+    })
 
+    console.log(this.dataSource);
   }
+
+  displayedColumns: string[] = [
+    'ID', 'Nome', 'Sexo', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor', 
+    'Nacionalidade', 'Naturalidade', 'Instrucao', 'Profissao', 'Responsavel', 
+    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular', 
+    'Contato', 'Telefone Contato', 'Email', 'Observacao', 'Opções'
+  ];
+  dataSource: Patient[] = [];
 }

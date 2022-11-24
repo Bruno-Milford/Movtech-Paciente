@@ -1,8 +1,9 @@
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import Patient from 'src/app/models/Patient';
+import { Patient } from 'src/app/models/Patient';
+import { Api } from '../api/api';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,40 @@ import Patient from 'src/app/models/Patient';
 
 export class PatientsService {
 
-  patientApiURL = 'https://localhost:7254/patients';
-
   constructor(private http: HttpClient) { }
 
-  getPatients(): Observable<Patient[]> {
-    return this.http.get<Patient[]>(this.patientApiURL);
+  patientApiURL = '/patients';
+
+  httpOpitons = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': '*'
+    })
   }
 
-  createPatient(patient: Patient): Observable<Patient> {
-    return this.http.post<Patient>(this.patientApiURL, patient);
+  public getPatients() {
+    return this.http.get<Patient[]>(Api.baseUrl + this.patientApiURL).pipe(
+      catchError(this.handleError)
+    )
   }
 
-  updatePatient(patient: Patient): Observable<Patient> {
-    return this.http.put<Patient>(this.patientApiURL, patient);
+  public savePatients(patients: Patient[]) {
+    return this.http.post<Patient[]>(Api.baseUrl + this.patientApiURL, patients, this.httpOpitons)
   }
 
-  deletePatient(codPaciente: string) {
-    return this.http.put(this.patientApiURL, codPaciente);
-  }
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage = '';
+
+    if (error.error instanceof ErrorEvent) {
+      // Erro ocorreu no lado do client
+      errorMessage = error.error.message;
+    } else {
+      // Erro ocorreu no lado do servidor
+      errorMessage = `Código do erro: ${ error.status }, ` + `menssagem: ${ error.message }`;
+    }
+
+    console.log(errorMessage);
+
+    return throwError(errorMessage);
+  } 
 }

@@ -4,7 +4,7 @@
       <div class="col-md-3 codigo">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código do paciente</mat-label>
-          <input type="text" matInput>
+          <input [(ngModel)]="formCod" matInput>
         </mat-form-field>
 
         <div class="search">
@@ -194,8 +194,8 @@
   </div>
 
   <div class="btn">
-    <button mat-raised-button class="success" (click)="recordPatient()">Cadastrar</button>
-    <button mat-raised-button class="warning" (click)="hospitalizationPatient()">Internar</button>
-    <button mat-raised-button color="warn" class="warn" (click)="deletePatient()">Excluir</button>
+    <button mat-raised-button class="success" (click)="savePatient()">Cadastrar</button>
+    <button mat-raised-button class="warning">Internar</button>
+    <button mat-raised-button color="warn" class="warn">Excluir</button>
   </div>
 </mat-card-content>

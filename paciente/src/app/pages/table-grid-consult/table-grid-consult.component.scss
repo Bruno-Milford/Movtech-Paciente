@@ -1,34 +1,22 @@
-// ::-webkit-scrollbar {
-//   color: black;
-//   width: 5px;
-//   border-top-right-radius: 5px;
-//   border-bottom-right-radius: 5px;
-// }
+.tablePatient {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 2%;
 
-.table {
-  overflow: auto;
-  height: 400px;
+  button {
+    margin-left: 2%;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+  }
 
-  .tablePatient {
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 2%;
+  .edit {
+    background-color: #17a2b8;
+  }
 
-    button {
-      margin-left: 2%;
-      cursor: pointer;
-      background: none;
-      border: 0;
-      color: white;
-      border-radius: 5px;
-    }
-
-    .edit {
-      background-color: #17a2b8;
-    }
-
-    .delete {
-      background-color: #dc3545;
-    }
+  .delete {
+    background-color: #dc3545;
   }
 }
