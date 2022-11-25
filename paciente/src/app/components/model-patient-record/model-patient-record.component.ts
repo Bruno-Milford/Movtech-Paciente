@@ -1,22 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  Opções: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-];
+import { Patient } from 'src/app/models/Patient';
+import { PatientsService } from 'src/services/patients/patients.service';
 
 @Component({
   selector: 'app-model-patient-record',
@@ -25,11 +10,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class ModelPatientRecordComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = [
+    'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS',
+    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 
+    'Celular', 'Email', 'Observacao', 'Opcoes'
+  ];
 
-  ngOnInit(): void {
+  dataSource: Patient[] = [];
+
+  constructor(public patientsService: PatientsService) { }
+
+  ngOnInit(): void { }
+
+  ngAfterViewInit() {
+    this.loadPatients()
   }
-  
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'Opções'];
-  dataSource = ELEMENT_DATA;
+
+  loadPatients() {
+    this.patientsService.getPatients().subscribe(patient => {
+      console.log(patient)
+      this.dataSource = patient;
+    })
+  }
 }

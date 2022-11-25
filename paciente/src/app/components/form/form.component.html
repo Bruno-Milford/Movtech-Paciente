@@ -19,7 +19,7 @@
       <div class="col-md-3 nome">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input type="text" matInput>
+          <input [(ngModel)]="formNome" matInput>
         </mat-form-field>
       </div>
     </div>
@@ -27,14 +27,14 @@
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formMae" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Responsável</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formResponsavel" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -50,21 +50,21 @@
     <div class="col-md-3 cpf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CPF</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formCPF" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 rg">
       <mat-form-field class="input" appearance="fill">
         <mat-label>RG</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formRG" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 sexo">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Sexo</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formSexo" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -73,21 +73,21 @@
     <div class="col-md-4 cor">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cor</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formCor" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 nacionalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nacionalidade</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formNacionalide" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 naturalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Naturalidade</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formNaturalidade" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -96,14 +96,14 @@
     <div class="col-md-6 instrucao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Grau de Instrução</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formInstrucao" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-6 profissao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Profissão</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formProfissao" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -112,35 +112,35 @@
     <div class="col-md-4 cep">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CEP</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formCEP" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 endereco">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Endereço</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formEndereco" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 bairro">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Bairro</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formBairro" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 cidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cidade</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formCidade" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 uf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>UF</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formUF" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -149,28 +149,28 @@
     <div class="col-md-3 telefone">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Telefone Fixo</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formTelefone" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 celular">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Celular</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formCelular" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 recado">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Recado (Nome)</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formContato" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 contato">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Contato Recado</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formTelefoneContato" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -179,7 +179,7 @@
     <div class="col-md-12">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Email</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="formEmail" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -188,7 +188,7 @@
     <div class="col-md-12">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Observação</mat-label>
-        <textarea matInput></textarea>
+        <textarea [(ngModel)]="formObservacao" matInput></textarea>
       </mat-form-field>
     </div>
   </div>
@@ -196,6 +196,5 @@
   <div class="btn">
     <button mat-raised-button class="success" (click)="savePatient()">Cadastrar</button>
     <button mat-raised-button class="warning">Internar</button>
-    <button mat-raised-button color="warn" class="warn">Excluir</button>
   </div>
 </mat-card-content>

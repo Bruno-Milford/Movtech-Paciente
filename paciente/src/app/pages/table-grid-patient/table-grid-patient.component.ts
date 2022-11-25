@@ -2,6 +2,8 @@ import { Patient } from 'src/app/models/Patient';
 import { Component, OnInit } from '@angular/core';
 
 import { PatientsService } from 'src/services/patients/patients.service';
+import { ModalTableGridPatientDeleteComponent } from 'src/app/components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-table-grid-patient',
@@ -14,7 +16,18 @@ import { PatientsService } from 'src/services/patients/patients.service';
 
 export class TableGridPatientComponent implements OnInit {
 
-  constructor(public patientsService: PatientsService) { }
+  displayedColumns: string[] = [
+    'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor',
+    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular',
+    'Email', 'Observacao', 'Opcoes'
+  ];
+
+  dataSource: Patient[] = [];
+
+  constructor(
+    public patientsService: PatientsService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void { }
 
@@ -23,18 +36,36 @@ export class TableGridPatientComponent implements OnInit {
   }
 
   loadPatients() {
-    this.patientsService.getPatients().subscribe(patients => {
-      this.dataSource = patients;
+    this.patientsService.getPatients().subscribe(patient => {
+      console.log(patient)
+      this.dataSource = patient;
     })
-
-    console.log(this.dataSource);
   }
 
-  displayedColumns: string[] = [
-    'ID', 'Nome', 'Sexo', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor', 
-    'Nacionalidade', 'Naturalidade', 'Instrucao', 'Profissao', 'Responsavel', 
-    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular', 
-    'Contato', 'Telefone Contato', 'Email', 'Observacao', 'Opções'
-  ];
-  dataSource: Patient[] = [];
+  openDialog() {
+    const dialogRef = this.dialog.open(ModalTableGridPatientDeleteComponent, {
+      width: '100%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('O dialog foi fechado');
+    })
+  }
+
+  public RemovePatient(patient: Patient) {
+    this.dataSource.forEach((element, index) => {
+      if(element.nomePaciente == patient.nomePaciente) {
+        this.dataSource.splice(index, 1);
+      }
+    });
+
+    let newDataSource: Patient[] = [];
+
+    this.dataSource.forEach(p => newDataSource.push(p));
+    this.dataSource = newDataSource;
+  }
+
+  UpdatePatient() {
+
+  }
 }

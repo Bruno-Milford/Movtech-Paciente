@@ -22,12 +22,6 @@ export class FormComponent implements OnInit {
 
   dataSource: Patient[] = [];
 
-  public savePatient() {
-    this.patientsService.savePatients(this.dataSource).subscribe(patient => 
-      alert('Paciente salvo com sucesso')  
-    );
-  }
-
   formCod: string = "";
   formNome: string = "";
   formSexo: string = "";
@@ -54,32 +48,25 @@ export class FormComponent implements OnInit {
   formEmail: string = "";
   formObservacao: string = ""; 
 
-  // public addPatient() {
-  //   let patient: Patient = new Patient(this.formCod, this.formNome, this.formSexo, this.formNascimento, this.formMae, this.formCPF, this.formRG, this.formCNS, 
-  //     this.formCor, this.formNacionalide, this.formNaturalidade, this.formInstrucao, this.formProfissao, this.formResponsavel, this.formCEP,
-  //     this.formEndereco, this.formBairro, this.formCidade, this.formUF, this.formTelefone, this.formCelular, this.formContato, this.formTelefoneContato,
-  //     this.formEmail, this.formObservacao) 
+  public savePatient() {
+    this.patientsService.savePatients(this.dataSource).subscribe(patient => 
+      alert('Paciente salvo com sucesso')  
+    );
+  }
 
-  //   let newDataSource: Patient[] = [];
+  public addPatient() {
+    let patient: Patient = new Patient(this.formCod, this.formNome, this.formSexo, this.formNascimento, this.formMae, this.formCPF, this.formRG, this.formCNS, 
+      this.formCor, this.formNacionalide, this.formNaturalidade, this.formInstrucao, this.formProfissao, this.formResponsavel, this.formCEP,
+      this.formEndereco, this.formBairro, this.formCidade, this.formUF, this.formTelefone, this.formCelular, this.formContato, this.formTelefoneContato,
+      this.formEmail, this.formObservacao) 
 
-  //   this.dataSource.forEach(p => newDataSource.push(p));
-  //   this.dataSource = newDataSource;
+    let newDataSource: Patient[] = [];
 
-  //   newDataSource.push(patient);
-  // }
+    this.dataSource.forEach(p => newDataSource.push(p));
+    this.dataSource = newDataSource;
 
-  // public removePatient(patient: Patient) {
-  //   this.dataSource.forEach((element, index) => {
-  //     if(element.nomePaciente == patient.nomePaciente) {
-  //       this.dataSource.splice(index, 1);
-  //     }
-  //   });
-
-  //   let newDataSource: Patient[] = [];
-
-  //   this.dataSource.forEach(p => newDataSource.push(p));
-  //   this.dataSource = newDataSource;
-  // }
+    newDataSource.push(patient);
+  }
 
   openDialog() {
     console.log(this.formCod);

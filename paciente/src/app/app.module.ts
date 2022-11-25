@@ -46,6 +46,7 @@ import { PatientsService } from '../services/patients/patients.service';
 // http
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ModalTableGridPatientDeleteComponent } from './components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { FormsModule } from '@angular/forms';
     ModelPatientRecordComponent,
     ModelPatientHospitalizationComponent,
     ModelPatientMovementComponent,
-    TableGridConsulltComponent
+    TableGridConsulltComponent,
+    ModalTableGridPatientDeleteComponent
   ],
   imports: [
     BrowserModule,

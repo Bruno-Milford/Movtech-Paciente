@@ -23,9 +23,7 @@ export class PatientsService {
   }
 
   public getPatients() {
-    return this.http.get<Patient[]>(Api.baseUrl + this.patientApiURL).pipe(
-      catchError(this.handleError)
-    )
+    return this.http.get<Patient[]>(Api.baseUrl + this.patientApiURL)
   }
 
   public savePatients(patients: Patient[]) {
@@ -46,5 +44,5 @@ export class PatientsService {
     console.log(errorMessage);
 
     return throwError(errorMessage);
-  } 
+  }
 }
