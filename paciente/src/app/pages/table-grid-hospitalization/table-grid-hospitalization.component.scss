@@ -1,0 +1,29 @@
+.tablePatient {
+  width: 98%;
+  margin-left: 1%;
+
+  button {
+    margin-left: 5%;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .info {
+    background-color: #17a2b8;
+  }
+
+  .edit {
+    background-color: #17a2b8;
+  }
+
+  .delete {
+    background-color: #dc3545;
+  }
+}
+
+table {
+  width: 100%;
+}

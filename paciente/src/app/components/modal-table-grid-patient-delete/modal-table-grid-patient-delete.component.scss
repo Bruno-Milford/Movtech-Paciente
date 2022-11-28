@@ -1,0 +1,38 @@
+.modalDelete {
+  margin-left: 24%;
+
+  .btn {
+    margin-top: 5%;
+    margin-left: 10%;
+
+    button {
+      padding: 5%;
+      margin-left: 5%;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .deleteYES {
+      background-color: #24963e;
+    }
+
+    .deleteYes:hover {
+      background-color: #28a745;
+
+      transition: all .4s;
+    }
+
+    .deleteNO {
+      background-color: #dc3545;
+    }
+
+    .deleteNO:hover {
+      background-color: #d32535;
+
+      transition: all .4s;
+    }
+  }
+}

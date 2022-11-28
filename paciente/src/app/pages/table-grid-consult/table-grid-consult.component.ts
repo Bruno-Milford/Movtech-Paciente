@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
@@ -31,7 +30,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TableGridConsulltComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

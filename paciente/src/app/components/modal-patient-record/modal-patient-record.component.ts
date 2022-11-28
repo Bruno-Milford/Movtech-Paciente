@@ -4,16 +4,15 @@ import { Patient } from 'src/app/models/Patient';
 import { PatientsService } from 'src/services/patients/patients.service';
 
 @Component({
-  selector: 'app-model-patient-record',
-  templateUrl: './model-patient-record.component.html',
-  styleUrls: ['./model-patient-record.component.scss']
+  selector: 'app-modal-patient-record',
+  templateUrl: './modal-patient-record.component.html',
+  styleUrls: ['./modal-patient-record.component.scss']
 })
-export class ModelPatientRecordComponent implements OnInit {
+export class ModalPatientRecordComponent implements OnInit {
 
   displayedColumns: string[] = [
     'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS',
-    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 
-    'Celular', 'Email', 'Observacao', 'Opcoes'
+    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Celular', 'Email', 'Opcoes'
   ];
 
   dataSource: Patient[] = [];

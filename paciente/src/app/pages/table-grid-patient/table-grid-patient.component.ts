@@ -1,9 +1,12 @@
-import { Patient } from 'src/app/models/Patient';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+
+import { ModalTableGridPatientDeleteComponent } from 'src/app/components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
+import { ModalPatientAllInformationComponent } from 'src/app/components/modal-patient-all-information/modal-patient-all-information.component';
 
 import { PatientsService } from 'src/services/patients/patients.service';
-import { ModalTableGridPatientDeleteComponent } from 'src/app/components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
-import { MatDialog } from '@angular/material/dialog';
+import { Patient } from 'src/app/models/Patient';
 
 @Component({
   selector: 'app-table-grid-patient',
@@ -26,7 +29,8 @@ export class TableGridPatientComponent implements OnInit {
 
   constructor(
     public patientsService: PatientsService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public router: Router
     ) { }
 
   ngOnInit(): void { }
@@ -44,7 +48,7 @@ export class TableGridPatientComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(ModalTableGridPatientDeleteComponent, {
-      width: '100%'
+      width: '30%'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -52,20 +56,13 @@ export class TableGridPatientComponent implements OnInit {
     })
   }
 
-  public RemovePatient(patient: Patient) {
-    this.dataSource.forEach((element, index) => {
-      if(element.nomePaciente == patient.nomePaciente) {
-        this.dataSource.splice(index, 1);
-      }
+  openDialogPatientAllInformation() {
+    const dialogRef = this.dialog.open(ModalPatientAllInformationComponent, {
+      width: '100%'
     });
-
-    let newDataSource: Patient[] = [];
-
-    this.dataSource.forEach(p => newDataSource.push(p));
-    this.dataSource = newDataSource;
   }
 
   UpdatePatient() {
-
+    this.router.navigate(['/']);
   }
 }

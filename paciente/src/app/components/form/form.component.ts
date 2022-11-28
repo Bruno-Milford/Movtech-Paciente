@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PatientsService } from 'src/services/patients/patients.service';
 import { Patient } from 'src/app/models/Patient';
 
-import { ModelPatientRecordComponent } from '../model-patient-record/model-patient-record.component';
+import { ModalPatientRecordComponent } from '../modal-patient-record/modal-patient-record.component';
 
 @Component({
   selector: 'app-form',
@@ -46,19 +46,19 @@ export class FormComponent implements OnInit {
   formContato: string = "";
   formTelefoneContato: string = "";
   formEmail: string = "";
-  formObservacao: string = ""; 
+  formObservacao: string = "";
 
   public savePatient() {
-    this.patientsService.savePatients(this.dataSource).subscribe(patient => 
-      alert('Paciente salvo com sucesso')  
+    this.patientsService.savePatients(this.dataSource).subscribe(patient =>
+      alert('Paciente salvo com sucesso')
     );
   }
 
   public addPatient() {
-    let patient: Patient = new Patient(this.formCod, this.formNome, this.formSexo, this.formNascimento, this.formMae, this.formCPF, this.formRG, this.formCNS, 
+    let patient: Patient = new Patient(this.formCod, this.formNome, this.formSexo, this.formNascimento, this.formMae, this.formCPF, this.formRG, this.formCNS,
       this.formCor, this.formNacionalide, this.formNaturalidade, this.formInstrucao, this.formProfissao, this.formResponsavel, this.formCEP,
       this.formEndereco, this.formBairro, this.formCidade, this.formUF, this.formTelefone, this.formCelular, this.formContato, this.formTelefoneContato,
-      this.formEmail, this.formObservacao) 
+      this.formEmail, this.formObservacao)
 
     let newDataSource: Patient[] = [];
 
@@ -70,7 +70,7 @@ export class FormComponent implements OnInit {
 
   openDialog() {
     console.log(this.formCod);
-    const dialogRef = this.dialog.open(ModelPatientRecordComponent, {
+    const dialogRef = this.dialog.open(ModalPatientRecordComponent, {
       width: '100%'
     });
 

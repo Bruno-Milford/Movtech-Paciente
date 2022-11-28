@@ -10,10 +10,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormComponent } from './components/form/form.component';
 import { FormMovementComponent } from './components/form-movement/form-movement.component';
 import { FormPatientConsultationComponent } from './components/form-patient-consultation/form-patient-consultation.component';
-import { ModelPatientRecordComponent } from './components/model-patient-record/model-patient-record.component';
-import { ModelPatientHospitalizationComponent } from './components/model-patient-hospitalization/model-patient-hospitalization.component';
-import { ModelPatientMovementComponent } from './components/model-patient-movement/model-patient-movement.component';
 import { FormHospitalizationComponent } from './components/form-hospitalization/form-hospitalization.component';
+import { ModalPatientRecordComponent } from './components/modal-patient-record/modal-patient-record.component';
+import { ModalPatientHospitalizationComponent } from './components/modal-patient-hospitalization/modal-patient-hospitalization.component';
+import { ModalPatientMovementComponent } from './components/modal-patient-movement/modal-patient-movement.component';
+import { ModalTableGridPatientDeleteComponent } from './components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -46,7 +47,7 @@ import { PatientsService } from '../services/patients/patients.service';
 // http
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ModalTableGridPatientDeleteComponent } from './components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
+import { ModalPatientAllInformationComponent } from './components/modal-patient-all-information/modal-patient-all-information.component';
 
 @NgModule({
   declarations: [
@@ -63,11 +64,12 @@ import { ModalTableGridPatientDeleteComponent } from './components/modal-table-g
     TableGridHospitalizationComponent,
     FormMovementComponent,
     FormPatientConsultationComponent,
-    ModelPatientRecordComponent,
-    ModelPatientHospitalizationComponent,
-    ModelPatientMovementComponent,
+    ModalPatientRecordComponent,
+    ModalPatientHospitalizationComponent,
+    ModalPatientMovementComponent,
+    ModalTableGridPatientDeleteComponent,
     TableGridConsulltComponent,
-    ModalTableGridPatientDeleteComponent
+    ModalPatientAllInformationComponent
   ],
   imports: [
     BrowserModule,
