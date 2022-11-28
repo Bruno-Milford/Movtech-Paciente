@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { PatientsService } from 'src/services/patients/patients.service';
-import { Patient } from 'src/app/models/Patient';
+import PatientProps  from 'src/app/models/Patient';
 
 import { ModalPatientRecordComponent } from '../modal-patient-record/modal-patient-record.component';
 
@@ -11,16 +13,37 @@ import { ModalPatientRecordComponent } from '../modal-patient-record/modal-patie
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
+
 export class FormComponent implements OnInit {
 
   constructor(
     private patientsService: PatientsService,
-    public dialog: MatDialog
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {}
 
-  dataSource: Patient[] = [];
+  dataSource: PatientProps[] = [];
+
+  public savePatient() {
+    // this.patientsService.createPatient().subscribe();
+  }
+
+  private onSuccess() {
+    this.snackBar.open('Paciente cadastrado!', '', { duration: 5000 })
+  }
+
+  private onError() {
+    this.snackBar.open('Error ao cadastrar!', '', { duration: 5000 })
+  }
+
+  openDialog() {
+    // console.log(this.formCod);
+    const dialogRef = this.dialog.open(ModalPatientRecordComponent, {
+      width: '100%'
+    });
+  }
 
   formCod: string = "";
   formNome: string = "";
@@ -47,35 +70,4 @@ export class FormComponent implements OnInit {
   formTelefoneContato: string = "";
   formEmail: string = "";
   formObservacao: string = "";
-
-  public savePatient() {
-    this.patientsService.savePatients(this.dataSource).subscribe(patient =>
-      alert('Paciente salvo com sucesso')
-    );
-  }
-
-  public addPatient() {
-    let patient: Patient = new Patient(this.formCod, this.formNome, this.formSexo, this.formNascimento, this.formMae, this.formCPF, this.formRG, this.formCNS,
-      this.formCor, this.formNacionalide, this.formNaturalidade, this.formInstrucao, this.formProfissao, this.formResponsavel, this.formCEP,
-      this.formEndereco, this.formBairro, this.formCidade, this.formUF, this.formTelefone, this.formCelular, this.formContato, this.formTelefoneContato,
-      this.formEmail, this.formObservacao)
-
-    let newDataSource: Patient[] = [];
-
-    this.dataSource.forEach(p => newDataSource.push(p));
-    this.dataSource = newDataSource;
-
-    newDataSource.push(patient);
-  }
-
-  openDialog() {
-    console.log(this.formCod);
-    const dialogRef = this.dialog.open(ModalPatientRecordComponent, {
-      width: '100%'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('O dialog foi fechado');
-    })
-  }
 }

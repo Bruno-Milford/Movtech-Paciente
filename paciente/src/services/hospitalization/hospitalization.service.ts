@@ -15,19 +15,12 @@ export class HospitalizationService {
 
   hospitalizationApiURL = '/hospitalization';
 
-  httpOpitons = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': '*'
-    })
-  }
-
   public getHospitalizations() {
-    this.http.get<Hospitalization[]>(Api.baseUrl + this.hospitalizationApiURL)
+    return this.http.get<Hospitalization[]>(Api.baseUrl + this.hospitalizationApiURL)
   }
 
   public saveHospitalization(hospitalizations: Hospitalization[]) {
-    this.http.post<Hospitalization[]>(Api.baseUrl + this.hospitalizationApiURL, hospitalizations, this.httpOpitons)
+    return this.http.post<Hospitalization[]>(Api.baseUrl + this.hospitalizationApiURL, hospitalizations)
   }
 
   private handleError(error: HttpErrorResponse) {

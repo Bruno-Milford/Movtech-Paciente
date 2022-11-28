@@ -6,97 +6,97 @@
 
   <ng-container matColumnDef="codInternacao">
     <th mat-header-cell *matHeaderCellDef>ID Internação</th>
-    <!-- <td mat-cell *matCellDef="let element">{{ element.codPaciente }}</td> -->
+    <td mat-cell *matCellDef="let element">{{ element.codInternacao }}</td>
   </ng-container>
 
   <ng-container matColumnDef="codPaciente">
     <th mat-header-cell *matHeaderCellDef>ID Paciente</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element">{{ element.codPaciente }}</td> --> -->
+    <td mat-cell *matCellDef="let element">{{ element.codPaciente }}</td>
   </ng-container>
 
   <ng-container matColumnDef="paciente">
     <th mat-header-cell *matHeaderCellDef>Nome</th>
-    <!-- <!-- <td mat-cel *matCellDef="let element">{{ element.nomePaciente }}</td> --> -->
+    <td mat-cel *matCellDef="let element">{{ element.Paciente }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="nascimento">
+  <!-- <ng-container matColumnDef="nascimento">
     <th mat-header-cell *matHeaderCellDef>Nascimento</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.dataNascimento }} </td> --> -->
-  </ng-container>
+    <td mat-cell *matCellDef="let element"> {{ element.Nascimento }} </td>
+  </ng-container> -->
 
-  <ng-container matColumnDef="maePaciente">
+  <!-- <ng-container matColumnDef="maePaciente">
     <th mat-header-cell *matHeaderCellDef>Mãe</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.nomeMaePaciente }} </td> --> -->
-  </ng-container>
+    <td mat-cell *matCellDef="let element"> {{ element.nomeMaePaciente }} </td>
+  </ng-container> -->
 
   <ng-container matColumnDef="dataEntradaInternacao">
     <th mat-header-cell *matHeaderCellDef>Data de entrada na Internação</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.cpfPaciente }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.dataEntradaInternacao }} </td>
   </ng-container>
 
-  <ng-container matColumnDef="horaEntradaInternacao">
+  <!-- <ng-container matColumnDef="horaEntradaInternacao">
     <th mat-header-cell *matHeaderCellDef>Hora de entrada na Internação</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.rgPaciente }} </td> --> -->
-  </ng-container>
+    <td mat-cell *matCellDef="let element"> {{ element.rgPaciente }} </td>
+  </ng-container> -->
 
   <ng-container matColumnDef="dataSaidaInternacao">
     <th mat-header-cell *matHeaderCellDef>Data de saida na Internação</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.corPaciente }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.dataSaidaInternacao }} </td>
   </ng-container>
 
-  <ng-container matColumnDef="horaSaidaInternacao">
+  <!-- <ng-container matColumnDef="horaSaidaInternacao">
     <th mat-header-cell *matHeaderCellDef>Hora de saida na Internação</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.nacionalidade }} </td> --> -->
-  </ng-container>
+    <td mat-cell *matCellDef="let element"> {{ element.nacionalidade }} </td>
+  </ng-container> -->
 
   <ng-container matColumnDef="cns">
     <th mat-header-cell *matHeaderCellDef>CNS</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.cep }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.cns }} </td>
   </ng-container>
 
   <ng-container matColumnDef="ClinicaMedica">
     <th mat-header-cell *matHeaderCellDef>Clínica Médica</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.endereco }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.ClinicaMedica }} </td>
   </ng-container>
 
   <ng-container matColumnDef="localizacao">
     <th mat-header-cell *matHeaderCellDef>Localização</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.bairro }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.localizacao }} </td>
   </ng-container>
 
-  <ng-container matColumnDef="leito">
+  <!-- <ng-container matColumnDef="leito">
     <th mat-header-cell *matHeaderCellDef>Leito (maca)</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.cidade }} </td> --> -->
-  </ng-container>
+    <td mat-cell *matCellDef="let element"> {{ element.cidade }} </td>
+  </ng-container> -->
 
   <ng-container matColumnDef="centroCusto">
     <th mat-header-cell *matHeaderCellDef>Centro de Custo</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.uf }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.centroCusto }} </td>
   </ng-container>
 
   <ng-container matColumnDef="hipoteseDiaginostica">
     <th mat-header-cell *matHeaderCellDef>Hipotese Diaginostica</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.telefone }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.hipoteseDiaginostica }} </td>
   </ng-container>
 
   <ng-container matColumnDef="medico">
     <th mat-header-cell *matHeaderCellDef>Médioc</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.celular }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.medico }} </td>
   </ng-container>
 
   <ng-container matColumnDef="crm">
-    <th mat-header-cell *matHeaderCellDef>crm</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.email }} </td> --> -->
+    <th mat-header-cell *matHeaderCellDef>CRM</th>
+    <td mat-cell *matCellDef="let element"> {{ element.crm }} </td>
   </ng-container>
 
-  <ng-container matColumnDef="diaginostico">
+  <!-- <ng-container matColumnDef="diaginostico">
     <th mat-header-cell *matHeaderCellDef>Diaginostico</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.observacao }} </td> --> -->
-  </ng-container>
+    <td mat-cell *matCellDef="let element"> {{ element.observacao }} </td>
+  </ng-container> -->
 
   <ng-container matColumnDef="situacao">
     <th mat-header-cell *matHeaderCellDef>Situação</th>
-    <!-- <!-- <td mat-cell *matCellDef="let element"> {{ element.observacao }} </td> --> -->
+    <td mat-cell *matCellDef="let element"> {{ element.situacao }} </td>
   </ng-container>
 
   <ng-container matColumnDef="Opcoes">

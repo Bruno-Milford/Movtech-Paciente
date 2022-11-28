@@ -6,7 +6,7 @@ import { ModalTableGridPatientDeleteComponent } from 'src/app/components/modal-t
 import { ModalPatientAllInformationComponent } from 'src/app/components/modal-patient-all-information/modal-patient-all-information.component';
 
 import { PatientsService } from 'src/services/patients/patients.service';
-import { Patient } from 'src/app/models/Patient';
+import { PatientProps } from 'src/app/models/Patient';
 
 @Component({
   selector: 'app-table-grid-patient',
@@ -25,13 +25,13 @@ export class TableGridPatientComponent implements OnInit {
     'Email', 'Observacao', 'Opcoes'
   ];
 
-  dataSource: Patient[] = [];
+  dataSource: PatientProps[] = [];
 
   constructor(
     public patientsService: PatientsService,
     public dialog: MatDialog,
     public router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void { }
 
@@ -50,10 +50,6 @@ export class TableGridPatientComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalTableGridPatientDeleteComponent, {
       width: '30%'
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('O dialog foi fechado');
-    })
   }
 
   openDialogPatientAllInformation() {

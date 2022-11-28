@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Patient } from 'src/app/models/Patient';
+import { PatientProps } from 'src/app/models/Patient';
 import { PatientsService } from 'src/services/patients/patients.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class ModalPatientRecordComponent implements OnInit {
     'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Celular', 'Email', 'Opcoes'
   ];
 
-  dataSource: Patient[] = [];
+  dataSource: PatientProps[] = [];
 
   constructor(public patientsService: PatientsService) { }
 

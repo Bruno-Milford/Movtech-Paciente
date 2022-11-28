@@ -11,11 +11,11 @@ import { HospitalizationService } from 'src/services/hospitalization/hospitaliza
 export class TableGridHospitalizationComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'codInternacao', 'codPaciente', 'paciente', 'nascimento', 'maePaciente',
-    'dataEntradaInternacao', 'horaEntradaInternacao', 'dataSaidaInternacao',
-    'horaSaidaInternacao', 'cns', 'ClinicaMedica', 'localizacao', 'leito',
-    'centroCusto', 'hipoteseDiaginostica', 'medico', 'crm', 'diaginostico',
-    'situacao'
+    'codInternacao', 'codPaciente', 'paciente',
+    'dataEntradaInternacao', 'dataSaidaInternacao',
+    'cns', 'ClinicaMedica', 'localizacao',
+    'centroCusto', 'hipoteseDiaginostica', 'medico', 'crm',
+    'situacao', 'Opcoes'
   ]
 
   dataSource: Hospitalization[] = [];
@@ -26,16 +26,16 @@ export class TableGridHospitalizationComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  // ngAfterViewInit() {
-  //   this.loadHospitalizations()
-  // }
+  ngAfterViewInit() {
+    this.loadHospitalizations()
+  }
 
-  // loadHospitalizations() {
-  //   this.hospitalizationService.getHospitalizations().subscribe(hospitalization => {
-  //     console.log(hospitalization)
-  //     this.dataSource = hospitalization;
-  //   })
-  // }
+  loadHospitalizations() {
+    this.hospitalizationService.getHospitalizations().subscribe(hospitalization => {
+      console.log(hospitalization);
+      this.dataSource = hospitalization;
+    })
+  }
 
   openDialogHospitalizationAllInformation() {
 

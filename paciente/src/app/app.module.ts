@@ -15,6 +15,7 @@ import { ModalPatientRecordComponent } from './components/modal-patient-record/m
 import { ModalPatientHospitalizationComponent } from './components/modal-patient-hospitalization/modal-patient-hospitalization.component';
 import { ModalPatientMovementComponent } from './components/modal-patient-movement/modal-patient-movement.component';
 import { ModalTableGridPatientDeleteComponent } from './components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
+import { ModalPatientAllInformationComponent } from './components/modal-patient-all-information/modal-patient-all-information.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -40,14 +41,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // service
 import { PatientsService } from '../services/patients/patients.service';
+import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 
 // http
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ModalPatientAllInformationComponent } from './components/modal-patient-all-information/modal-patient-all-information.component';
+import { ModalHospitalizationAllInformationComponent } from './components/modal-hospitalization-all-information/modal-hospitalization-all-information.component';
+import { ModalDeleteHospitalizationComponent } from './components/modal-delete-hospitalization/modal-delete-hospitalization.component';
+import { CostCenterComponent } from './pages/cost-center/cost-center.component';
+import { TableGridCostCenterComponent } from './components/table-grid-cost-center/table-grid-cost-center.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +75,11 @@ import { ModalPatientAllInformationComponent } from './components/modal-patient-
     ModalPatientMovementComponent,
     ModalTableGridPatientDeleteComponent,
     TableGridConsulltComponent,
-    ModalPatientAllInformationComponent
+    ModalPatientAllInformationComponent,
+    ModalHospitalizationAllInformationComponent,
+    ModalDeleteHospitalizationComponent,
+    CostCenterComponent,
+    TableGridCostCenterComponent
   ],
   imports: [
     BrowserModule,
@@ -86,12 +96,14 @@ import { ModalPatientAllInformationComponent } from './components/modal-patient-
     MatSidenavModule,
     MatListModule,
     MatDialogModule,
+    MatSnackBarModule,
     HttpClientModule,
     FormsModule
   ],
   providers: [
     HttpClientModule,
-    PatientsService
+    PatientsService,
+    HospitalizationService
   ],
   bootstrap: [AppComponent]
 })

@@ -2,7 +2,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Patient } from 'src/app/models/Patient';
+import PatientProps from 'src/app/models/Patient';
 import { Api } from '../api/api';
 
 @Injectable({
@@ -15,34 +15,21 @@ export class PatientsService {
 
   patientApiURL = '/patients';
 
-  httpOpitons = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': '*'
+  getPatients() {
+    return this.http.get<PatientProps[]>(Api.baseUrl + this.patientApiURL)
+  }
+
+  createPatient(patients: PatientProps): Observable<PatientProps> {
+    return this.http.post<PatientProps>(Api.baseUrl + this.patientApiURL, {
+      nomePaciente: patients.nomePaciente,
     })
   }
 
-  public getPatients() {
-    return this.http.get<Patient[]>(Api.baseUrl + this.patientApiURL)
+  updatePatient(patients: PatientProps): Observable<PatientProps> {
+    return this.http.put<PatientProps>(Api.baseUrl + this.patientApiURL, patients)
   }
 
-  public savePatients(patients: Patient[]) {
-    return this.http.post<Patient[]>(Api.baseUrl + this.patientApiURL, patients, this.httpOpitons)
-  }
-
-  private handleError(error: HttpErrorResponse) {
-    let errorMessage = '';
-
-    if (error.error instanceof ErrorEvent) {
-      // Erro ocorreu no lado do client
-      errorMessage = error.error.message;
-    } else {
-      // Erro ocorreu no lado do servidor
-      errorMessage = `Código do erro: ${ error.status }, ` + `menssagem: ${ error.message }`;
-    }
-
-    console.log(errorMessage);
-
-    return throwError(errorMessage);
+  deletePatient(codPaciente: string) {
+    return this.http.put(Api.baseUrl + this.patientApiURL, codPaciente)
   }
 }

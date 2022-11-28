@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
-import { Patient } from 'src/app/models/Patient';
+import { PatientProps } from 'src/app/models/Patient';
 
 @Component({
   selector: 'app-modal-table-grid-patient-delete',
@@ -17,16 +17,16 @@ export class ModalTableGridPatientDeleteComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  dataSource: Patient[] = [];
+  dataSource: PatientProps[] = [];
 
-  public RemovePatient(patient: Patient) {
+  public RemovePatient(patient: PatientProps) {
     this.dataSource.forEach((element, index) => {
       if(element.nomePaciente == patient.nomePaciente) {
         this.dataSource.splice(index, 1);
       }
     });
 
-    let newDataSource: Patient[] = [];
+    let newDataSource: PatientProps[] = [];
 
     this.dataSource.forEach(p => newDataSource.push(p));
     this.dataSource = newDataSource;
