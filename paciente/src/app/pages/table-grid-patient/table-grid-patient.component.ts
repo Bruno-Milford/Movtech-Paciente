@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -6,7 +6,7 @@ import { ModalTableGridPatientDeleteComponent } from 'src/app/components/modal-t
 import { ModalPatientAllInformationComponent } from 'src/app/components/modal-patient-all-information/modal-patient-all-information.component';
 
 import { PatientsService } from 'src/services/patients/patients.service';
-import { PatientProps } from 'src/app/models/Patient';
+import { PatientProps }  from 'src/app/models/Patient';
 
 @Component({
   selector: 'app-table-grid-patient',
@@ -18,6 +18,7 @@ import { PatientProps } from 'src/app/models/Patient';
 })
 
 export class TableGridPatientComponent implements OnInit {
+  @Output() edit = new EventEmitter(false);
 
   displayedColumns: string[] = [
     'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor',
@@ -52,13 +53,16 @@ export class TableGridPatientComponent implements OnInit {
     });
   }
 
-  openDialogPatientAllInformation() {
+  openDialogPatientAllInformation(patient: PatientProps) {
     const dialogRef = this.dialog.open(ModalPatientAllInformationComponent, {
       width: '100%'
     });
+
+    // let IDPaciente = (<HTMLInputElement>document.getElementById(patient.nomePaciente.toString()));
+    // console.log(IDPaciente)
   }
 
-  UpdatePatient() {
+  EditPatient() {
     this.router.navigate(['/']);
   }
 }

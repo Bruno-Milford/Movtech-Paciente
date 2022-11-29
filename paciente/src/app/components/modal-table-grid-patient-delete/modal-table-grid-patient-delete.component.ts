@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
-import { PatientProps } from 'src/app/models/Patient';
+import { PatientProps }  from 'src/app/models/Patient';
 
 @Component({
   selector: 'app-modal-table-grid-patient-delete',

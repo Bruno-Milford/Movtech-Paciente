@@ -2,7 +2,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import PatientProps from 'src/app/models/Patient';
+import { PatientProps } from 'src/app/models/Patient';
 import { Api } from '../api/api';
 
 @Injectable({
@@ -19,10 +19,10 @@ export class PatientsService {
     return this.http.get<PatientProps[]>(Api.baseUrl + this.patientApiURL)
   }
 
+
+
   createPatient(patients: PatientProps): Observable<PatientProps> {
-    return this.http.post<PatientProps>(Api.baseUrl + this.patientApiURL, {
-      nomePaciente: patients.nomePaciente,
-    })
+    return this.http.post<PatientProps>(Api.baseUrl + this.patientApiURL, patients)
   }
 
   updatePatient(patients: PatientProps): Observable<PatientProps> {

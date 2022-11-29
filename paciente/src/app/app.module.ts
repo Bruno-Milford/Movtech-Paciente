@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormComponent } from './components/form/form.component';
+import { FormComponent } from './components/form-patient/form-patient.component';
 import { FormMovementComponent } from './components/form-movement/form-movement.component';
 import { FormPatientConsultationComponent } from './components/form-patient-consultation/form-patient-consultation.component';
 import { FormHospitalizationComponent } from './components/form-hospitalization/form-hospitalization.component';
@@ -16,6 +16,9 @@ import { ModalPatientHospitalizationComponent } from './components/modal-patient
 import { ModalPatientMovementComponent } from './components/modal-patient-movement/modal-patient-movement.component';
 import { ModalTableGridPatientDeleteComponent } from './components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
 import { ModalPatientAllInformationComponent } from './components/modal-patient-all-information/modal-patient-all-information.component';
+import { ModalHospitalizationAllInformationComponent } from './components/modal-hospitalization-all-information/modal-hospitalization-all-information.component';
+import { ModalDeleteHospitalizationComponent } from './components/modal-delete-hospitalization/modal-delete-hospitalization.component';
+import { TableGridCostCenterComponent } from './components/table-grid-cost-center/table-grid-cost-center.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -23,11 +26,11 @@ import { HospitalizationComponent } from './pages/hospitalization/hospitalizatio
 import { TableGridPatientComponent } from './pages/table-grid-patient/table-grid-patient.component';
 import { TableGridConsulltComponent } from './pages/table-grid-consult/table-grid-consult.component';
 import { TableGridHospitalizationComponent } from './pages/table-grid-hospitalization/table-grid-hospitalization.component';
-
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
+
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 // angular material
 import { MatCardModule } from '@angular/material/card';
@@ -42,6 +45,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
 
 // service
 import { PatientsService } from '../services/patients/patients.service';
@@ -50,10 +54,6 @@ import { HospitalizationService } from 'src/services/hospitalization/hospitaliza
 // http
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ModalHospitalizationAllInformationComponent } from './components/modal-hospitalization-all-information/modal-hospitalization-all-information.component';
-import { ModalDeleteHospitalizationComponent } from './components/modal-delete-hospitalization/modal-delete-hospitalization.component';
-import { CostCenterComponent } from './pages/cost-center/cost-center.component';
-import { TableGridCostCenterComponent } from './components/table-grid-cost-center/table-grid-cost-center.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +97,7 @@ import { TableGridCostCenterComponent } from './components/table-grid-cost-cente
     MatListModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatMenuModule,
     HttpClientModule,
     FormsModule
   ],

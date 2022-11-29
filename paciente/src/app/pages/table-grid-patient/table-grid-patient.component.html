@@ -132,13 +132,13 @@
   <ng-container matColumnDef="Opcoes">
     <th mat-header-cell *matHeaderCellDef>Opções</th>
     <td mat-cell *matCellDef="let element">
-      <button (click)="openDialogPatientAllInformation()" class="info">
+      <button (click)="openDialogPatientAllInformation(element)" class="info">
         <mat-icon class="material-symbols-outlined">
           info
         </mat-icon>
       </button>
 
-      <button (click)="UpdatePatient()" class="edit">
+      <button (click)="EditPatient()" class="edit">
         <mat-icon class="material-symbols-outlined">
           edit
         </mat-icon>
