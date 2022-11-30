@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -18,7 +18,6 @@ import { PatientProps }  from 'src/app/models/Patient';
 })
 
 export class TableGridPatientComponent implements OnInit {
-  @Output() edit = new EventEmitter(false);
 
   displayedColumns: string[] = [
     'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor',
@@ -29,9 +28,9 @@ export class TableGridPatientComponent implements OnInit {
   dataSource: PatientProps[] = [];
 
   constructor(
-    public patientsService: PatientsService,
-    public dialog: MatDialog,
-    public router: Router
+    private patientsService: PatientsService,
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void { }
@@ -42,7 +41,7 @@ export class TableGridPatientComponent implements OnInit {
 
   loadPatients() {
     this.patientsService.getPatients().subscribe(patient => {
-      console.log(patient)
+      // console.log(patient)
       this.dataSource = patient;
     })
   }
@@ -57,12 +56,9 @@ export class TableGridPatientComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalPatientAllInformationComponent, {
       width: '100%'
     });
-
-    // let IDPaciente = (<HTMLInputElement>document.getElementById(patient.nomePaciente.toString()));
-    // console.log(IDPaciente)
   }
 
-  EditPatient() {
+  EditPatient(patient: PatientProps) {
     this.router.navigate(['/']);
   }
 }

@@ -49,31 +49,6 @@
     <td mat-cell *matCellDef="let element"> {{ element.nacionalidade }} </td>
   </ng-container>
 
-  <!-- <ng-container matColumnDef="Nacionalidade">
-    <th mat-header-cell *matHeaderCellDef>Nacionalidade</th>
-    <td mat-cell *matCellDef="let element"> {{ element.naturalidade }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Naturalidade">
-    <th mat-header-cell *matHeaderCellDef>Naturalidade</th>
-    <td mat-cell *matCellDef="let element"> {{ element.grauInstrucaoPaciente }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Instrucao">
-    <th mat-header-cell *matHeaderCellDef>Instrução</th>
-    <td mat-cell *matCellDef="let element"> {{ element.profissaoPaciente }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Profissao">
-    <th mat-header-cell *matHeaderCellDef>Profissão</th>
-    <td mat-cell *matCellDef="let element"> {{ element.responsavelPaciente }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Responsavel">
-    <th mat-header-cell *matHeaderCellDef>Responsável</th>
-    <td mat-cell *matCellDef="let element"> {{ element.responsavelPaciente }} </td>
-  </ng-container> -->
-
   <ng-container matColumnDef="CEP">
     <th mat-header-cell *matHeaderCellDef>CEP</th>
     <td mat-cell *matCellDef="let element"> {{ element.cep }} </td>
@@ -109,16 +84,6 @@
     <td mat-cell *matCellDef="let element"> {{ element.celular }} </td>
   </ng-container>
 
-  <!-- <ng-container matColumnDef="Contato">
-    <th mat-header-cell *matHeaderCellDef>Contato</th>
-    <td mat-cell *matCellDef="let element"> {{ element.contato }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Telefone Contato">
-    <th mat-header-cell *matHeaderCellDef>Telefone Contato</th>
-    <td mat-cell *matCellDef="let element"> {{ element.telefoneContato }} </td>
-  </ng-container> -->
-
   <ng-container matColumnDef="Email">
     <th mat-header-cell *matHeaderCellDef>Email</th>
     <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
@@ -138,7 +103,7 @@
         </mat-icon>
       </button>
 
-      <button (click)="EditPatient()" class="edit">
+      <button (click)="EditPatient(element)" class="edit">
         <mat-icon class="material-symbols-outlined">
           edit
         </mat-icon>

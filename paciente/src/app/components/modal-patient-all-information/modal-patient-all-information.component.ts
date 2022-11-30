@@ -1,4 +1,7 @@
+import { PatientsService } from 'src/services/patients/patients.service';
 import { Component, OnInit } from '@angular/core';
+
+import { PatientProps } from 'src/app/models/Patient';
 
 @Component({
   selector: 'app-modal-patient-all-information',
@@ -7,8 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalPatientAllInformationComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = [
+    'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor',
+    'Nacionalidade', 'Naturalidade', 'Profissao', 'Responsavel',
+    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular',
+    'Email', 'Observacao', 'Opcoes'
+  ];
+
+  dataSource: PatientProps[] = [];
+
+  constructor(
+    private patientsService: PatientsService
+  ) { }
 
   ngOnInit(): void { }
 
+  // ngAfterViewInit() {
+  //   this.loadPatientWithSelectedId()
+  // }
+
+  // loadPatientWithSelectedId(codPaceinte: number) {
+  //   this.patientsService.getPatientById(codPaceinte).subscribe(patient => {
+  //     this.dataSource = patient;
+  //   })
+  // }
 }

@@ -10,7 +10,7 @@ import { Api } from '../api/api';
 })
 
 export class PatientsService {
-
+  
   constructor(private http: HttpClient) { }
 
   patientApiURL = '/patients';
@@ -19,17 +19,19 @@ export class PatientsService {
     return this.http.get<PatientProps[]>(Api.baseUrl + this.patientApiURL)
   }
 
-
+  getPatientById(codPaciente: number): Observable<PatientProps> {
+    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`);
+  }
 
   createPatient(patients: PatientProps): Observable<PatientProps> {
     return this.http.post<PatientProps>(Api.baseUrl + this.patientApiURL, patients)
   }
 
   updatePatient(patients: PatientProps): Observable<PatientProps> {
-    return this.http.put<PatientProps>(Api.baseUrl + this.patientApiURL, patients)
+    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ patients.codPaciente }`, patients)
   }
 
-  deletePatient(codPaciente: string) {
-    return this.http.put(Api.baseUrl + this.patientApiURL, codPaciente)
+  deletePatient(codPaciente: number): Observable<PatientProps> {
+    return this.http.delete<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`)
   }
 }

@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 import { Hospitalization } from 'src/app/models/Hospitalization';
 import { Api } from '../api/api';
@@ -15,27 +15,23 @@ export class HospitalizationService {
 
   hospitalizationApiURL = '/hospitalization';
 
-  public getHospitalizations() {
+  getHospitalizations() {
     return this.http.get<Hospitalization[]>(Api.baseUrl + this.hospitalizationApiURL)
   }
 
-  public saveHospitalization(hospitalizations: Hospitalization[]) {
-    return this.http.post<Hospitalization[]>(Api.baseUrl + this.hospitalizationApiURL, hospitalizations)
+  getHospitalizationById(codInternacao: number): Observable<Hospitalization> {
+    return this.http.get<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ codInternacao }`);
   }
 
-  private handleError(error: HttpErrorResponse) {
-    let errorMessage = '';
+  createHospitalization(hospitalizations: Hospitalization): Observable<Hospitalization> {
+    return this.http.post<Hospitalization>(Api.baseUrl + this.hospitalizationApiURL, hospitalizations)
+  }
 
-    if (error.error instanceof ErrorEvent) {
-      // Erro ocorreu no lado do client
-      errorMessage = error.error.message;
-    } else {
-      // Erro ocorreu no lado do servidor
-      errorMessage = `Código do erro: ${ error.status }, ` + `menssagem: ${ error.message }`;
-    }
+  updateHospitalization(hospitalizations: Hospitalization): Observable<Hospitalization> {
+    return this.http.put<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ hospitalizations.codInternacao }`, hospitalizations);
+  }
 
-    console.log(errorMessage);
-
-    return throwError(errorMessage);
+  deleteHospitalization(codInternacao: number): Observable<Hospitalization>  {
+    return this.http.delete<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ codInternacao }`);
   }
 }

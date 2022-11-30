@@ -21,7 +21,7 @@ export class FormComponent implements OnInit {
     private patientsService: PatientsService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
-    public router: Router
+    private router: Router
   ) { }
 
   ngOnInit(): void {}
@@ -30,34 +30,20 @@ export class FormComponent implements OnInit {
 
   savePatient() {
     const patients = new PatientProps(this.codPaciente,
-      this.nomePaciente,
-      this.sexoPaciente,
+      this.nomePaciente, this.sexoPaciente,
       new Date(this.dataNascimento),
-      this.nomeMaePaciente,
-      this.cpfPaciente,
-      this.rgPaciente,
-      this.cns,
-      this.corPaciente,
-      this.nacionalidade,
-      this.naturalidade,
-      this.grauInstrucaoPaciente,
-      this.profissaoPaciente,
-      this.responsavelPaciente,
-      this.cep,
-      this.endereco,
-      this.bairro,
-      this.cidade,
-      this.uf,
-      this.telefone,
-      this.celular,
-      this.contato,
-      this.telefoneContato,
-      this.email,
-      this.observacao)
+      this.nomeMaePaciente, this.cpfPaciente, this.rgPaciente, this.cns,
+      this.corPaciente, this.nacionalidade, this.naturalidade,
+      this.grauInstrucaoPaciente, this.profissaoPaciente,
+      this.responsavelPaciente, this.cep, this.endereco,
+      this.bairro, this.cidade, this.uf, this.telefone,
+      this.celular, this.contato, this.telefoneContato, this.email, this.observacao)
 
     this.patientsService.createPatient(patients)
     .subscribe(data => {
+      // console.log(patients);
       this.dataSource.push(data);
+      this.onSuccess();
     })
   }
 
@@ -80,10 +66,10 @@ export class FormComponent implements OnInit {
     });
   }
 
-  codPaciente = "";
+  codPaciente = 0;
   nomePaciente = "";
   sexoPaciente = "";
-  dataNascimento = "";
+  dataNascimento = Date();
   nomeMaePaciente = "";
   cpfPaciente = "";
   rgPaciente = "";

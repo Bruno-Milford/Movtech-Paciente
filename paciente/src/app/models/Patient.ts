@@ -1,5 +1,5 @@
 export class PatientProps {
-  codPaciente: string;
+  codPaciente: number;
   nomePaciente: string;
   sexoPaciente: string;
   dataNascimento: Date;
@@ -25,7 +25,7 @@ export class PatientProps {
   email: string;
   observacao: string;
 
-  constructor(codPaciente: string, nomePaciente: string, sexoPaciente: string, dataNascimento: Date,
+  constructor(codPaciente: number, nomePaciente: string, sexoPaciente: string, dataNascimento: Date,
     nomeMaePaciente: string, cpfPaciente: string, rgPaciente: string, cns: string, corPaciente: string,
     nacionalidade: string, naturalidade: string, grauInstrucaoPaciente: string, profissaoPaciente: string,
     responsavelPaciente: string, cep: string, endereco: string, bairro: string, cidade: string,

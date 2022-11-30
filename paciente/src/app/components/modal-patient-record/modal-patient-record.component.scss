@@ -1,25 +1,30 @@
-.tablePatient {
-  width: 90%;
-  margin-left: 5%;
-  margin-top: 2%;
+.modalPatient {
+  max-height: 500px;
+  overflow: auto;
 
-  button {
-    margin-left: 2%;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    color: white;
-    border-radius: 5px;
-  }
+  .tablePatient {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
 
-  .edit {
-    background-color: #17a2b8;
-    padding: 2% 3%;
-  }
+    button {
+      margin-left: 2%;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      color: white;
+      border-radius: 5px;
+    }
 
-  .edit:hover {
-    background-color: #148ea1;
+    .edit {
+      background-color: #17a2b8;
+      padding: 2% 3%;
+    }
 
-    transition: all .4s;
+    .edit:hover {
+      background-color: #148ea1;
+
+      transition: all .4s;
+    }
   }
 }
