@@ -20,7 +20,7 @@ export class HospitalizationService {
   }
 
   getHospitalizationById(codInternacao: number): Observable<Hospitalization> {
-    return this.http.get<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ codInternacao }`);
+    return this.http.get<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }?codInternacao=${ codInternacao }`);
   }
 
   createHospitalization(hospitalizations: Hospitalization): Observable<Hospitalization> {
@@ -28,10 +28,10 @@ export class HospitalizationService {
   }
 
   updateHospitalization(hospitalizations: Hospitalization): Observable<Hospitalization> {
-    return this.http.put<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ hospitalizations.codInternacao }`, hospitalizations);
+    return this.http.put<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }?codInternacao=${ hospitalizations.codInternacao }`, hospitalizations);
   }
 
   deleteHospitalization(codInternacao: number): Observable<Hospitalization>  {
-    return this.http.delete<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ codInternacao }`);
+    return this.http.delete<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }?codInternacao=${ codInternacao }`);
   }
 }

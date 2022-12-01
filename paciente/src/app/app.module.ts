@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 // compoents
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,7 +16,6 @@ import { FormHospitalizationComponent } from './components/form-hospitalization/
 import { ModalPatientRecordComponent } from './components/modal-patient-record/modal-patient-record.component';
 import { ModalPatientHospitalizationComponent } from './components/modal-patient-hospitalization/modal-patient-hospitalization.component';
 import { ModalPatientMovementComponent } from './components/modal-patient-movement/modal-patient-movement.component';
-import { ModalTableGridPatientDeleteComponent } from './components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
 import { ModalPatientAllInformationComponent } from './components/modal-patient-all-information/modal-patient-all-information.component';
 import { ModalHospitalizationAllInformationComponent } from './components/modal-hospitalization-all-information/modal-hospitalization-all-information.component';
 import { ModalDeleteHospitalizationComponent } from './components/modal-delete-hospitalization/modal-delete-hospitalization.component';
@@ -30,7 +31,6 @@ import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
 
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 // angular material
 import { MatCardModule } from '@angular/material/card';
@@ -73,7 +73,6 @@ import { FormsModule } from '@angular/forms';
     ModalPatientRecordComponent,
     ModalPatientHospitalizationComponent,
     ModalPatientMovementComponent,
-    ModalTableGridPatientDeleteComponent,
     TableGridConsulltComponent,
     ModalPatientAllInformationComponent,
     ModalHospitalizationAllInformationComponent,

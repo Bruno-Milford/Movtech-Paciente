@@ -11,10 +11,10 @@ import { PatientProps } from 'src/app/models/Patient';
 export class ModalPatientAllInformationComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor',
-    'Nacionalidade', 'Naturalidade', 'Profissao', 'Responsavel',
+    'ID', 'Nome', 'Nascimento', 'Sexo', 'Mae', 'CPF', 'RG', 'CNS', 'Cor',
+    'Nacionalidade', 'Naturalidade', 'Instrucao', 'Profissao', 'Responsavel',
     'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular',
-    'Email', 'Observacao', 'Opcoes'
+    'Email', 'Observacao'
   ];
 
   dataSource: PatientProps[] = [];

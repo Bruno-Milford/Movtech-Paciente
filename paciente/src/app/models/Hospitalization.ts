@@ -5,9 +5,9 @@ export class Hospitalization {
   Nascimento: Date;
   MaePaciente: string;
   dataEntradaInternacao: Date;
-  horaEntradaInternacao: string;
+  horaEntradaInternacao: Date;
   dataSaidaInternacao: Date;
-  horaSaidaInternacao: string;
+  horaSaidaInternacao: Date;
   cns: string;
   ClinicaMedica: string;
   localizacao: string;
@@ -16,13 +16,13 @@ export class Hospitalization {
   hipoteseDiagnostica: string;
   medico: string;
   crm: string;
-  diaginostico: string;
+  diagnostico: string;
   situacao: string;
 
   constructor(codInternacao: number, codPaciente: number, Paciente: string, Nascimento: Date, MaePaciente: string,
-    dataEntradaInternacao: Date, horaEntradaInternacao: string, dataSaidaInternacao: Date, horaSaidaInternacao: string,
+    dataEntradaInternacao: Date, horaEntradaInternacao: Date, dataSaidaInternacao: Date, horaSaidaInternacao: Date,
     cns: string, ClinicaMedica: string, localizacao: string, leito: string, centroCusto: string, hipoteseDiagnostica: string,
-    medico: string, crm: string, diaginostico: string, situiacao: string) {
+    medico: string, crm: string, diagnostico: string, situiacao: string) {
       this.codInternacao = codInternacao;
       this.codPaciente = codPaciente;
       this.Paciente = Paciente;
@@ -40,7 +40,7 @@ export class Hospitalization {
       this.hipoteseDiagnostica = hipoteseDiagnostica;
       this.medico = medico;
       this.crm = crm;
-      this.diaginostico = diaginostico;
+      this.diagnostico = diagnostico;
       this.situacao = situiacao;
   }
 }

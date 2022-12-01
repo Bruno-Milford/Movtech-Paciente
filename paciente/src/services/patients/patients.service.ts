@@ -20,7 +20,7 @@ export class PatientsService {
   }
 
   getPatientById(codPaciente: number): Observable<PatientProps> {
-    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`);
+    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }?codPaciente=${ codPaciente }`);
   }
 
   createPatient(patients: PatientProps): Observable<PatientProps> {
@@ -28,10 +28,10 @@ export class PatientsService {
   }
 
   updatePatient(patients: PatientProps): Observable<PatientProps> {
-    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ patients.codPaciente }`, patients)
+    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURL }?codPaciente=${ patients.codPaciente }`, patients)
   }
 
   deletePatient(codPaciente: number): Observable<PatientProps> {
-    return this.http.delete<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`)
+    return this.http.delete<PatientProps>(`${ Api.baseUrl + this.patientApiURL }?codPaciente=${ codPaciente }`)
   }
 }

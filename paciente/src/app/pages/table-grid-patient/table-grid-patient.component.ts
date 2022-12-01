@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ModalTableGridPatientDeleteComponent } from 'src/app/components/modal-table-grid-patient-delete/modal-table-grid-patient-delete.component';
 import { ModalPatientAllInformationComponent } from 'src/app/components/modal-patient-all-information/modal-patient-all-information.component';
 
 import { PatientsService } from 'src/services/patients/patients.service';
@@ -20,7 +19,7 @@ import { PatientProps }  from 'src/app/models/Patient';
 export class TableGridPatientComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS', 'Cor',
+    'ID', 'Nome', 'Nascimento', 'CPF', 'RG', 'CNS',
     'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular',
     'Email', 'Observacao', 'Opcoes'
   ];
@@ -46,9 +45,10 @@ export class TableGridPatientComponent implements OnInit {
     })
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(ModalTableGridPatientDeleteComponent, {
-      width: '30%'
+  DeletePatient(codPaciente: number) {
+    this.patientsService.deletePatient(codPaciente).subscribe(() => {
+      this.dataSource = this.dataSource.filter(cod => cod.codPaciente != codPaciente)
+      this.loadPatients()
     });
   }
 

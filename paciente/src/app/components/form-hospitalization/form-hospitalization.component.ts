@@ -33,7 +33,7 @@ export class FormHospitalizationComponent implements OnInit {
       this.dataSaidaInternacao, this.horaSaidaInternacao,
       this.cns, this.ClinicaMedica, this.localizacao, this.leito,
       this.centroCusto, this.hipoteseDiagnostica,
-      this.medico, this.crm, this.diaginostico, this.situacao)
+      this.medico, this.crm, this.diagnostico, this.situacao)
 
     this.hospitalizationServive.createHospitalization(hospitalization)
     .subscribe(data => {
@@ -43,7 +43,7 @@ export class FormHospitalizationComponent implements OnInit {
   }
 
   onSuccess() {
-    this.snackBar.open('Paciente cadastrado!', '', { duration: 5000 })
+    this.snackBar.open('Internação cadastrada!', '', { duration: 5000 })
   }
 
   codInternacao = 0;
@@ -52,9 +52,9 @@ export class FormHospitalizationComponent implements OnInit {
   Nascimento = new Date();
   MaePaciente = "";
   dataEntradaInternacao = new Date();
-  horaEntradaInternacao = "";
+  horaEntradaInternacao = new Date();
   dataSaidaInternacao = new Date();
-  horaSaidaInternacao = "";
+  horaSaidaInternacao = new Date();
   cns = "";
   ClinicaMedica = "";
   localizacao = "";
@@ -63,6 +63,6 @@ export class FormHospitalizationComponent implements OnInit {
   hipoteseDiagnostica = "";
   medico = "";
   crm = "";
-  diaginostico = "";
+  diagnostico = "";
   situacao = "";
 }
