@@ -10,7 +10,7 @@ import { Api } from '../api/api';
 })
 
 export class PatientsService {
-  
+
   constructor(private http: HttpClient) { }
 
   patientApiURL = '/patients';
@@ -19,7 +19,7 @@ export class PatientsService {
     return this.http.get<PatientProps[]>(Api.baseUrl + this.patientApiURL)
   }
 
-  getPatientById(codPaciente: number): Observable<PatientProps> {
+  getPatientById(codPaciente: any): Observable<PatientProps> {
     return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }?codPaciente=${ codPaciente }`);
   }
 

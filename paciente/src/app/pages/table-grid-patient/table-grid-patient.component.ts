@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 
 import { ModalPatientAllInformationComponent } from 'src/app/components/modal-patient-all-information/modal-patient-all-information.component';
@@ -29,6 +31,7 @@ export class TableGridPatientComponent implements OnInit {
   constructor(
     private patientsService: PatientsService,
     private dialog: MatDialog,
+    private snackBar: MatSnackBar,
     private router: Router
   ) { }
 
@@ -40,7 +43,6 @@ export class TableGridPatientComponent implements OnInit {
 
   loadPatients() {
     this.patientsService.getPatients().subscribe(patient => {
-      // console.log(patient)
       this.dataSource = patient;
     })
   }
@@ -48,17 +50,27 @@ export class TableGridPatientComponent implements OnInit {
   DeletePatient(codPaciente: number) {
     this.patientsService.deletePatient(codPaciente).subscribe(() => {
       this.dataSource = this.dataSource.filter(cod => cod.codPaciente != codPaciente)
+      this.onSuccess()
       this.loadPatients()
     });
   }
 
-  openDialogPatientAllInformation(patient: PatientProps) {
+  onSuccess() {
+    this.snackBar.open('Paciente excluido com sucesso!', '', { duration: 5000 })
+  }
+
+  openDialogPatientAllInformation(codPaciente: number) {
     const dialogRef = this.dialog.open(ModalPatientAllInformationComponent, {
       width: '100%'
     });
   }
 
-  EditPatient(patient: PatientProps) {
-    this.router.navigate(['/']);
+  patientApiURL = '/pacientes';
+
+  EditPatient(codPaciente: number) {
+    const url = `${ this.patientApiURL }?codPaciente=${ codPaciente }`
+
+
+    // this.router.navigate([`${ patientApiURLbyId }?codPaciente=${ codPaciente }`]);
   }
 }

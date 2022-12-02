@@ -21,7 +21,7 @@
 
   <ng-container matColumnDef="Nascimento">
     <th mat-header-cell *matHeaderCellDef>Nascimento</th>
-    <td mat-cell *matCellDef="let element"> {{ element.dataNascimento }} </td>
+    <td mat-cell *matCellDef="let element"> {{ element.dataNascimento | date: 'dd-MM-YYYY' }} </td>
   </ng-container>
 
   <ng-container matColumnDef="CPF">
@@ -87,13 +87,13 @@
   <ng-container matColumnDef="Opcoes">
     <th mat-header-cell *matHeaderCellDef>Opções</th>
     <td mat-cell *matCellDef="let element">
-      <button (click)="openDialogPatientAllInformation(element)" class="info">
+      <button (click)="openDialogPatientAllInformation(element.codPaciente)" class="info">
         <mat-icon class="material-symbols-outlined">
           info
         </mat-icon>
       </button>
 
-      <button (click)="EditPatient(element)" class="edit">
+      <button (click)="EditPatient(element.codPaciente)" class="edit">
         <mat-icon class="material-symbols-outlined">
           edit
         </mat-icon>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 import { Hospitalization } from 'src/app/models/Hospitalization';
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
@@ -21,7 +25,10 @@ export class TableGridHospitalizationComponent implements OnInit {
   dataSource: Hospitalization[] = [];
 
   constructor(
-    public hospitalizationService: HospitalizationService
+    private hospitalizationService: HospitalizationService,
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar,
+    private router: Router
   ) { }
 
   ngOnInit(): void { }
@@ -32,12 +39,11 @@ export class TableGridHospitalizationComponent implements OnInit {
 
   loadHospitalizations() {
     this.hospitalizationService.getHospitalizations().subscribe(hospitalization => {
-      console.log(hospitalization);
       this.dataSource = hospitalization;
     })
   }
 
-  openDialogHospitalizationAllInformation() {
+  openDialogHospitalizationAllInformation(codInternacao: number) {
 
   }
 
@@ -45,7 +51,15 @@ export class TableGridHospitalizationComponent implements OnInit {
 
   }
 
-  openDialog() {
+  DeleteHospitalization(codInternacao: number) {
+    this.hospitalizationService.deleteHospitalization(codInternacao).subscribe(() => {
+      this.dataSource = this.dataSource.filter(cod => cod.codInternacao != codInternacao)
+      this.onSuccess()
+      this.loadHospitalizations()
+    })
+  }
 
+  onSuccess() {
+    this.snackBar.open('Internação excluido com sucesso!', '', { duration: 5000 })
   }
 }

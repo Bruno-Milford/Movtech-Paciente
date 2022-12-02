@@ -1,4 +1,10 @@
 .tablePatient {
+  th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+
   button {
     margin-left: 5%;
     cursor: pointer;

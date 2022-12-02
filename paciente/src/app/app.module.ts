@@ -20,6 +20,8 @@ import { ModalPatientAllInformationComponent } from './components/modal-patient-
 import { ModalHospitalizationAllInformationComponent } from './components/modal-hospitalization-all-information/modal-hospitalization-all-information.component';
 import { ModalDeleteHospitalizationComponent } from './components/modal-delete-hospitalization/modal-delete-hospitalization.component';
 import { TableGridCostCenterComponent } from './components/table-grid-cost-center/table-grid-cost-center.component';
+import { FormPatientDataUpdateComponent } from './components/form-patient-data-update/form-patient-data-update.component';
+import { FormHospitalizationDataUpdateComponent } from './components/form-hospitalization-data-update/form-hospitalization-data-update.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -30,7 +32,8 @@ import { TableGridHospitalizationComponent } from './pages/table-grid-hospitaliz
 import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
-
+import { PatientDataUpdateComponent } from './pages/patient-data-update/patient-data-update.component';
+import { HospitalizationDataUpdateComponent } from './pages/hospitalization-data-update/hospitalization-data-update.component';
 
 // angular material
 import { MatCardModule } from '@angular/material/card';
@@ -78,7 +81,11 @@ import { FormsModule } from '@angular/forms';
     ModalHospitalizationAllInformationComponent,
     ModalDeleteHospitalizationComponent,
     CostCenterComponent,
-    TableGridCostCenterComponent
+    TableGridCostCenterComponent,
+    PatientDataUpdateComponent,
+    FormPatientDataUpdateComponent,
+    FormHospitalizationDataUpdateComponent,
+    HospitalizationDataUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -30,8 +30,11 @@
   </ng-container> -->
 
   <ng-container matColumnDef="dataEntradaInternacao">
-    <th mat-header-cell *matHeaderCellDef>Data de entrada na Internação</th>
-    <td mat-cell *matCellDef="let element"> {{ element.dataEntradaInternacao }} </td>
+    <th mat-header-cell *matHeaderCellDef>Entrada na Internação</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.dataEntradaInternacao | date: 'dd/MM/YYYY' }} -
+      {{ element.horaEntradaInternacao | date: 'HH:mm' }}
+    </td>
   </ng-container>
 
   <!-- <ng-container matColumnDef="horaEntradaInternacao">
@@ -40,8 +43,11 @@
   </ng-container> -->
 
   <ng-container matColumnDef="dataSaidaInternacao">
-    <th mat-header-cell *matHeaderCellDef>Data de saida na Internação</th>
-    <td mat-cell *matCellDef="let element"> {{ element.dataSaidaInternacao }} </td>
+    <th mat-header-cell *matHeaderCellDef>Saida na Internação</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.dataSaidaInternacao | date: 'dd/MM/YYYY' }} -
+      {{ element.horaSaidaInternacao | date: 'HH:mm' }}
+    </td>
   </ng-container>
 
   <!-- <ng-container matColumnDef="horaSaidaInternacao">
@@ -102,7 +108,7 @@
   <ng-container matColumnDef="Opcoes">
     <th mat-header-cell *matHeaderCellDef>Opções</th>
     <td mat-cell *matCellDef="let element">
-      <button (click)="openDialogHospitalizationAllInformation()" class="info">
+      <button (click)="openDialogHospitalizationAllInformation(element.codInternacao)" class="info">
         <mat-icon class="material-symbols-outlined">
           info
         </mat-icon>
@@ -114,7 +120,7 @@
         </mat-icon>
       </button>
 
-      <button (click)="openDialog()" class="delete">
+      <button (click)="DeleteHospitalization(element.codInternacao)" class="delete">
         <mat-icon class="material-symbols-outlined">
           delete
         </mat-icon>
