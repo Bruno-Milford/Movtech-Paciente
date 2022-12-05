@@ -31,11 +31,11 @@ export class FormPatientDataUpdateComponent implements OnInit {
   snapShotPatientData() {
     const IDpatient = this.activatedRoute.snapshot.paramMap.get("codPaciente");
 
-    // console.log(this.dataSource)
+    console.log(IDpatient)
 
-    this.patientsService.getPatientById(IDpatient).subscribe((data) => {
-      this.dataSource = data;
-    })
+    // this.patientsService.getPatientById().subscribe((data) => {
+    //   this.dataSource = data;
+    // })
   }
 
   editPatient() {

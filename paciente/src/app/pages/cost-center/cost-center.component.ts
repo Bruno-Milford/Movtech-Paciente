@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CostCenter } from 'src/app/models/CostCenter';
 
 @Component({
   selector: 'app-cost-center',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CostCenterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private costCenter: CostCenter) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  dataSource: CostCenter[] = [];
+
+  openDialog() {
+
   }
 
+  codCentroCusto = 0;
+  nomeCentroCusto = "";
 }

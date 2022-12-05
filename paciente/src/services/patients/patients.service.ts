@@ -15,12 +15,14 @@ export class PatientsService {
 
   patientApiURL = '/patients';
 
+  patientApiURLbyId = '/editar-paciente';
+
   getPatients() {
     return this.http.get<PatientProps[]>(Api.baseUrl + this.patientApiURL)
   }
 
-  getPatientById(codPaciente: any): Observable<PatientProps> {
-    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }?codPaciente=${ codPaciente }`);
+  getPatientById(codPaciente: number): Observable<PatientProps> {
+    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`);
   }
 
   createPatient(patients: PatientProps): Observable<PatientProps> {
@@ -28,7 +30,7 @@ export class PatientsService {
   }
 
   updatePatient(patients: PatientProps): Observable<PatientProps> {
-    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURL }?codPaciente=${ patients.codPaciente }`, patients)
+    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURLbyId }?codPaciente=${ patients.codPaciente }`, patients)
   }
 
   deletePatient(codPaciente: number): Observable<PatientProps> {

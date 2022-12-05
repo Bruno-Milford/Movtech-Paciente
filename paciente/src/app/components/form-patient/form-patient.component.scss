@@ -100,10 +100,12 @@
   }
 }
 
-@media only screen and (max-device-width: 1920px) {
-  // .infoDados {
-  //   .nome {
-  //     width: 84% !important;
-  //   }
-  // }
+@media screen and (min-width: 900px) {
+  .infoDados {
+    // background-color: red;
+
+    .nome {
+      width: 75% !important;
+    }
+  }
 }

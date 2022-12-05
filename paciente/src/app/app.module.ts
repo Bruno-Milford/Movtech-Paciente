@@ -22,6 +22,7 @@ import { ModalDeleteHospitalizationComponent } from './components/modal-delete-h
 import { TableGridCostCenterComponent } from './components/table-grid-cost-center/table-grid-cost-center.component';
 import { FormPatientDataUpdateComponent } from './components/form-patient-data-update/form-patient-data-update.component';
 import { FormHospitalizationDataUpdateComponent } from './components/form-hospitalization-data-update/form-hospitalization-data-update.component';
+import { TableGridMovementComponent } from './components/table-grid-movement/table-grid-movement.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -34,6 +35,7 @@ import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
 import { PatientDataUpdateComponent } from './pages/patient-data-update/patient-data-update.component';
 import { HospitalizationDataUpdateComponent } from './pages/hospitalization-data-update/hospitalization-data-update.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 // angular material
 import { MatCardModule } from '@angular/material/card';
@@ -51,7 +53,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 
 // service
-import { PatientsService } from '../services/patients/patients.service';
+import { PatientsService } from 'src/services/patients/patients.service';
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 
 // http
@@ -85,7 +87,9 @@ import { FormsModule } from '@angular/forms';
     PatientDataUpdateComponent,
     FormPatientDataUpdateComponent,
     FormHospitalizationDataUpdateComponent,
-    HospitalizationDataUpdateComponent
+    HospitalizationDataUpdateComponent,
+    DashboardComponent,
+    TableGridMovementComponent
   ],
   imports: [
     BrowserModule,

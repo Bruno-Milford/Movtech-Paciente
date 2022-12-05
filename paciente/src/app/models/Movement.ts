@@ -1,6 +1,6 @@
 export class Movement {
   codMovimentacao: number;
-  codPacienteMov: string;
+  codPacienteMov: number;
   nomePacienteMov: string;
   dataNasciemtoMov: Date;
   nomeMaePacienteMov: string;
@@ -12,7 +12,7 @@ export class Movement {
   medicoMov: string;
   crmMov: string;
 
-  constructor(codMovimentacao: number, codPacienteMov: string, nomePacienteMov: string, dataNasciemtoMov: Date,
+  constructor(codMovimentacao: number, codPacienteMov: number, nomePacienteMov: string, dataNasciemtoMov: Date,
     nomeMaePacienteMov: string, dataMovimentacao: string, horaMovimentacao: string, motivo: string,
     leitoMov: string, centroCustoMov: string, medicoMov: string, crmMov: string) {
       this.codMovimentacao = codMovimentacao;

@@ -4,7 +4,7 @@
       <div class="col-md-4 codigo">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código do paciente</mat-label>
-          <input [(ngModel)]="codPaciente" matInput>
+          <input [(ngModel)]="codPaciente" matInput type="number">
         </mat-form-field>
 
         <div class="search">
@@ -19,7 +19,7 @@
       <div class="col-md-4 prontuario">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Prontuário</mat-label>
-          <input [(ngModel)]="codInternacao" matInput>
+          <input [(ngModel)]="codInternacao" matInput type="number">
         </mat-form-field>
       </div>
 
@@ -43,7 +43,7 @@
     <div class="col-md-4">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="Nascimento" matInput>
+        <input [(ngModel)]="Nascimento" matInput type="date">
       </mat-form-field>
     </div>
 
@@ -59,28 +59,28 @@
     <div class="cold-md-3 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Entrada</mat-label>
-        <input [(ngModel)]="dataEntradaInternacao" matInput>
+        <input [(ngModel)]="dataEntradaInternacao" matInput type="date">
       </mat-form-field>
     </div>
 
     <div class="cold-md-3 horaEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Hora de Entrada</mat-label>
-        <input [(ngModel)]="horaEntradaInternacao" matInput>
+        <input [(ngModel)]="horaEntradaInternacao" matInput type="time">
       </mat-form-field>
     </div>
 
     <div class="cold-md-3 dataSaida">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Saida</mat-label>
-        <input [(ngModel)]="dataSaidaInternacao" matInput>
+        <input [(ngModel)]="dataSaidaInternacao" matInput type="date">
       </mat-form-field>
     </div>
 
     <div class="cold-md-3 horaSaida">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Hora de Saida</mat-label>
-        <input [(ngModel)]="horaSaidaInternacao" matInput>
+        <input [(ngModel)]="horaSaidaInternacao" matInput type="time">
       </mat-form-field>
     </div>
   </div>

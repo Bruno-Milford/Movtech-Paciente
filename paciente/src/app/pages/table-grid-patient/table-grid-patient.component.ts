@@ -65,12 +65,9 @@ export class TableGridPatientComponent implements OnInit {
     });
   }
 
-  patientApiURL = '/pacientes';
+  patientApiURL = '/editar-paciente';
 
   EditPatient(codPaciente: number) {
-    const url = `${ this.patientApiURL }?codPaciente=${ codPaciente }`
-
-
-    // this.router.navigate([`${ patientApiURLbyId }?codPaciente=${ codPaciente }`]);
+    this.router.navigate([`${ this.patientApiURL }/${ codPaciente }`]);
   }
 }

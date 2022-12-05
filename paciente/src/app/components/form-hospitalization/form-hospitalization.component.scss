@@ -80,3 +80,23 @@
     }
   }
 }
+
+@media screen and (min-width: 900px) {
+  .infoDados {
+    .nome {
+      width: 57% !important;
+    }
+  }
+
+  .nascimento {
+    .mae {
+      width: 69% !important;
+    }
+  }
+
+  .medico {
+    .nomeMedico {
+      width: 80% !important;
+    }
+  }
+}

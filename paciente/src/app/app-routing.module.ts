@@ -9,6 +9,8 @@ import { TableGridPatientComponent } from './pages/table-grid-patient/table-grid
 import { TableGridHospitalizationComponent } from './pages/table-grid-hospitalization/table-grid-hospitalization.component';
 import { PatientDataUpdateComponent } from './pages/patient-data-update/patient-data-update.component';
 import { HospitalizationDataUpdateComponent } from './pages/hospitalization-data-update/hospitalization-data-update.component';
+import { CostCenterComponent } from './pages/cost-center/cost-center.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -20,7 +22,7 @@ const routes: Routes = [
     component: TableGridPatientComponent
   },
   {
-    path: 'editar-paciente',
+    path: 'editar-paciente/:id',
     component: PatientDataUpdateComponent
   },
   {
@@ -36,12 +38,20 @@ const routes: Routes = [
     component: HospitalizationDataUpdateComponent
   },
   {
+    path: 'centro-custo',
+    component: CostCenterComponent
+  },
+  {
     path: 'movimentacao',
     component: MovementComponent
   },
   {
     path: 'consulta',
     component: PatientConsultationComponent
+  },
+  {
+    path: 'grafico',
+    component: DashboardComponent
   }
 ];
 
