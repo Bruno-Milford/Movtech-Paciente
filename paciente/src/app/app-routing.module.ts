@@ -22,7 +22,7 @@ const routes: Routes = [
     component: TableGridPatientComponent
   },
   {
-    path: 'editar-paciente/:id',
+    path: 'pacientes/editar-paciente/:id',
     component: PatientDataUpdateComponent
   },
   {

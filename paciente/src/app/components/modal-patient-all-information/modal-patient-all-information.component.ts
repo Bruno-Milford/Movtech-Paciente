@@ -30,6 +30,6 @@ export class ModalPatientAllInformationComponent implements OnInit {
   }
 
   loadPatientWithSelectedId(codPaciente: number) {
-    this.patientsService.getPatientById(codPaciente)
+    // this.patientsService.getPatientById(codPaciente)
   }
 }

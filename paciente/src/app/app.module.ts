@@ -23,6 +23,7 @@ import { TableGridCostCenterComponent } from './components/table-grid-cost-cente
 import { FormPatientDataUpdateComponent } from './components/form-patient-data-update/form-patient-data-update.component';
 import { FormHospitalizationDataUpdateComponent } from './components/form-hospitalization-data-update/form-hospitalization-data-update.component';
 import { TableGridMovementComponent } from './components/table-grid-movement/table-grid-movement.component';
+import { FormCostCenterComponent } from './components/form-cost-center/form-cost-center.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -30,12 +31,12 @@ import { HospitalizationComponent } from './pages/hospitalization/hospitalizatio
 import { TableGridPatientComponent } from './pages/table-grid-patient/table-grid-patient.component';
 import { TableGridConsulltComponent } from './pages/table-grid-consult/table-grid-consult.component';
 import { TableGridHospitalizationComponent } from './pages/table-grid-hospitalization/table-grid-hospitalization.component';
-import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
 import { PatientDataUpdateComponent } from './pages/patient-data-update/patient-data-update.component';
 import { HospitalizationDataUpdateComponent } from './pages/hospitalization-data-update/hospitalization-data-update.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 
 // angular material
 import { MatCardModule } from '@angular/material/card';
@@ -82,14 +83,15 @@ import { FormsModule } from '@angular/forms';
     ModalPatientAllInformationComponent,
     ModalHospitalizationAllInformationComponent,
     ModalDeleteHospitalizationComponent,
-    CostCenterComponent,
     TableGridCostCenterComponent,
     PatientDataUpdateComponent,
     FormPatientDataUpdateComponent,
     FormHospitalizationDataUpdateComponent,
     HospitalizationDataUpdateComponent,
     DashboardComponent,
-    TableGridMovementComponent
+    TableGridMovementComponent,
+    CostCenterComponent,
+    FormCostCenterComponent
   ],
   imports: [
     BrowserModule,

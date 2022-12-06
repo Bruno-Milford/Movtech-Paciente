@@ -1,1 +1,36 @@
-<p>table-grid-cost-center works!</p>
+<!-- <mat-toolbar>
+  <span>Centro de Custo</span>
+</mat-toolbar> -->
+
+<table mat-table [dataSource]="dataSource" class="tableCostCenter mat-elevation-z8">
+
+  <ng-container matColumnDef="ID">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let element">{{ element.codCentroCusto }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Nome">
+    <th mat-header-cell *matHeaderCellDef>Nome do Centro de Custo</th>
+    <td mat-cell *matCellDef="let element">{{ element.nomeCentroCusto }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Opcoes">
+    <th mat-header-cell *matHeaderCellDef>Opções</th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="editCostCenter(element.codCentroCusto)" class="edit">
+        <mat-icon class="material-symbols-outlined">
+          edit
+        </mat-icon>
+      </button>
+
+      <button (click)="deleteCostCenter(element.codCentroCusto)"  class="delete">
+        <mat-icon class="material-symbols-outlined">
+          delete
+        </mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

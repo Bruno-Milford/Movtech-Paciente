@@ -1,8 +1,8 @@
 export class CostCenter {
-  codCentroCusto: string;
+  codCentroCusto: number;
   nomeCentroCusto: string;
 
-  constructor(codCentroCusto: string, nomeCentroCusto: string) {
+  constructor(codCentroCusto: number, nomeCentroCusto: string) {
     this.codCentroCusto = codCentroCusto;
     this.nomeCentroCusto = nomeCentroCusto;
   }

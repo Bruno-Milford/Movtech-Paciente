@@ -1,0 +1,31 @@
+table {
+  width: 95%;
+}
+
+.tableCostCenter {
+  margin-left: 5%;
+  margin-top: 1%;
+
+  th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+
+  button {
+    margin-left: 5%;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .edit {
+    background-color: #17a2b8;
+  }
+
+  .delete {
+    background-color: #dc3545;
+  }
+}

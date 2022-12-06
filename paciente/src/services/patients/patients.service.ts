@@ -1,4 +1,4 @@
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable, take, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -22,7 +22,7 @@ export class PatientsService {
   }
 
   getPatientById(codPaciente: number): Observable<PatientProps> {
-    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`);
+    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`)
   }
 
   createPatient(patients: PatientProps): Observable<PatientProps> {

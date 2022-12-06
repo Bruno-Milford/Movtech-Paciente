@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -32,7 +32,8 @@ export class TableGridPatientComponent implements OnInit {
     private patientsService: PatientsService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void { }
@@ -65,9 +66,10 @@ export class TableGridPatientComponent implements OnInit {
     });
   }
 
-  patientApiURL = '/editar-paciente';
-
   EditPatient(codPaciente: number) {
-    this.router.navigate([`${ this.patientApiURL }/${ codPaciente }`]);
+    this.router.navigate(
+      ['editar-paciente', codPaciente],
+      { relativeTo: this.route }
+    );
   }
 }

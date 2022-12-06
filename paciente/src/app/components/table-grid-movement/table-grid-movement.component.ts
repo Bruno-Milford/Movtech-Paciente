@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movement } from 'src/app/models/Movement';
+import { MovementService } from 'src/services/movement/movement.service';
 
 @Component({
   selector: 'app-table-grid-movement',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableGridMovementComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = [
+    'ID', 'Nome', 'Prontuario', 'Sequencia', 'Data', 'Hora', 'Motivo', 'Localizacao', 
+    'Leito', 'Centro de Custo', 'Clinica Medica', 'Medico', 'CRM'
+  ];
 
-  ngOnInit(): void {
+  dataSource: Movement[] = [];
+
+  constructor(
+    private movementService: MovementService
+  ) { }
+
+  ngOnInit(): void { }
+
+  ngAfterViewInit() {
+    this.loadMovement()
   }
 
+  loadMovement() {
+    this.movementService.getMovements().subscribe(movement => {
+      this.dataSource = movement;
+    })
+  }
 }
