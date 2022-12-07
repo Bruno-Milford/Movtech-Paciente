@@ -26,10 +26,11 @@ export class ModalPatientAllInformationComponent implements OnInit {
   ngOnInit(): void { }
 
   ngAfterViewInit(codPaciente: number) {
-    this.loadPatientWithSelectedId(codPaciente)
-  }
+    this.patientsService.getPatientById(codPaciente).subscribe(data => {
+      console.log(data)
+      this.dataSource = data;
+    })
 
-  loadPatientWithSelectedId(codPaciente: number) {
-    // this.patientsService.getPatientById(codPaciente)
+    // console.log(this.patientsService.getPatientById(codPaciente))
   }
 }

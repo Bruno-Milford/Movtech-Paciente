@@ -33,7 +33,6 @@ export class TableGridPatientComponent implements OnInit {
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
     private router: Router,
-    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void { }
@@ -67,9 +66,6 @@ export class TableGridPatientComponent implements OnInit {
   }
 
   EditPatient(codPaciente: number) {
-    this.router.navigate(
-      ['editar-paciente', codPaciente],
-      { relativeTo: this.route }
-    );
+    // this.router.navigate([`pacientes/editar-paciente/${ codPaciente }`]);
   }
 }

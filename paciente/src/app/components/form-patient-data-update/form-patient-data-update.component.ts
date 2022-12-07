@@ -12,60 +12,31 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class FormPatientDataUpdateComponent implements OnInit {
-  @Input() patientsData!: {
-    codPaciente: number;
-    nomePaciente: string;
-    sexoPaciente: string;
-    dataNascimento: Date;
-    nomeMaePaciente: string;
-    cpfPaciente: string;
-    rgPaciente: string;
-    cns: string;
-    corPaciente: string;
-    nacionalidade: string;
-    naturalidade: string;
-    grauInstrucaoPaciente: string;
-    profissaoPaciente: string;
-    responsavelPaciente: string;
-    cep: string;
-    endereco: string;
-    bairro: string;
-    cidade: string;
-    uf: string;
-    telefone: string;
-    celular: string;
-    contato: string;
-    telefoneContato: string;
-    email: string;
-    observacao: string;
-  }
 
   constructor(
     public patientsService: PatientsService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
+    public patientProps: PatientProps
   ) { }
 
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(
-      (params: any) => {
-        const id = params['id'];
-        console.log(id);
-      }
-    )
+  ngOnInit(): void { }
+
+  ngAfterViewInit(codPaciente: number) {
+    this.patientsService.getPatientById(codPaciente).subscribe(data => {
+      this.dataSource = data;
+    })
+    // console.log(this.dataSource)
   }
 
-  dataSource: PatientProps = new PatientProps(
-    0, "", "", new Date(), "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
-  );
+  dataSource: PatientProps[] = [];
 
   editPatient() {
-    this.patientsService.updatePatient(this.dataSource).subscribe(() => {
-      this.onSuccess()
-      this.router.navigate(["/pacientes"])
-    })
+    // this.patientsService.updatePatient().subscribe(() => {
+    //   this.onSuccess()
+    //   // this.router.navigate(["/pacientes"])
+    // })
   }
 
   back() {

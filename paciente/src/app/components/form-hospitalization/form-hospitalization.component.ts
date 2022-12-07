@@ -46,6 +46,10 @@ export class FormHospitalizationComponent implements OnInit {
     this.snackBar.open('Internação cadastrada!', '', { duration: 5000 })
   }
 
+  // openDialog() {
+  //   const dialoggRef = this.dialog.open()
+  // }
+
   codInternacao = 0;
   codPaciente = 0;
   Paciente = "";

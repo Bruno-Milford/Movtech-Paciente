@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Movement } from 'src/app/models/Movement';
 import { MovementService } from 'src/services/movement/movement.service';
 
@@ -10,14 +11,15 @@ import { MovementService } from 'src/services/movement/movement.service';
 export class TableGridMovementComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'ID', 'Nome', 'Prontuario', 'Sequencia', 'Data', 'Hora', 'Motivo', 'Localizacao', 
-    'Leito', 'Centro de Custo', 'Clinica Medica', 'Medico', 'CRM'
+    'ID', 'Nome', 'Nascimento', 'Prontuario', 'Sequencia', 'Data', 'Hora', 'Motivo', 'Localizacao',
+    'Leito', 'Centro de Custo', 'Medico', 'CRM', 'Opcoes'
   ];
 
   dataSource: Movement[] = [];
 
   constructor(
-    private movementService: MovementService
+    private movementService: MovementService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void { }
@@ -30,5 +32,17 @@ export class TableGridMovementComponent implements OnInit {
     this.movementService.getMovements().subscribe(movement => {
       this.dataSource = movement;
     })
+  }
+
+  deleteMovement(codMovimentacao: number) {
+    this.movementService.deleteMovement(codMovimentacao).subscribe(() => {
+      this.dataSource = this.dataSource.filter(cod => cod.codMovimentacao != codMovimentacao)
+      this.onSuccess()
+      this.loadMovement()
+    })
+  }
+
+  onSuccess() {
+    this.snackBar.open('Movimentação excluida com sucesso!', '', { duration: 5000 })
   }
 }

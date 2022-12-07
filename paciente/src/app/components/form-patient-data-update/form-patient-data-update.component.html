@@ -4,22 +4,14 @@
       <div class="col-md-3 codigo">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código do paciente</mat-label>
-          <input [(ngModel)]="patientsData.codPaciente" matInput>
+          <input [(ngModel)]="patientProps.codPaciente" matInput>
         </mat-form-field>
-
-        <!-- <div class="search">
-          <button mat-button-raised (click)="openDialog()">
-            <mat-icon class="material-symbols-outlined">
-              search
-            </mat-icon>
-          </button>
-        </div> -->
       </div>
 
       <div class="col-md-3 nome">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input [(ngModel)]="dataSource.nomePaciente" matInput>
+          <input [(ngModel)]="patientProps.nomePaciente" matInput>
         </mat-form-field>
       </div>
     </div>
@@ -27,14 +19,14 @@
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="dataSource.nomeMaePaciente" matInput>
+        <input [(ngModel)]="patientProps.nomeMaePaciente" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Responsável</mat-label>
-        <input [(ngModel)]="dataSource.responsavelPaciente" matInput>
+        <input [(ngModel)]="patientProps.responsavelPaciente" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -43,28 +35,28 @@
     <div class="col-md-3 nascimento">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="dataSource.dataNascimento" matInput>
+        <input [(ngModel)]="patientProps.dataNascimento" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 cpf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CPF</mat-label>
-        <input [(ngModel)]="dataSource.cpfPaciente" matInput>
+        <input [(ngModel)]="patientProps.cpfPaciente" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 rg">
       <mat-form-field class="input" appearance="fill">
         <mat-label>RG</mat-label>
-        <input [(ngModel)]="dataSource.rgPaciente" matInput>
+        <input [(ngModel)]="patientProps.rgPaciente" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 sexo">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Sexo</mat-label>
-        <input [(ngModel)]="dataSource.sexoPaciente" matInput>
+        <input [(ngModel)]="patientProps.sexoPaciente" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -73,21 +65,21 @@
     <div class="col-md-4 cor">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cor</mat-label>
-        <input [(ngModel)]="dataSource.corPaciente" matInput>
+        <input [(ngModel)]="patientProps.corPaciente" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 nacionalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nacionalidade</mat-label>
-        <input [(ngModel)]="dataSource.nacionalidade" matInput>
+        <input [(ngModel)]="patientProps.nacionalidade" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 naturalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Naturalidade</mat-label>
-        <input [(ngModel)]="dataSource.naturalidade" matInput>
+        <input [(ngModel)]="patientProps.naturalidade" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -96,14 +88,14 @@
     <div class="col-md-6 instrucao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Grau de Instrução</mat-label>
-        <input [(ngModel)]="dataSource.grauInstrucaoPaciente" matInput>
+        <input [(ngModel)]="patientProps.grauInstrucaoPaciente" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-6 profissao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Profissão</mat-label>
-        <input [(ngModel)]="dataSource.profissaoPaciente" matInput>
+        <input [(ngModel)]="patientProps.profissaoPaciente" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -112,35 +104,35 @@
     <div class="col-md-4 cep">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CEP</mat-label>
-        <input [(ngModel)]="dataSource.cep" matInput>
+        <input [(ngModel)]="patientProps.cep" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 endereco">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Endereço</mat-label>
-        <input [(ngModel)]="dataSource.endereco" matInput>
+        <input [(ngModel)]="patientProps.endereco" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 bairro">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Bairro</mat-label>
-        <input [(ngModel)]="dataSource.bairro" matInput>
+        <input [(ngModel)]="patientProps.bairro" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 cidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cidade</mat-label>
-        <input [(ngModel)]="dataSource.bairro" matInput>
+        <input [(ngModel)]="patientProps.bairro" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 uf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>UF</mat-label>
-        <input [(ngModel)]="dataSource.uf" matInput>
+        <input [(ngModel)]="patientProps.uf" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -149,28 +141,28 @@
     <div class="col-md-3 telefone">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Telefone Fixo</mat-label>
-        <input [(ngModel)]="dataSource.telefone" matInput>
+        <input [(ngModel)]="patientProps.telefone" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 celular">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Celular</mat-label>
-        <input [(ngModel)]="dataSource.celular" matInput>
+        <input [(ngModel)]="patientProps.celular" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 recado">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Recado (Nome)</mat-label>
-        <input [(ngModel)]="dataSource.contato" matInput>
+        <input [(ngModel)]="patientProps.contato" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 contato">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Contato Recado</mat-label>
-        <input [(ngModel)]="dataSource.telefoneContato" matInput>
+        <input [(ngModel)]="patientProps.telefoneContato" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -179,7 +171,7 @@
     <div class="col-md-12">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Email</mat-label>
-        <input [(ngModel)]="dataSource.email" matInput>
+        <input [(ngModel)]="patientProps.email" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -188,7 +180,7 @@
     <div class="col-md-12">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Observação</mat-label>
-        <textarea [(ngModel)]="dataSource.observacao" matInput></textarea>
+        <textarea [(ngModel)]="patientProps.observacao" matInput></textarea>
       </mat-form-field>
     </div>
   </div>

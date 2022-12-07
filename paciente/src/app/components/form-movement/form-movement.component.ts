@@ -21,10 +21,10 @@ export class FormMovementComponent implements OnInit {
 
   saveMovement() {
     const movements = new Movement(this.codMovimentacao,
-    this.codPacienteMov, this.nomePacienteMov,
+    this.codSequencia, this.codPacienteMov, this.nomePacienteMov,
     new Date(this.dataNasciemtoMov), this.nomeMaePacienteMov,
-    this.dataMovimentacao, this.horaMovimentacao,
-    this.motivo, this.leitoMov, this.centroCustoMov,
+    new Date(this.dataMovimentacao), new Date(this.horaMovimentacao),
+    this.motivo, this.localizacao, this.leitoMov, this.centroCustoMov,
     this. medicoMov, this.crmMov)
 
     this.movementService.createMovement(movements)
@@ -36,16 +36,20 @@ export class FormMovementComponent implements OnInit {
 
   onSuccess() {
     this.snackBar.open('Paciente movimentado!', '', { duration: 5000 })
+
+    location.reload();
   }
 
   codMovimentacao = 0;
   codPacienteMov = 0;
+  codSequencia = 0;
   nomePacienteMov = "";
   dataNasciemtoMov = Date();
   nomeMaePacienteMov = "";
-  dataMovimentacao = "";
-  horaMovimentacao = "";
+  dataMovimentacao = Date();
+  horaMovimentacao = Date();
   motivo = "";
+  localizacao = "";
   leitoMov = "";
   centroCustoMov = "";
   medicoMov = "";

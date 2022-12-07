@@ -60,7 +60,6 @@ export class FormComponent implements OnInit {
   }
 
   openDialog() {
-    // console.log(this.formCod);
     const dialogRef = this.dialog.open(ModalPatientRecordComponent, {
       width: '100%'
     });

@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="dataSource" class="tableCostCenter mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="tableMovement mat-elevation-z8">
 
   <ng-container matColumnDef="ID">
     <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -10,6 +10,11 @@
     <td mat-cell *matCellDef="let element">{{ element.nomePacienteMov }}</td>
   </ng-container>
 
+  <ng-container matColumnDef="Nascimento">
+    <th mat-header-cell *matHeaderCellDef>Data</th>
+    <td mat-cell *matCellDef="let element">{{ element.dataNascimento | date: 'dd-MM-YYYY' }}</td>
+  </ng-container>
+
   <ng-container matColumnDef="Prontuario">
     <th mat-header-cell *matHeaderCellDef>Prontuario</th>
     <td mat-cell *matCellDef="let element">{{ element.codPacienteMov }}</td>
@@ -17,52 +22,47 @@
 
   <ng-container matColumnDef="Sequencia">
     <th mat-header-cell *matHeaderCellDef>Sequencia</th>
-    <td mat-cell *matCellDef="let element">{{ element.nomeCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.codSequencia }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Data">
     <th mat-header-cell *matHeaderCellDef>Data</th>
-    <td mat-cell *matCellDef="let element">{{ element.codCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.dataMovimentacao | date: 'dd-MM-YYYY' }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Hora">
     <th mat-header-cell *matHeaderCellDef>Hora</th>
-    <td mat-cell *matCellDef="let element">{{ element.nomeCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.horaMovimentacao | date: 'HH:mm' }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Motivo">
     <th mat-header-cell *matHeaderCellDef>Motivo</th>
-    <td mat-cell *matCellDef="let element">{{ element.codCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.motivo }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Localizacao">
     <th mat-header-cell *matHeaderCellDef>Localizacao</th>
-    <td mat-cell *matCellDef="let element">{{ element.nomeCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.localizacao }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Leito">
     <th mat-header-cell *matHeaderCellDef>Leito</th>
-    <td mat-cell *matCellDef="let element">{{ element.codCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.leitoMov }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Centro de Custo">
     <th mat-header-cell *matHeaderCellDef>Centro de Custo</th>
-    <td mat-cell *matCellDef="let element">{{ element.nomeCentroCusto }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Clinica Medica">
-    <th mat-header-cell *matHeaderCellDef>Clinica Medica</th>
-    <td mat-cell *matCellDef="let element">{{ element.codCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.centroCustoMov }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Medico">
     <th mat-header-cell *matHeaderCellDef>Medico</th>
-    <td mat-cell *matCellDef="let element">{{ element.nomeCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.medicoMov }}</td>
   </ng-container>
 
   <ng-container matColumnDef="CRM">
     <th mat-header-cell *matHeaderCellDef>CRM</th>
-    <td mat-cell *matCellDef="let element">{{ element.codCentroCusto }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.crmMov }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Opcoes">
@@ -74,7 +74,7 @@
         </mat-icon>
       </button>
 
-      <button class="delete">
+      <button (click)="deleteMovement(element.codMovimentacao)" class="delete">
         <mat-icon class="material-symbols-outlined">
           delete
         </mat-icon>

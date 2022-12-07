@@ -61,6 +61,9 @@ import { HospitalizationService } from 'src/services/hospitalization/hospitaliza
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+// pagination
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +114,8 @@ import { FormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatMenuModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [
     HttpClientModule,

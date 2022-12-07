@@ -1,10 +1,10 @@
 <mat-card-content class="infoMov">
   <div class="row">
     <div class="infoDados">
-      <div class="col-md-6 codMov">
+      <div class="col-md-4 codMov">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código de Movimentação</mat-label>
-          <input type="text" matInput>
+          <input [(ngModel)]="codMovimentacao" matInput>
         </mat-form-field>
 
         <div class="search">
@@ -16,10 +16,17 @@
         </div>
       </div>
 
-      <div class="col-md-6 nomeMov">
+      <div class="col-md-4 nomeMov">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input type="text" matInput>
+          <input [(ngModel)]="nomePacienteMov" matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-4">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Data Nascimento</mat-label>
+          <input [(ngModel)]="dataNasciemtoMov" type="date" matInput>
         </mat-form-field>
       </div>
     </div>
@@ -29,28 +36,28 @@
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Prontuário</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="codPacienteMov" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Sequencia</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="codSequencia" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data</mat-label>
-        <input type="date" matInput>
+        <input [(ngModel)]="dataMovimentacao" type="date" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Hora</mat-label>
-        <input type="Time" matInput>
+        <input [(ngModel)]="horaMovimentacao" type="time" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -59,51 +66,44 @@
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Motivo</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="motivo" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Localização</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="localizacao" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Leito</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="leitoMov" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Centro de Custo</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="centroCustoMov" matInput>
       </mat-form-field>
     </div>
   </div>
 
   <div class="row infoDados">
-    <div class="col-md-4">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Clinica Médica</mat-label>
-        <input type="text" matInput>
-      </mat-form-field>
-    </div>
-
     <div class="col-md-4 medico">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Médico</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="medicoMov" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CRM</mat-label>
-        <input type="text" matInput>
+        <input [(ngModel)]="crmMov" matInput>
       </mat-form-field>
     </div>
   </div>
