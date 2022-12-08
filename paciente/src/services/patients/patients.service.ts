@@ -31,7 +31,7 @@ export class PatientsService {
   }
 
   updatePatient(patients: PatientProps): Observable<PatientProps> {
-    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURLbyId }?codPaciente=${ patients.codPaciente }`, patients)
+    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURLbyId }/${ patients.codPaciente }`, patients)
   }
 
   deletePatient(codPaciente: number): Observable<PatientProps> {
