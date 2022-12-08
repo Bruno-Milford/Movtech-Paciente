@@ -21,8 +21,9 @@ export class PatientsService {
     return this.http.get<PatientProps[]>(Api.baseUrl + this.patientApiURL)
   }
 
-  getPatientById(codPaciente: number) {
-    return this.http.get<PatientProps[]>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`)
+  getPatientById(codPaciente: any): Observable<PatientProps> {
+    console.log(codPaciente)
+    return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL}/${ codPaciente}`);
   }
 
   createPatient(patients: PatientProps): Observable<PatientProps> {

@@ -16,7 +16,6 @@ import { FormHospitalizationComponent } from './components/form-hospitalization/
 import { ModalPatientRecordComponent } from './components/modal-patient-record/modal-patient-record.component';
 import { ModalPatientHospitalizationComponent } from './components/modal-patient-hospitalization/modal-patient-hospitalization.component';
 import { ModalPatientMovementComponent } from './components/modal-patient-movement/modal-patient-movement.component';
-import { ModalPatientAllInformationComponent } from './components/modal-patient-all-information/modal-patient-all-information.component';
 import { ModalHospitalizationAllInformationComponent } from './components/modal-hospitalization-all-information/modal-hospitalization-all-information.component';
 import { ModalDeleteHospitalizationComponent } from './components/modal-delete-hospitalization/modal-delete-hospitalization.component';
 import { TableGridCostCenterComponent } from './components/table-grid-cost-center/table-grid-cost-center.component';
@@ -63,6 +62,7 @@ import { FormsModule } from '@angular/forms';
 
 // pagination
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PatientAllInformationComponent } from './pages/patient-all-information/patient-all-information.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +83,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ModalPatientHospitalizationComponent,
     ModalPatientMovementComponent,
     TableGridConsulltComponent,
-    ModalPatientAllInformationComponent,
     ModalHospitalizationAllInformationComponent,
     ModalDeleteHospitalizationComponent,
     TableGridCostCenterComponent,
@@ -94,7 +93,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     DashboardComponent,
     TableGridMovementComponent,
     CostCenterComponent,
-    FormCostCenterComponent
+    FormCostCenterComponent,
+    PatientAllInformationComponent
   ],
   imports: [
     BrowserModule,

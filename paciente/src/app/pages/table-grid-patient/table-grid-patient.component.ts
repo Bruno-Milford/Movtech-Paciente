@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ModalPatientAllInformationComponent } from 'src/app/components/modal-patient-all-information/modal-patient-all-information.component';
+
 
 import { PatientsService } from 'src/services/patients/patients.service';
 import { PatientProps }  from 'src/app/models/Patient';
@@ -59,13 +59,17 @@ export class TableGridPatientComponent implements OnInit {
     this.snackBar.open('Paciente excluido com sucesso!', '', { duration: 5000 })
   }
 
-  openDialogPatientAllInformation(codPaciente: number) {
-    const dialogRef = this.dialog.open(ModalPatientAllInformationComponent, {
-      width: '100%'
-    });
+  PatientAllInformation(codPaciente: number) {
+    this.router.navigate([`pacientes/info/${ codPaciente }`]);
   }
 
+  // openDialogPatientAllInformation(codPaciente: number) {
+  //   const dialogRef = this.dialog.open(ModalPatientAllInformationComponent, {
+  //     width: '100%'
+  //   });
+  // }
+
   EditPatient(codPaciente: number) {
-    // this.router.navigate([`pacientes/editar-paciente/${ codPaciente }`]);
+    this.router.navigate([`pacientes/editar-paciente/${ codPaciente }`]);
   }
 }

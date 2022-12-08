@@ -1,5 +1,5 @@
 export class PatientProps {
-  codPaciente: number;
+  codPaciente?: number;
   nomePaciente: string;
   sexoPaciente: string;
   dataNascimento: Date;

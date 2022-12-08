@@ -11,6 +11,7 @@ import { PatientDataUpdateComponent } from './pages/patient-data-update/patient-
 import { HospitalizationDataUpdateComponent } from './pages/hospitalization-data-update/hospitalization-data-update.component';
 import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PatientAllInformationComponent } from './pages/patient-all-information/patient-all-information.component';
 
 const routes: Routes = [
   {
@@ -22,8 +23,12 @@ const routes: Routes = [
     component: TableGridPatientComponent
   },
   {
-    path: 'pacientes/editar-paciente/:id',
+    path: 'pacientes/editar-paciente/:codPaciente',
     component: PatientDataUpdateComponent
+  },
+  {
+    path: 'pacientes/info/:codPaciente',
+    component: PatientAllInformationComponent
   },
   {
     path: 'internacao',

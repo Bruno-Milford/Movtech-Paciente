@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 
 import { PatientProps } from 'src/app/models/Patient';
@@ -13,30 +13,32 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class FormPatientDataUpdateComponent implements OnInit {
 
+  dataPatient: PatientProps = new PatientProps(
+    0, "", "", new Date(), "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+  );
+
   constructor(
     public patientsService: PatientsService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
-    public patientProps: PatientProps
   ) { }
 
-  ngOnInit(): void { }
-
-  ngAfterViewInit(codPaciente: number) {
-    this.patientsService.getPatientById(codPaciente).subscribe(data => {
-      this.dataSource = data;
+  ngOnInit(): void {
+    const codPaciente: any = this.activatedRoute.snapshot.paramMap.get("codPaciente");
+    
+    this.patientsService.getPatientById(codPaciente).subscribe((data) => {
+      this.dataPatient = data;
     })
-    // console.log(this.dataSource)
   }
 
-  dataSource: PatientProps[] = [];
-
-  editPatient() {
-    // this.patientsService.updatePatient().subscribe(() => {
-    //   this.onSuccess()
-    //   // this.router.navigate(["/pacientes"])
-    // })
+  editPatient(patients: PatientProps) {
+    this.patientsService.updatePatient(patients).subscribe(() => {
+      console.log('ola 1')
+      this.onSuccess()
+      // this.router.navigate(["/pacientes"])
+    })
   }
 
   back() {
