@@ -36,6 +36,7 @@ import { PatientDataUpdateComponent } from './pages/patient-data-update/patient-
 import { HospitalizationDataUpdateComponent } from './pages/hospitalization-data-update/hospitalization-data-update.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CostCenterComponent } from './pages/cost-center/cost-center.component';
+import { PatientAllInformationComponent } from './pages/patient-all-information/patient-all-information.component';
 
 // angular material
 import { MatCardModule } from '@angular/material/card';
@@ -62,7 +63,7 @@ import { FormsModule } from '@angular/forms';
 
 // pagination
 import { NgxPaginationModule } from 'ngx-pagination';
-import { PatientAllInformationComponent } from './pages/patient-all-information/patient-all-information.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,10 @@ import { PatientAllInformationComponent } from './pages/patient-all-information/
     MatMenuModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    }),
   ],
   providers: [
     HttpClientModule,

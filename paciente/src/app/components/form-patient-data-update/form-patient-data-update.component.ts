@@ -27,7 +27,7 @@ export class FormPatientDataUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     const codPaciente: any = this.activatedRoute.snapshot.paramMap.get("codPaciente");
-    
+
     this.patientsService.getPatientById(codPaciente).subscribe((data) => {
       this.dataPatient = data;
     })
@@ -35,7 +35,6 @@ export class FormPatientDataUpdateComponent implements OnInit {
 
   editPatient(patients: PatientProps) {
     this.patientsService.updatePatient(patients).subscribe(() => {
-      console.log('ola 1')
       this.onSuccess()
       // this.router.navigate(["/pacientes"])
     })

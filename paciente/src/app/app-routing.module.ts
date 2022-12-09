@@ -39,6 +39,10 @@ const routes: Routes = [
     component: TableGridHospitalizationComponent
   },
   {
+    path: 'internacoes/editar-internacao/:codInterncao',
+    component: HospitalizationDataUpdateComponent
+  },
+  {
     path: 'editar-internacao',
     component: HospitalizationDataUpdateComponent
   },

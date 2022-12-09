@@ -43,14 +43,6 @@ export class TableGridHospitalizationComponent implements OnInit {
     })
   }
 
-  openDialogHospitalizationAllInformation(codInternacao: number) {
-
-  }
-
-  UpdateHospitalization() {
-
-  }
-
   DeleteHospitalization(codInternacao: number) {
     this.hospitalizationService.deleteHospitalization(codInternacao).subscribe(() => {
       this.dataSource = this.dataSource.filter(cod => cod.codInternacao != codInternacao)
@@ -58,6 +50,11 @@ export class TableGridHospitalizationComponent implements OnInit {
       this.loadHospitalizations()
     })
   }
+
+  UpdateHospitalization(codInternacao: number) {
+    this.router.navigate([`internacoes/editar-internacao/${ codInternacao }`]);
+  }
+
 
   onSuccess() {
     this.snackBar.open('Internação excluido com sucesso!', '', { duration: 5000 })

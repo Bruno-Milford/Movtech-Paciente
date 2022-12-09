@@ -13,13 +13,13 @@
 
     <ng-container matColumnDef="Nascimento">
       <th mat-header-cell *matHeaderCellDef>Nascimento</th>
-      <td mat-cell *matCellDef="let element"> {{ element.dataNascimento | date: 'dd-MM-YYYY' }} </td>
+      <td mat-cell *matCellDef="let element"> {{ element.dataNascimento | date: 'dd/MM/YYYY' }} </td>
     </ng-container>
 
-    <ng-container matColumnDef="Mae">
+    <!-- <ng-container matColumnDef="Mae">
       <th mat-header-cell *matHeaderCellDef>Mãe</th>
       <td mat-cell *matCellDef="let element"> {{ element.nomeMaePaciente }} </td>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="CPF">
       <th mat-header-cell *matHeaderCellDef>CPF</th>
@@ -46,7 +46,7 @@
       <td mat-cell *matCellDef="let element"> {{ element.endereco }} </td>
     </ng-container>
 
-    <ng-container matColumnDef="Bairro">
+    <!-- <ng-container matColumnDef="Bairro">
       <th mat-header-cell *matHeaderCellDef>Bairro</th>
       <td mat-cell *matCellDef="let element"> {{ element.bairro }} </td>
     </ng-container>
@@ -54,7 +54,7 @@
     <ng-container matColumnDef="Cidade">
       <th mat-header-cell *matHeaderCellDef>Cidade</th>
       <td mat-cell *matCellDef="let element"> {{ element.cidade }} </td>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="UF">
       <th mat-header-cell *matHeaderCellDef>UF</th>

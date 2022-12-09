@@ -11,8 +11,8 @@ import { PatientsService } from 'src/services/patients/patients.service';
 export class ModalPatientRecordComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'ID', 'Nome', 'Nascimento', 'Mae', 'CPF', 'RG', 'CNS',
-    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Celular', 'Email', 'Opcoes'
+    'ID', 'Nome', 'Nascimento', 'CPF', 'RG', 'CNS',
+    'CEP', 'Endereco', 'UF', 'Celular', 'Email', 'Opcoes'
   ];
 
   dataSource: PatientProps[] = [];

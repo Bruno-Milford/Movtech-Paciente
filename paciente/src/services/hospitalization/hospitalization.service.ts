@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Hospitalization } from 'src/app/models/Hospitalization';
 import { Api } from '../api/api';
@@ -20,7 +20,7 @@ export class HospitalizationService {
   }
 
   getHospitalizationById(codInternacao: number): Observable<Hospitalization> {
-    return this.http.get<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }?codInternacao=${ codInternacao }`);
+    return this.http.get<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ codInternacao }`);
   }
 
   createHospitalization(hospitalizations: Hospitalization): Observable<Hospitalization> {
@@ -28,7 +28,7 @@ export class HospitalizationService {
   }
 
   updateHospitalization(hospitalizations: Hospitalization): Observable<Hospitalization> {
-    return this.http.put<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }?codInternacao=${ hospitalizations.codInternacao }`, hospitalizations);
+    return this.http.put<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ hospitalizations.codInternacao }`, hospitalizations);
   }
 
   deleteHospitalization(codInternacao: number): Observable<Hospitalization>  {

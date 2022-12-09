@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { PatientProps } from 'src/app/models/Patient';
 import { PatientsService } from 'src/services/patients/patients.service';
@@ -16,19 +17,21 @@ export class PatientAllInformationComponent implements OnInit {
     'Email', 'Observacao'
   ];
 
-  dataSource: PatientProps[] = [];
+  dataPatient: PatientProps = new PatientProps(
+    0, "", "", new Date(), "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+  );
 
   constructor(
     private patientsService: PatientsService,
+    public activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    // this.loadPatientbyId()
-  }
+    const codPaciente: any = this.activatedRoute.snapshot.paramMap.get("codPaciente");
 
-  // loadPatientbyId() {
-  //   this.patientsService.getPatientById(22).subscribe(patient => {
-  //     this.dataSource = patient;
-  //   })
-  // }
+    this.patientsService.getPatientById(codPaciente).subscribe((data) => {
+      this.dataPatient = data;
+    })
+  }
 }

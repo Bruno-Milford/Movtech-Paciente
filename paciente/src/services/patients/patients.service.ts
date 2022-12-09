@@ -1,5 +1,5 @@
-import { catchError, Observable, take, throwError } from 'rxjs';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { PatientProps } from 'src/app/models/Patient';
@@ -15,14 +15,12 @@ export class PatientsService {
 
   patientApiURL = '/patients';
 
-  patientApiURLbyId = '/editar-paciente';
-
   getPatients() {
     return this.http.get<PatientProps[]>(Api.baseUrl + this.patientApiURL)
   }
 
   getPatientById(codPaciente: any): Observable<PatientProps> {
-    console.log(codPaciente)
+    // console.log(codPaciente)
     return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL}/${ codPaciente}`);
   }
 
@@ -31,7 +29,7 @@ export class PatientsService {
   }
 
   updatePatient(patients: PatientProps): Observable<PatientProps> {
-    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURLbyId }/${ patients.codPaciente }`, patients)
+    return this.http.put<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ patients.codPaciente }`, patients)
   }
 
   deletePatient(codPaciente: number): Observable<PatientProps> {

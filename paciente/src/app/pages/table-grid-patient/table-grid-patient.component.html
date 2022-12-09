@@ -21,7 +21,7 @@
 
   <ng-container matColumnDef="Nascimento">
     <th mat-header-cell *matHeaderCellDef>Nascimento</th>
-    <td mat-cell *matCellDef="let element"> {{ element.dataNascimento | date: 'dd-MM-YYYY' }} </td>
+    <td mat-cell *matCellDef="let element"> {{ element.dataNascimento | date: 'dd/MM/YYYY' }} </td>
   </ng-container>
 
   <ng-container matColumnDef="CPF">

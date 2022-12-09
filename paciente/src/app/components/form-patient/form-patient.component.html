@@ -4,7 +4,7 @@
       <div class="col-md-3 codigo">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código do paciente</mat-label>
-          <input [(ngModel)]="codPaciente" matInput>
+          <input [(ngModel)]="codPaciente" matInput mask="000000">
         </mat-form-field>
 
         <div class="search">
@@ -19,7 +19,8 @@
       <div class="col-md-3 nome">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input [(ngModel)]="nomePaciente" matInput>
+          <input [(ngModel)]="nomePaciente" matInput
+          mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
         </mat-form-field>
       </div>
     </div>
@@ -27,14 +28,16 @@
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="nomeMaePaciente" matInput>
+        <input [(ngModel)]="nomeMaePaciente" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Responsável</mat-label>
-        <input [(ngModel)]="responsavelPaciente" matInput>
+        <input [(ngModel)]="responsavelPaciente" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
   </div>
@@ -50,21 +53,21 @@
     <div class="col-md-3 cpf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CPF</mat-label>
-        <input [(ngModel)]="cpfPaciente" matInput>
+        <input [(ngModel)]="cpfPaciente" matInput mask="000.000.000-00">
       </mat-form-field>
     </div>
 
     <div class="col-md-3 rg">
       <mat-form-field class="input" appearance="fill">
         <mat-label>RG</mat-label>
-        <input [(ngModel)]="rgPaciente" matInput>
+        <input [(ngModel)]="rgPaciente" matInput mask="00.000.000">
       </mat-form-field>
     </div>
 
     <div class="col-md-3 sexo">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Sexo</mat-label>
-        <input [(ngModel)]="sexoPaciente" matInput>
+        <input [(ngModel)]="sexoPaciente" matInput mask="S">
       </mat-form-field>
     </div>
   </div>
@@ -73,21 +76,23 @@
     <div class="col-md-4 cor">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cor</mat-label>
-        <input [(ngModel)]="corPaciente" matInput>
+        <input [(ngModel)]="corPaciente" matInput mask="SSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-4 nacionalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nacionalidade</mat-label>
-        <input [(ngModel)]="nacionalidade" matInput>
+        <input [(ngModel)]="nacionalidade" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-4 naturalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Naturalidade</mat-label>
-        <input [(ngModel)]="naturalidade" matInput>
+        <input [(ngModel)]="naturalidade" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
   </div>
@@ -96,14 +101,16 @@
     <div class="col-md-6 instrucao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Grau de Instrução</mat-label>
-        <input [(ngModel)]="grauInstrucaoPaciente" matInput>
+        <input [(ngModel)]="grauInstrucaoPaciente" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-6 profissao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Profissão</mat-label>
-        <input [(ngModel)]="profissaoPaciente" matInput>
+        <input [(ngModel)]="profissaoPaciente" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
   </div>
@@ -112,35 +119,38 @@
     <div class="col-md-4 cep">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CEP</mat-label>
-        <input [(ngModel)]="cep" matInput>
+        <input [(ngModel)]="cep" matInput mask="00000-000">
       </mat-form-field>
     </div>
 
     <div class="col-md-4 endereco">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Endereço</mat-label>
-        <input [(ngModel)]="endereco" matInput>
+        <input [(ngModel)]="endereco" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-4 bairro">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Bairro</mat-label>
-        <input [(ngModel)]="bairro" matInput>
+        <input [(ngModel)]="bairro" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-4 cidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cidade</mat-label>
-        <input [(ngModel)]="bairro" matInput>
+        <input [(ngModel)]="cidade" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-4 uf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>UF</mat-label>
-        <input [(ngModel)]="uf" matInput>
+        <input [(ngModel)]="uf" matInput mask="SS">
       </mat-form-field>
     </div>
   </div>
@@ -149,28 +159,29 @@
     <div class="col-md-3 telefone">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Telefone Fixo</mat-label>
-        <input [(ngModel)]="telefone" matInput>
+        <input [(ngModel)]="telefone" matInput mask="(00)0000-0000">
       </mat-form-field>
     </div>
 
     <div class="col-md-3 celular">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Celular</mat-label>
-        <input [(ngModel)]="celular" matInput>
+        <input [(ngModel)]="celular" matInput mask="(00)00000-0000">
       </mat-form-field>
     </div>
 
     <div class="col-md-3 recado">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Recado (Nome)</mat-label>
-        <input [(ngModel)]="contato" matInput>
+        <input [(ngModel)]="contato" matInput
+        mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS">
       </mat-form-field>
     </div>
 
     <div class="col-md-3 contato">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Contato Recado</mat-label>
-        <input [(ngModel)]="telefoneContato" matInput>
+        <input [(ngModel)]="telefoneContato" matInput mask="(00)0000-0000">
       </mat-form-field>
     </div>
   </div>
@@ -195,6 +206,6 @@
 
   <div class="btn">
     <button mat-raised-button class="success" (click)="savePatient()">Cadastrar</button>
-    <button mat-raised-button class="warning" (click)="hospitalizationPatient()">Internar</button>
+    <!-- <button mat-raised-button class="warning" (click)="hospitalizationPatient()">Internar</button> -->
   </div>
 </mat-card-content>

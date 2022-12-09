@@ -47,9 +47,9 @@ export class FormComponent implements OnInit {
     })
   }
 
-  hospitalizationPatient() {
-    this.router.navigate(['/internacao']);
-  }
+  // hospitalizationPatient() {
+  //   this.router.navigate(['/internacao']);
+  // }
 
   onSuccess() {
     this.snackBar.open('Paciente cadastrado!', '', { duration: 5000 })

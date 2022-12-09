@@ -63,12 +63,6 @@ export class TableGridPatientComponent implements OnInit {
     this.router.navigate([`pacientes/info/${ codPaciente }`]);
   }
 
-  // openDialogPatientAllInformation(codPaciente: number) {
-  //   const dialogRef = this.dialog.open(ModalPatientAllInformationComponent, {
-  //     width: '100%'
-  //   });
-  // }
-
   EditPatient(codPaciente: number) {
     this.router.navigate([`pacientes/editar-paciente/${ codPaciente }`]);
   }
