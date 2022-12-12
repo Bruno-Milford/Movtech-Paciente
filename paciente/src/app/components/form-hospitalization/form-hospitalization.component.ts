@@ -1,3 +1,5 @@
+import { CostCenterService } from 'src/services/costCenter/cost-center.service';
+import { CostCenter } from './../../models/CostCenter';
 import { Component, OnInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -17,13 +19,20 @@ export class FormHospitalizationComponent implements OnInit {
 
   constructor(
     private hospitalizationServive: HospitalizationService,
+    private costCenterService: CostCenterService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
     private router: Router
   ) { }
+  
+  ngOnInit(): void {
+    this.costCenterService.getCostCenter().subscribe((data) => {
+      this.costCenters = data;
+    })
+  }
 
-  ngOnInit(): void { }
-
+  costCenters: CostCenter[] = [];
+  
   dataSource: Hospitalization[] = [];
 
   saveHospitalization() {

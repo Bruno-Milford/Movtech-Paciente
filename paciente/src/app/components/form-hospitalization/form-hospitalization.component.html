@@ -110,7 +110,11 @@
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Centro de Custo</mat-label>
-        <input [(ngModel)]="centroCusto" matInput>
+        <mat-select [(ngModel)]="centroCusto">
+          <mat-option *ngFor="let CostCenter of costCenters" [value]="CostCenter.nomeCentroCusto">
+            {{ CostCenter.nomeCentroCusto }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </div>

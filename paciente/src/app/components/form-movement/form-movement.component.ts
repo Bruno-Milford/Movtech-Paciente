@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { CostCenter } from 'src/app/models/CostCenter';
 import { Movement } from 'src/app/models/Movement';
+
+import { CostCenterService } from 'src/services/costCenter/cost-center.service';
 import { MovementService } from 'src/services/movement/movement.service';
 
 @Component({
@@ -12,10 +16,17 @@ export class FormMovementComponent implements OnInit {
 
   constructor(
     private movementService: MovementService,
+    private costCenterService: CostCenterService,
     private snackBar: MatSnackBar
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.costCenterService.getCostCenter().subscribe((data) => {
+      this.costCenters = data;
+    })
+  }
+
+  costCenters: CostCenter[] = [];
 
   dataSource: Movement[] = [];
 

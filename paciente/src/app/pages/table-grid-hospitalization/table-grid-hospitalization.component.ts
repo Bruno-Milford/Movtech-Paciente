@@ -26,7 +26,6 @@ export class TableGridHospitalizationComponent implements OnInit {
 
   constructor(
     private hospitalizationService: HospitalizationService,
-    private dialog: MatDialog,
     private snackBar: MatSnackBar,
     private router: Router
   ) { }
@@ -53,8 +52,9 @@ export class TableGridHospitalizationComponent implements OnInit {
 
   UpdateHospitalization(codInternacao: number) {
     this.router.navigate([`internacoes/editar-internacao/${ codInternacao }`]);
-  }
 
+    console.log(codInternacao)
+  }
 
   onSuccess() {
     this.snackBar.open('Internação excluido com sucesso!', '', { duration: 5000 })

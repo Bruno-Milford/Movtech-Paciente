@@ -1,5 +1,5 @@
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
-import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 import { PatientProps } from 'src/app/models/Patient';
 import { PatientsService } from 'src/services/patients/patients.service';

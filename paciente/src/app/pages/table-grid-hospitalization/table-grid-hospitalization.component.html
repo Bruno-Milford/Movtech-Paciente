@@ -83,11 +83,11 @@
   <ng-container matColumnDef="Opcoes">
     <th mat-header-cell *matHeaderCellDef>Opções</th>
     <td mat-cell *matCellDef="let element">
-      <!-- <button (click)="openDialogHospitalizationAllInformation(element.codInternacao)" class="info">
+      <button class="info">
         <mat-icon class="material-symbols-outlined">
           info
         </mat-icon>
-      </button> -->
+      </button>
 
       <button (click)="UpdateHospitalization(element.codInterncao)" class="edit">
         <mat-icon class="material-symbols-outlined">

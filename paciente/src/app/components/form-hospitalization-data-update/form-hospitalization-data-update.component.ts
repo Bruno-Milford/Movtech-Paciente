@@ -13,7 +13,7 @@ import { Hospitalization } from 'src/app/models/Hospitalization';
 export class FormHospitalizationDataUpdateComponent implements OnInit {
 
   dataHospitalization: Hospitalization = new Hospitalization(
-    0, 0, "", new Date(), "", new Date(), new Date("HH:mm"), new Date(), new Date(),
+    0, 0, "", new Date(), "", new Date(), new Date("HH:mm"), new Date(), new Date("HH:mm"),
     "", "", "", "", "", "", "", "", "", ""
   );
 
@@ -25,7 +25,7 @@ export class FormHospitalizationDataUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const codInternacao: any = this.activatedRoute.snapshot.paramMap.get("codInterncao");
+    const codInternacao: any = this.activatedRoute.snapshot.paramMap.get("codInternacao");
 
     this.hospitalizationService.getHospitalizationById(codInternacao).subscribe((data) => {
       this.dataHospitalization = data;

@@ -12,9 +12,10 @@ import { PatientsService } from 'src/services/patients/patients.service';
 export class PatientAllInformationComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'ID', 'Nome', 'Nascimento', 'CPF', 'RG', 'CNS',
+    'ID', 'Nome', 'Sexo', 'Nascimento', 'CPF', 'RG', 'CNS', 'Cor',
+    'nacionalidade', 'naturalidade', 'Instrucao', 'profissao', 'responsavel',
     'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular',
-    'Email', 'Observacao'
+    'Contato', 'Telefone Contato', 'Email', 'Observacao'
   ];
 
   dataPatient: PatientProps = new PatientProps(

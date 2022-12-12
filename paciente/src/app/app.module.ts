@@ -52,6 +52,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOption } from '@angular/material/core';
 
 // service
 import { PatientsService } from 'src/services/patients/patients.service';
@@ -116,6 +118,8 @@ import { NgxMaskModule } from 'ngx-mask';
     MatMenuModule,
     HttpClientModule,
     FormsModule,
+    MatSelectModule,
+    // MatOption,
     NgxPaginationModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false

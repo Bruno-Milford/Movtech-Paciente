@@ -65,5 +65,7 @@ export class TableGridPatientComponent implements OnInit {
 
   EditPatient(codPaciente: number) {
     this.router.navigate([`pacientes/editar-paciente/${ codPaciente }`]);
+
+    console.log(codPaciente)
   }
 }
