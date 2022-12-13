@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
-
-
 
 import { PatientsService } from 'src/services/patients/patients.service';
 import { PatientProps }  from 'src/app/models/Patient';
@@ -22,15 +19,14 @@ export class TableGridPatientComponent implements OnInit {
 
   displayedColumns: string[] = [
     'ID', 'Nome', 'Nascimento', 'CPF', 'RG', 'CNS',
-    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular',
-    'Email', 'Observacao', 'Opcoes'
+    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Celular',
+    'Email', 'Opcoes'
   ];
 
   dataSource: PatientProps[] = [];
 
   constructor(
     private patientsService: PatientsService,
-    private dialog: MatDialog,
     private snackBar: MatSnackBar,
     private router: Router,
   ) { }
@@ -65,7 +61,5 @@ export class TableGridPatientComponent implements OnInit {
 
   EditPatient(codPaciente: number) {
     this.router.navigate([`pacientes/editar-paciente/${ codPaciente }`]);
-
-    console.log(codPaciente)
   }
 }

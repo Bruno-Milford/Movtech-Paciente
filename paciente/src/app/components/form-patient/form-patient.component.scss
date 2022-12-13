@@ -7,21 +7,10 @@
 
     .codigo {
       display: inline-flex;
-
-      .search {
-        margin-top: 6%;
-        margin-left: 6%;
-
-        button {
-          cursor: pointer;
-          background: none;
-          border: 0;
-        }
-      }
     }
 
     .nome {
-      width: 77%;
+      width: 80%;
     }
 
     .nacionalidade {
@@ -100,12 +89,12 @@
   }
 }
 
-@media screen and (min-width: 900px) {
-  .infoDados {
-    // background-color: red;
+// @media screen and (min-width: 900px) {
+//   .infoDados {
+//     // background-color: red;
 
-    .nome {
-      width: 75% !important;
-    }
-  }
-}
+//     .nome {
+//       width: 75% !important;
+//     }
+//   }
+// }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
 
 import { Hospitalization } from 'src/app/models/Hospitalization';
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
@@ -50,7 +49,7 @@ export class TableGridHospitalizationComponent implements OnInit {
     })
   }
 
-  UpdateHospitalization(codInternacao: number) {
+  EditHospitalization(codInternacao: number) {
     this.router.navigate([`internacoes/editar-internacao/${ codInternacao }`]);
 
     console.log(codInternacao)

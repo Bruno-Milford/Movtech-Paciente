@@ -11,28 +11,7 @@ import { PatientsService } from 'src/services/patients/patients.service';
 })
 export class PatientAllInformationComponent implements OnInit {
 
-  displayedColumns: string[] = [
-    'ID', 'Nome', 'Sexo', 'Nascimento', 'CPF', 'RG', 'CNS', 'Cor',
-    'nacionalidade', 'naturalidade', 'Instrucao', 'profissao', 'responsavel',
-    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular',
-    'Contato', 'Telefone Contato', 'Email', 'Observacao'
-  ];
+  constructor( ) { }
 
-  dataPatient: PatientProps = new PatientProps(
-    0, "", "", new Date(), "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-  );
-
-  constructor(
-    private patientsService: PatientsService,
-    public activatedRoute: ActivatedRoute,
-  ) { }
-
-  ngOnInit(): void {
-    const codPaciente: any = this.activatedRoute.snapshot.paramMap.get("codPaciente");
-
-    this.patientsService.getPatientById(codPaciente).subscribe((data) => {
-      this.dataPatient = data;
-    })
-  }
+  ngOnInit(): void { }
 }

@@ -1,19 +1,31 @@
 <mat-card-content class="infoInternacao">
   <div class="row">
     <div class="infoDados">
-      <div class="col-md-4 codigo">
+      <div class="col-md-4 codigo" *ngIf="!isValid">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código do paciente</mat-label>
-          <input [(ngModel)]="codPaciente" matInput type="number">
+          <mat-select [(ngModel)]="codPaciente">
+            <mat-option 
+              *ngFor="let PatientProps of patients" 
+              [value]="PatientProps.codPaciente" 
+              (click)="validationCodPatient()">
+              {{ PatientProps.codPaciente }} - {{ PatientProps.nomePaciente }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
+      </div>
 
-        <div class="search">
-          <button>
-            <mat-icon class="material-symbols-outlined">
-              search
-            </mat-icon>
-          </button>
-        </div>
+      <div class="col-md-4 codigo" *ngIf="isValid">
+        <mat-form-field class="input" appearance="fill" (click)="validationCodPatient()">
+          <mat-label>Código do paciente</mat-label>
+          <mat-select [(ngModel)]="codPaciente">
+            <mat-option 
+              *ngFor="let PatientProps of patients" 
+              [value]="PatientProps.codPaciente">
+              {{ PatientProps.codPaciente }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
       <div class="col-md-4 prontuario">
@@ -26,7 +38,7 @@
       <div class="col-md-4 nome">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input [(ngModel)]="Paciente" matInput>
+          <input [(ngModel)]="Paciente" matInput readonly>
         </mat-form-field>
       </div>
     </div>
@@ -36,21 +48,21 @@
     <div class="col-md-4 mae">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="MaePaciente" matInput>
+        <input [(ngModel)]="MaePaciente" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="Nascimento" matInput type="date">
+        <input [(ngModel)]="Nascimento" matInput type="date" readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 cns">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CNS</mat-label>
-        <input [(ngModel)]="cns" matInput>
+        <input [(ngModel)]="cns" matInput readonly>
       </mat-form-field>
     </div>
   </div>

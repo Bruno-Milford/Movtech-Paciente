@@ -1,14 +1,14 @@
-import { CostCenterService } from 'src/services/costCenter/cost-center.service';
-import { CostCenter } from './../../models/CostCenter';
 import { Component, OnInit } from '@angular/core';
 
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { Router } from '@angular/router';
+import { PatientProps } from 'src/app/models/Patient';
+import { CostCenter } from 'src/app/models/CostCenter';
 import { Hospitalization } from 'src/app/models/Hospitalization';
 
+import { CostCenterService } from 'src/services/costCenter/cost-center.service';
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
+import { PatientsService } from 'src/services/patients/patients.service';
 
 @Component({
   selector: 'app-form-hospitalization',
@@ -20,20 +20,30 @@ export class FormHospitalizationComponent implements OnInit {
   constructor(
     private hospitalizationServive: HospitalizationService,
     private costCenterService: CostCenterService,
-    private dialog: MatDialog,
+    private patientsService: PatientsService,
+    // @inject(MAT_FORM_FIELD, MAT_FORM_FIELD_DEFAULT_OPTIONS) public hospitalization: Hospitalization,
     private snackBar: MatSnackBar,
-    private router: Router
   ) { }
-  
+
+  isValid!: boolean;
+
+  patients: PatientProps[] = [];
+
+  costCenters: CostCenter[] = [];
+
+  dataSource: Hospitalization[] = [];
+
   ngOnInit(): void {
+    // console.log(this.patients)
+
     this.costCenterService.getCostCenter().subscribe((data) => {
       this.costCenters = data;
     })
-  }
 
-  costCenters: CostCenter[] = [];
-  
-  dataSource: Hospitalization[] = [];
+    this.patientsService.getPatients().subscribe((data) => {
+      this.patients = data;
+    })
+  }
 
   saveHospitalization() {
     const hospitalization = new Hospitalization(this.codInternacao,
@@ -48,6 +58,28 @@ export class FormHospitalizationComponent implements OnInit {
     .subscribe(data => {
       this.dataSource.push(data);
       this.onSuccess();
+    })
+  }
+
+  validationCodPatient() {
+    console.log(this.patients)
+
+    if(this.isValid != true) {
+      this.isValid = true;
+    } else {
+      this.isValid = false;
+    }
+
+    this.patientsService.getPatientById(this.codPaciente).subscribe((data) => {
+      this.patients = [data];
+
+      if(data) {
+        this.Paciente = data.nomePaciente;
+        this.MaePaciente = data.nomeMaePaciente;
+        this.cns = data.cns;
+
+        console.log(this.cns)
+      }
     })
   }
 

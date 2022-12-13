@@ -1,9 +1,10 @@
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 import { Hospitalization } from 'src/app/models/Hospitalization';
+import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 
 @Component({
   selector: 'app-form-hospitalization-data-update',
@@ -21,7 +22,7 @@ export class FormHospitalizationDataUpdateComponent implements OnInit {
     public hospitalizationService: HospitalizationService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
-    private snackBar: MatSnackBar
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {

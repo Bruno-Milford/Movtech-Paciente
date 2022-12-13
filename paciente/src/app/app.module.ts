@@ -13,16 +13,12 @@ import { FormComponent } from './components/form-patient/form-patient.component'
 import { FormMovementComponent } from './components/form-movement/form-movement.component';
 import { FormPatientConsultationComponent } from './components/form-patient-consultation/form-patient-consultation.component';
 import { FormHospitalizationComponent } from './components/form-hospitalization/form-hospitalization.component';
-import { ModalPatientRecordComponent } from './components/modal-patient-record/modal-patient-record.component';
-import { ModalPatientHospitalizationComponent } from './components/modal-patient-hospitalization/modal-patient-hospitalization.component';
-import { ModalPatientMovementComponent } from './components/modal-patient-movement/modal-patient-movement.component';
-import { ModalHospitalizationAllInformationComponent } from './components/modal-hospitalization-all-information/modal-hospitalization-all-information.component';
-import { ModalDeleteHospitalizationComponent } from './components/modal-delete-hospitalization/modal-delete-hospitalization.component';
 import { TableGridCostCenterComponent } from './components/table-grid-cost-center/table-grid-cost-center.component';
 import { FormPatientDataUpdateComponent } from './components/form-patient-data-update/form-patient-data-update.component';
 import { FormHospitalizationDataUpdateComponent } from './components/form-hospitalization-data-update/form-hospitalization-data-update.component';
 import { TableGridMovementComponent } from './components/table-grid-movement/table-grid-movement.component';
 import { FormCostCenterComponent } from './components/form-cost-center/form-cost-center.component';
+import { PatientDataAllInformationComponent } from './components/patient-data-all-information/patient-data-all-information.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -53,7 +49,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import { MatOption } from '@angular/material/core';
 
 // service
 import { PatientsService } from 'src/services/patients/patients.service';
@@ -82,12 +77,7 @@ import { NgxMaskModule } from 'ngx-mask';
     TableGridHospitalizationComponent,
     FormMovementComponent,
     FormPatientConsultationComponent,
-    ModalPatientRecordComponent,
-    ModalPatientHospitalizationComponent,
-    ModalPatientMovementComponent,
     TableGridConsulltComponent,
-    ModalHospitalizationAllInformationComponent,
-    ModalDeleteHospitalizationComponent,
     TableGridCostCenterComponent,
     PatientDataUpdateComponent,
     FormPatientDataUpdateComponent,
@@ -97,7 +87,8 @@ import { NgxMaskModule } from 'ngx-mask';
     TableGridMovementComponent,
     CostCenterComponent,
     FormCostCenterComponent,
-    PatientAllInformationComponent
+    PatientAllInformationComponent,
+    PatientDataAllInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -119,7 +110,6 @@ import { NgxMaskModule } from 'ngx-mask';
     HttpClientModule,
     FormsModule,
     MatSelectModule,
-    // MatOption,
     NgxPaginationModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false

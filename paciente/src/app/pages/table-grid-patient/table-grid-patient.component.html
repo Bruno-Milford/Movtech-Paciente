@@ -36,7 +36,7 @@
 
   <ng-container matColumnDef="CNS">
     <th mat-header-cell *matHeaderCellDef>CNS</th>
-    <td mat-cell *matCellDef="let element"> {{ element.corPaciente }} </td>
+    <td mat-cell *matCellDef="let element"> {{ element.cns }} </td>
   </ng-container>
 
   <ng-container matColumnDef="CEP">
@@ -64,11 +64,6 @@
     <td mat-cell *matCellDef="let element"> {{ element.uf }} </td>
   </ng-container>
 
-  <ng-container matColumnDef="Telefone">
-    <th mat-header-cell *matHeaderCellDef>Telefone</th>
-    <td mat-cell *matCellDef="let element"> {{ element.telefone }} </td>
-  </ng-container>
-
   <ng-container matColumnDef="Celular">
     <th mat-header-cell *matHeaderCellDef>Celular</th>
     <td mat-cell *matCellDef="let element"> {{ element.celular }} </td>
@@ -77,11 +72,6 @@
   <ng-container matColumnDef="Email">
     <th mat-header-cell *matHeaderCellDef>Email</th>
     <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Observacao">
-    <th mat-header-cell *matHeaderCellDef>Observação</th>
-    <td mat-cell *matCellDef="let element"> {{ element.observacao }} </td>
   </ng-container>
 
   <ng-container matColumnDef="Opcoes">

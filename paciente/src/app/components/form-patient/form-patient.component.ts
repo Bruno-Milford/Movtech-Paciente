@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 import { PatientsService } from 'src/services/patients/patients.service';
 import { PatientProps }  from 'src/app/models/Patient';
-
-import { ModalPatientRecordComponent } from '../modal-patient-record/modal-patient-record.component';
 
 @Component({
   selector: 'app-form-patient',
@@ -18,10 +14,9 @@ import { ModalPatientRecordComponent } from '../modal-patient-record/modal-patie
 export class FormComponent implements OnInit {
 
   constructor(
-    private patientsService: PatientsService,
-    private dialog: MatDialog,
-    private snackBar: MatSnackBar,
-    private router: Router
+    public patientsService: PatientsService,
+    public snackBar: MatSnackBar,
+    public router: Router
   ) { }
 
   ngOnInit(): void {}
@@ -47,22 +42,14 @@ export class FormComponent implements OnInit {
     })
   }
 
-  // hospitalizationPatient() {
-  //   this.router.navigate(['/internacao']);
-  // }
-
   onSuccess() {
     this.snackBar.open('Paciente cadastrado!', '', { duration: 5000 })
+
+    this.router.navigate(['/pacientes'])
   }
 
   onError() {
     this.snackBar.open('Error ao cadastrar!', '', { duration: 5000 })
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(ModalPatientRecordComponent, {
-      width: '100%'
-    });
   }
 
   codPaciente = 0;
