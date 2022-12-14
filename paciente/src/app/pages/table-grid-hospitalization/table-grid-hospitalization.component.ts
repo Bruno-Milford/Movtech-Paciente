@@ -52,6 +52,12 @@ export class TableGridHospitalizationComponent implements OnInit {
   EditHospitalization(codInternacao: number) {
     this.router.navigate([`internacoes/editar-internacao/${ codInternacao }`]);
 
+    // console.log(codInternacao)
+  }
+
+  HospitalizationAllInformation(codInternacao: number) {
+    this.router.navigate([`internacoes/info/${ codInternacao }`])
+
     console.log(codInternacao)
   }
 

@@ -4,14 +4,14 @@
       <div class="col-md-3 codigo">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código do paciente</mat-label>
-          <input [(ngModel)]="dataPatient.codPaciente" matInput disabled>
+          <input [(ngModel)]="dataPatient.codPaciente" matInput readonly>
         </mat-form-field>
       </div>
 
       <div class="col-md-3 nome">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input [(ngModel)]="dataPatient.nomePaciente" matInput disabled>
+          <input [(ngModel)]="dataPatient.nomePaciente" matInput readonly>
         </mat-form-field>
       </div>
     </div>
@@ -19,14 +19,14 @@
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="dataPatient.nomeMaePaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.nomeMaePaciente" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Responsável</mat-label>
-        <input [(ngModel)]="dataPatient.responsavelPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.responsavelPaciente" matInput readonly>
       </mat-form-field>
     </div>
   </div>
@@ -35,28 +35,28 @@
     <div class="col-md-3 nascimento">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="dataPatient.dataNascimento" matInput disabled mask="0000/00/00">
+        <input [(ngModel)]="dataPatient.dataNascimento" matInput readonly mask="0000/00/00">
       </mat-form-field>
     </div>
 
     <div class="col-md-3 cpf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CPF</mat-label>
-        <input [(ngModel)]="dataPatient.cpfPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.cpfPaciente" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 rg">
       <mat-form-field class="input" appearance="fill">
         <mat-label>RG</mat-label>
-        <input [(ngModel)]="dataPatient.rgPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.rgPaciente" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 sexo">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Sexo</mat-label>
-        <input [(ngModel)]="dataPatient.sexoPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.sexoPaciente" matInput readonly>
       </mat-form-field>
     </div>
   </div>
@@ -65,21 +65,21 @@
     <div class="col-md-4 cor">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cor</mat-label>
-        <input [(ngModel)]="dataPatient.corPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.corPaciente" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 nacionalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nacionalidade</mat-label>
-        <input [(ngModel)]="dataPatient.nacionalidade" matInput disabled>
+        <input [(ngModel)]="dataPatient.nacionalidade" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 naturalidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Naturalidade</mat-label>
-        <input [(ngModel)]="dataPatient.naturalidade" matInput disabled>
+        <input [(ngModel)]="dataPatient.naturalidade" matInput readonly>
       </mat-form-field>
     </div>
   </div>
@@ -88,14 +88,14 @@
     <div class="col-md-6 instrucao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Grau de Instrução</mat-label>
-        <input [(ngModel)]="dataPatient.grauInstrucaoPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.grauInstrucaoPaciente" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-6 profissao">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Profissão</mat-label>
-        <input [(ngModel)]="dataPatient.profissaoPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.profissaoPaciente" matInput readonly>
       </mat-form-field>
     </div>
   </div>
@@ -104,35 +104,35 @@
     <div class="col-md-4 cep">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CEP</mat-label>
-        <input [(ngModel)]="dataPatient.cep" matInput disabled>
+        <input [(ngModel)]="dataPatient.cep" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 endereco">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Endereço</mat-label>
-        <input [(ngModel)]="dataPatient.endereco" matInput disabled>
+        <input [(ngModel)]="dataPatient.endereco" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 bairro">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Bairro</mat-label>
-        <input [(ngModel)]="dataPatient.bairro" matInput disabled>
+        <input [(ngModel)]="dataPatient.bairro" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 cidade">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Cidade</mat-label>
-        <input [(ngModel)]="dataPatient.bairro" matInput disabled>
+        <input [(ngModel)]="dataPatient.bairro" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 uf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>UF</mat-label>
-        <input [(ngModel)]="dataPatient.uf" matInput disabled>
+        <input [(ngModel)]="dataPatient.uf" matInput readonly>
       </mat-form-field>
     </div>
   </div>
@@ -141,28 +141,28 @@
     <div class="col-md-3 telefone">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Telefone Fixo</mat-label>
-        <input [(ngModel)]="dataPatient.telefone" matInput disabled>
+        <input [(ngModel)]="dataPatient.telefone" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 celular">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Celular</mat-label>
-        <input [(ngModel)]="dataPatient.celular" matInput disabled>
+        <input [(ngModel)]="dataPatient.celular" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 recado">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Recado (Nome)</mat-label>
-        <input [(ngModel)]="dataPatient.contato" matInput disabled>
+        <input [(ngModel)]="dataPatient.contato" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 contato">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Contato Recado</mat-label>
-        <input [(ngModel)]="dataPatient.telefoneContato" matInput disabled>
+        <input [(ngModel)]="dataPatient.telefoneContato" matInput readonly>
       </mat-form-field>
     </div>
   </div>
@@ -171,7 +171,7 @@
     <div class="col-md-12">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Email</mat-label>
-        <input [(ngModel)]="dataPatient.email" matInput disabled>
+        <input [(ngModel)]="dataPatient.email" matInput readonly>
       </mat-form-field>
     </div>
   </div>
@@ -180,7 +180,7 @@
     <div class="col-md-12">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Observação</mat-label>
-        <textarea [(ngModel)]="dataPatient.observacao" matInput disabled></textarea>
+        <textarea [(ngModel)]="dataPatient.observacao" matInput readonly></textarea>
       </mat-form-field>
     </div>
   </div>

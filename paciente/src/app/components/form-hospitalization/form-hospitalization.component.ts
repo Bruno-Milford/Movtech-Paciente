@@ -21,7 +21,6 @@ export class FormHospitalizationComponent implements OnInit {
     private hospitalizationServive: HospitalizationService,
     private costCenterService: CostCenterService,
     private patientsService: PatientsService,
-    // @inject(MAT_FORM_FIELD, MAT_FORM_FIELD_DEFAULT_OPTIONS) public hospitalization: Hospitalization,
     private snackBar: MatSnackBar,
   ) { }
 
@@ -62,8 +61,6 @@ export class FormHospitalizationComponent implements OnInit {
   }
 
   validationCodPatient() {
-    console.log(this.patients)
-
     if(this.isValid != true) {
       this.isValid = true;
     } else {
@@ -77,8 +74,6 @@ export class FormHospitalizationComponent implements OnInit {
         this.Paciente = data.nomePaciente;
         this.MaePaciente = data.nomeMaePaciente;
         this.cns = data.cns;
-
-        console.log(this.cns)
       }
     })
   }

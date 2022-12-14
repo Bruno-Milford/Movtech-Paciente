@@ -12,6 +12,8 @@ import { HospitalizationDataUpdateComponent } from './pages/hospitalization-data
 import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PatientAllInformationComponent } from './pages/patient-all-information/patient-all-information.component';
+import { HospitalizationAllInformationComponent } from './pages/hospitalization-all-information/hospitalization-all-information.component';
+import { MovementDataUpdateComponent } from './pages/movement-data-update/movement-data-update.component';
 
 const routes: Routes = [
   {
@@ -43,12 +45,20 @@ const routes: Routes = [
     component: HospitalizationDataUpdateComponent
   },
   {
+    path: 'internacoes/info/:codInternacao',
+    component: HospitalizationAllInformationComponent
+  },
+  {
     path: 'centro-custo',
     component: CostCenterComponent
   },
   {
     path: 'movimentacao',
     component: MovementComponent
+  },
+  {
+    path: 'movimentacao/editar-movimentacao/:codMovimentacao',
+    component: MovementDataUpdateComponent
   },
   {
     path: 'consulta',

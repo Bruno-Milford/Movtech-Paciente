@@ -20,7 +20,7 @@ export class HospitalizationService {
   }
 
   getHospitalizationById(codInternacao: number): Observable<Hospitalization> {
-    console.log(codInternacao)
+    // console.log(codInternacao)
     return this.http.get<Hospitalization>(`${ Api.baseUrl + this.hospitalizationApiURL }/${ codInternacao }`);
   }
 

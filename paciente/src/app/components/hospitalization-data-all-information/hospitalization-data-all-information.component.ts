@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MatSnackBar } from '@angular/material/snack-bar';
-
 import { Hospitalization } from 'src/app/models/Hospitalization';
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 
 @Component({
-  selector: 'app-form-hospitalization-data-update',
-  templateUrl: './form-hospitalization-data-update.component.html',
-  styleUrls: ['./form-hospitalization-data-update.component.scss']
+  selector: 'app-hospitalization-data-all-information',
+  templateUrl: './hospitalization-data-all-information.component.html',
+  styleUrls: ['./hospitalization-data-all-information.component.scss']
 })
-export class FormHospitalizationDataUpdateComponent implements OnInit {
+
+export class HospitalizationDataAllInformationComponent implements OnInit {
 
   dataHospitalization: Hospitalization = new Hospitalization(
     0, 0, "", new Date(), "", new Date(), new Date("HH:mm"), new Date(), new Date("HH:mm"),
@@ -22,7 +21,6 @@ export class FormHospitalizationDataUpdateComponent implements OnInit {
     public hospitalizationService: HospitalizationService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
-    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -33,17 +31,7 @@ export class FormHospitalizationDataUpdateComponent implements OnInit {
     })
   }
 
-  editPatient(hospitalization: Hospitalization) {
-    this.hospitalizationService.updateHospitalization(hospitalization).subscribe(() => {
-      this.onSuccess()
-    })
-  }
-
   back() {
     this.router.navigate(["/internacoes"]);
-  }
-
-  onSuccess() {
-    this.snackBar.open('Internação editada com sucesso!', '', { duration: 5000 });
   }
 }
