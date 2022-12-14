@@ -33,8 +33,6 @@ export class FormHospitalizationComponent implements OnInit {
   dataSource: Hospitalization[] = [];
 
   ngOnInit(): void {
-    // console.log(this.patients)
-
     this.costCenterService.getCostCenter().subscribe((data) => {
       this.costCenters = data;
     })
@@ -47,8 +45,7 @@ export class FormHospitalizationComponent implements OnInit {
   saveHospitalization() {
     const hospitalization = new Hospitalization(this.codInternacao,
       this.codPaciente, this.Paciente, this.Nascimento, this.MaePaciente,
-      this.dataEntradaInternacao, this.horaEntradaInternacao,
-      this.dataSaidaInternacao, this.horaSaidaInternacao,
+      this.dataEntradaInternacao, this.dataSaidaInternacao,
       this.cns, this.ClinicaMedica, this.localizacao, this.leito,
       this.centroCusto, this.hipoteseDiagnostica,
       this.medico, this.crm, this.diagnostico, this.situacao)
@@ -68,11 +65,11 @@ export class FormHospitalizationComponent implements OnInit {
     }
 
     this.patientsService.getPatientById(this.codPaciente).subscribe((data) => {
-      this.patients = [data];
 
       if(data) {
         this.Paciente = data.nomePaciente;
         this.MaePaciente = data.nomeMaePaciente;
+        this.Nascimento = new Date(data.dataNascimento);
         this.cns = data.cns;
       }
     })
@@ -88,9 +85,7 @@ export class FormHospitalizationComponent implements OnInit {
   Nascimento = new Date();
   MaePaciente = "";
   dataEntradaInternacao = new Date();
-  horaEntradaInternacao = new Date();
   dataSaidaInternacao = new Date();
-  horaSaidaInternacao = new Date();
   cns = "";
   ClinicaMedica = "";
   localizacao = "";

@@ -36,7 +36,6 @@ export class FormComponent implements OnInit {
 
     this.patientsService.createPatient(patients)
     .subscribe(data => {
-      // console.log(patients);
       this.dataSource.push(data);
       this.onSuccess();
     })
@@ -46,10 +45,6 @@ export class FormComponent implements OnInit {
     this.snackBar.open('Paciente cadastrado!', '', { duration: 5000 })
 
     this.router.navigate(['/pacientes'])
-  }
-
-  onError() {
-    this.snackBar.open('Error ao cadastrar!', '', { duration: 5000 })
   }
 
   codPaciente = 0;

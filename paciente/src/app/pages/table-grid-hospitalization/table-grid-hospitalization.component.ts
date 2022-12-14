@@ -16,8 +16,7 @@ export class TableGridHospitalizationComponent implements OnInit {
   displayedColumns: string[] = [
     'codInternacao', 'codPaciente', 'paciente',
     'dataEntradaInternacao', 'dataSaidaInternacao',
-    'cns', 'ClinicaMedica', 'localizacao',
-    'centroCusto', 'hipoteseDiaginostica', 'medico', 'crm',
+    'cns', 'localizacao', 'centroCusto', 'medico', 'crm',
     'situacao', 'Opcoes'
   ]
 
@@ -51,14 +50,10 @@ export class TableGridHospitalizationComponent implements OnInit {
 
   EditHospitalization(codInternacao: number) {
     this.router.navigate([`internacoes/editar-internacao/${ codInternacao }`]);
-
-    // console.log(codInternacao)
   }
 
   HospitalizationAllInformation(codInternacao: number) {
     this.router.navigate([`internacoes/info/${ codInternacao }`])
-
-    console.log(codInternacao)
   }
 
   onSuccess() {

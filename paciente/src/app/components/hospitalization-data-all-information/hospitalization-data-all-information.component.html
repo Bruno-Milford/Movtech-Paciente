@@ -31,41 +31,27 @@
         <input [(ngModel)]="dataHospitalization.MaePaciente" matInput readonly>
       </mat-form-field>
     </div>
-
-    <div class="col-md-4 nascimento">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="dataHospitalization.Nascimento" matInput readonly>
-      </mat-form-field>
-    </div>
   </div>
 
   <div class="row editInfoDados">
-    <div class="col-md-3 dataEntrada">
+    <div class="col-md-4 nascimento">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Data de Nascimento</mat-label>
+        <input [ngModel]="dataHospitalization.Nascimento | date: 'dd/MM/YYYY'" matInput readonly>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-4 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Entrada</mat-label>
-        <input [(ngModel)]="dataHospitalization.dataEntradaInternacao" matInput readonly mask="0000/00/00">
+        <input [ngModel]="dataHospitalization.dataEntradaInternacao | date: 'dd/MM/YYYY'" matInput readonly>
       </mat-form-field>
     </div>
 
-    <div class="col-md-3 horaEntrada">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Hora de Entrada</mat-label>
-        <input [(ngModel)]="dataHospitalization.horaEntradaInternacao" matInput readonly mask="0000/00/00">
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-3 dataEntrada">
+    <div class="col-md-4 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Saída</mat-label>
-        <input [(ngModel)]="dataHospitalization.dataSaidaInternacao" matInput readonly mask="0000/00/00">
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-3 horaEntrada">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Hora de Saída</mat-label>
-        <input [(ngModel)]="dataHospitalization.horaSaidaInternacao" matInput readonly mask="0000/00/00">
+        <input [ngModel]="dataHospitalization.dataSaidaInternacao | date: 'dd/MM/YYYY'" matInput readonly>
       </mat-form-field>
     </div>
   </div>

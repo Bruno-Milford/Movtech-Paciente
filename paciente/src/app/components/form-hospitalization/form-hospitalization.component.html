@@ -31,7 +31,7 @@
       <div class="col-md-4 prontuario">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Prontuário</mat-label>
-          <input [(ngModel)]="codInternacao" matInput type="number">
+          <input [(ngModel)]="codInternacao" matInput readonly>
         </mat-form-field>
       </div>
 
@@ -51,23 +51,23 @@
         <input [(ngModel)]="MaePaciente" matInput readonly>
       </mat-form-field>
     </div>
+  </div>
 
-    <div class="col-md-4">
+  <div class="row entradaSaida">
+    <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="Nascimento" matInput type="date" readonly>
+        <input [ngModel]="Nascimento | date: 'dd/MM/YYYY'" matInput readonly>
       </mat-form-field>
     </div>
 
-    <div class="col-md-4 cns">
+    <div class="col-md-3 cns">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CNS</mat-label>
         <input [(ngModel)]="cns" matInput readonly>
       </mat-form-field>
     </div>
-  </div>
 
-  <div class="row entradaSaida">
     <div class="cold-md-3 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Entrada</mat-label>
@@ -75,24 +75,10 @@
       </mat-form-field>
     </div>
 
-    <div class="cold-md-3 horaEntrada">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Hora de Entrada</mat-label>
-        <input [(ngModel)]="horaEntradaInternacao" matInput type="time">
-      </mat-form-field>
-    </div>
-
     <div class="cold-md-3 dataSaida">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Saida</mat-label>
         <input [(ngModel)]="dataSaidaInternacao" matInput disabled type="date">
-      </mat-form-field>
-    </div>
-
-    <div class="cold-md-3 horaSaida">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Hora de Saida</mat-label>
-        <input [(ngModel)]="horaSaidaInternacao" matInput disabled type="time">
       </mat-form-field>
     </div>
   </div>

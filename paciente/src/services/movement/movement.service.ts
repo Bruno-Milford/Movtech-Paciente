@@ -23,7 +23,7 @@ export class MovementService {
   }
 
   updateMovement(movements: Movement): Observable<Movement> {
-    return this.http.put<Movement>(`${ Api.baseUrl + this.movementApiURL }?codMovimentacao=${ movements.codMovimentacao }`, movements)
+    return this.http.put<Movement>(`${ Api.baseUrl + this.movementApiURL }/${ movements.codMovimentacao }`, movements)
   }
 
   deleteMovement(codMovimentacao: number): Observable<Movement> {

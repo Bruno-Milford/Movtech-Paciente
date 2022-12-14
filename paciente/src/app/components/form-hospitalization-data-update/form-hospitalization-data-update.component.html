@@ -28,14 +28,14 @@
     <div class="col-md-4 mae">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="dataHospitalization.MaePaciente" matInput>
+        <input [(ngModel)]="dataHospitalization.MaePaciente"  matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 nascimento">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="dataHospitalization.Nascimento" matInput disabled>
+        <input [ngModel]="dataHospitalization.Nascimento | date:'dd/MM/YYYY'" matInput disabled>
       </mat-form-field>
     </div>
   </div>
@@ -44,33 +44,17 @@
     <div class="col-md-3 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Entrada</mat-label>
-        <input [(ngModel)]="dataHospitalization.dataEntradaInternacao" matInput disabled>
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-3 horaEntrada">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Hora de Entrada</mat-label>
-        <input [(ngModel)]="dataHospitalization.horaEntradaInternacao" matInput disabled>
+        <input [ngModel]="dataHospitalization.dataEntradaInternacao | date:'dd/MM/YYYY'" matInput disabled>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Saída</mat-label>
-        <input [(ngModel)]="dataHospitalization.dataSaidaInternacao" matInput>
+        <input [ngModel]="dataHospitalization.dataSaidaInternacao | date:'dd/MM/YYYY'" matInput>
       </mat-form-field>
     </div>
 
-    <div class="col-md-3 horaEntrada">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Hora de Saída</mat-label>
-        <input [(ngModel)]="dataHospitalization.horaSaidaInternacao" matInput>
-      </mat-form-field>
-    </div>
-  </div>
-
-  <div class="row editInfoDados">
     <div class="col-md-3 cns">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CNS</mat-label>
@@ -91,16 +75,16 @@
         <input [(ngModel)]="dataHospitalization.localizacao" matInput>
       </mat-form-field>
     </div>
+  </div>
 
+  <div class="row editInfoDados">
     <div class="col-md-3 leito">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Leito</mat-label>
         <input [(ngModel)]="dataHospitalization.leito" matInput>
       </mat-form-field>
     </div>
-  </div>
 
-  <div class="row editInfoDados">
     <div class="col-md-3 centroCusto">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Centro de Custo</mat-label>

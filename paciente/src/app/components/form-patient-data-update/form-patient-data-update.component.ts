@@ -36,7 +36,6 @@ export class FormPatientDataUpdateComponent implements OnInit {
   editPatient(patients: PatientProps) {
     this.patientsService.updatePatient(patients).subscribe(() => {
       this.onSuccess()
-      // this.router.navigate(["/pacientes"])
     })
   }
 
@@ -46,5 +45,7 @@ export class FormPatientDataUpdateComponent implements OnInit {
 
   onSuccess() {
     this.snackBar.open('Paciente editado com sucesso!', '', { duration: 5000 })
+
+    this.router.navigate(["/pacientes"])
   }
 }

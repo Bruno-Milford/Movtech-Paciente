@@ -13,7 +13,7 @@ import { HospitalizationService } from 'src/services/hospitalization/hospitaliza
 export class HospitalizationDataAllInformationComponent implements OnInit {
 
   dataHospitalization: Hospitalization = new Hospitalization(
-    0, 0, "", new Date(), "", new Date(), new Date("HH:mm"), new Date(), new Date("HH:mm"),
+    0, 0, "", new Date(), "", new Date(), new Date(),
     "", "", "", "", "", "", "", "", "", ""
   );
 

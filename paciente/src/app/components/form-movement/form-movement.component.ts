@@ -3,7 +3,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { CostCenter } from 'src/app/models/CostCenter';
 import { Movement } from 'src/app/models/Movement';
+import { PatientProps } from 'src/app/models/Patient';
 
+import { PatientsService } from 'src/services/patients/patients.service';
 import { CostCenterService } from 'src/services/costCenter/cost-center.service';
 import { MovementService } from 'src/services/movement/movement.service';
 
@@ -15,26 +17,51 @@ import { MovementService } from 'src/services/movement/movement.service';
 export class FormMovementComponent implements OnInit {
 
   constructor(
+    private patientsService: PatientsService,
     private movementService: MovementService,
     private costCenterService: CostCenterService,
     private snackBar: MatSnackBar
   ) { }
 
-  ngOnInit(): void {
-    this.costCenterService.getCostCenter().subscribe((data) => {
-      this.costCenters = data;
-    })
-  }
+  isValid!: boolean;
+
+  patients: PatientProps[] = [];
 
   costCenters: CostCenter[] = [];
 
   dataSource: Movement[] = [];
 
+  ngOnInit(): void {
+    this.costCenterService.getCostCenter().subscribe((data) => {
+      this.costCenters = data;
+    })
+
+    this.patientsService.getPatients().subscribe((data) => {
+      this.patients = data;
+    })
+  }
+
+  validationCodPatient() {
+    if(this.isValid != true) {
+      this.isValid = true;
+    } else {
+      this.isValid = false;
+    }
+
+    this.patientsService.getPatientById(this.codPacienteMov).subscribe((data) => {
+
+      if(data) {
+        this.codPacienteMov = data.codPaciente;
+        this.nomePacienteMov = data.nomePaciente;
+        this.nomeMaePacienteMov = data.nomeMaePaciente;
+      }
+    })
+  }
+
   saveMovement() {
     const movements = new Movement(this.codMovimentacao,
     this.codSequencia, this.codPacienteMov, this.nomePacienteMov,
-    new Date(this.dataNasciemtoMov), this.nomeMaePacienteMov,
-    new Date(this.dataMovimentacao), new Date(this.horaMovimentacao),
+    this.nomeMaePacienteMov, new Date(this.dataMovimentacao),
     this.motivo, this.localizacao, this.leitoMov, this.centroCustoMov,
     this. medicoMov, this.crmMov)
 
@@ -55,10 +82,8 @@ export class FormMovementComponent implements OnInit {
   codPacienteMov = 0;
   codSequencia = 0;
   nomePacienteMov = "";
-  dataNasciemtoMov = Date();
   nomeMaePacienteMov = "";
   dataMovimentacao = Date();
-  horaMovimentacao = Date();
   motivo = "";
   localizacao = "";
   leitoMov = "";

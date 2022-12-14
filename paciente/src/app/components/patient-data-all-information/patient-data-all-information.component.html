@@ -35,7 +35,7 @@
     <div class="col-md-3 nascimento">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="dataPatient.dataNascimento" matInput readonly mask="0000/00/00">
+        <input [ngModel]="dataPatient.dataNascimento | date: 'dd/MM/YYYY'" matInput readonly>
       </mat-form-field>
     </div>
 

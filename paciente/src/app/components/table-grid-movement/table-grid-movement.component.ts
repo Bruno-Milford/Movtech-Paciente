@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { Movement } from 'src/app/models/Movement';
+
 import { MovementService } from 'src/services/movement/movement.service';
 
 @Component({
@@ -11,7 +13,7 @@ import { MovementService } from 'src/services/movement/movement.service';
 export class TableGridMovementComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'ID', 'Nome', 'Nascimento', 'Prontuario', 'Sequencia', 'Data', 'Hora', 'Motivo', 'Localizacao',
+    'ID', 'Nome', 'Sequencia', 'Data', 'Motivo', 'Localizacao',
     'Leito', 'Centro de Custo', 'Medico', 'CRM', 'Opcoes'
   ];
 

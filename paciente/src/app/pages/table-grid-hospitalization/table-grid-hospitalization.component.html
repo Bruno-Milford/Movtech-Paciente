@@ -16,22 +16,20 @@
 
   <ng-container matColumnDef="paciente">
     <th mat-header-cell *matHeaderCellDef>Nome</th>
-    <td mat-cel *matCellDef="let element">{{ element.Paciente }}</td>
+    <td mat-cel *matCellDef="let element">{{ element.paciente }}</td>
   </ng-container>
 
   <ng-container matColumnDef="dataEntradaInternacao">
     <th mat-header-cell *matHeaderCellDef>Entrada na Internação</th>
     <td mat-cell *matCellDef="let element">
-      {{ element.dataEntradaInternacao | date: 'dd/MM/YYYY' }} -
-      {{ element.horaEntradaInternacao | date: 'HH:mm' }}
+      {{ element.dataEntradaInternacao | date: 'dd/MM/YYYY' }} 
     </td>
   </ng-container>
 
   <ng-container matColumnDef="dataSaidaInternacao">
     <th mat-header-cell *matHeaderCellDef>Saida na Internação</th>
     <td mat-cell *matCellDef="let element">
-      {{ element.dataSaidaInternacao | date: 'dd/MM/YYYY' }} -
-      {{ element.horaSaidaInternacao | date: 'HH:mm' }}
+      {{ element.dataSaidaInternacao | date: 'dd/MM/YYYY' }} 
     </td>
   </ng-container>
 
@@ -40,29 +38,14 @@
     <td mat-cell *matCellDef="let element"> {{ element.cns }} </td>
   </ng-container>
 
-  <ng-container matColumnDef="ClinicaMedica">
-    <th mat-header-cell *matHeaderCellDef>Clínica Médica</th>
-    <td mat-cell *matCellDef="let element"> {{ element.ClinicaMedica }} </td>
-  </ng-container>
-
   <ng-container matColumnDef="localizacao">
     <th mat-header-cell *matHeaderCellDef>Localização</th>
     <td mat-cell *matCellDef="let element"> {{ element.localizacao }} </td>
   </ng-container>
 
-  <!-- <ng-container matColumnDef="leito">
-    <th mat-header-cell *matHeaderCellDef>Leito (maca)</th>
-    <td mat-cell *matCellDef="let element"> {{ element.cidade }} </td>
-  </ng-container> -->
-
   <ng-container matColumnDef="centroCusto">
     <th mat-header-cell *matHeaderCellDef>Centro de Custo</th>
     <td mat-cell *matCellDef="let element"> {{ element.centroCusto }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="hipoteseDiaginostica">
-    <th mat-header-cell *matHeaderCellDef>Hipotese Diaginostica</th>
-    <td mat-cell *matCellDef="let element"> {{ element.hipoteseDiaginostica }} </td>
   </ng-container>
 
   <ng-container matColumnDef="medico">

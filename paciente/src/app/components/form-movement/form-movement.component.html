@@ -4,58 +4,64 @@
       <div class="col-md-4 codMov">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código de Movimentação</mat-label>
-          <input [(ngModel)]="codMovimentacao" matInput>
+          <input [(ngModel)]="codMovimentacao" matInput readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-4" *ngIf="!isValid">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Prontuário</mat-label>
+          <mat-select [(ngModel)]="codPacienteMov">
+            <mat-option
+              *ngFor="let PatientProps of patients"
+              [value]="PatientProps.codPaciente"
+              (click)="validationCodPatient()">
+              {{ PatientProps.codPaciente }} - {{ PatientProps.nomePaciente }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-4" *ngIf="isValid">
+        <mat-form-field class="input" appearance="fill" (click)="validationCodPatient()">
+          <mat-label>Prontuário</mat-label>
+          <mat-select [(ngModel)]="codPacienteMov">
+            <mat-option
+              *ngFor="let PatientProps of patients"
+              [value]="PatientProps.codPaciente">
+              {{ PatientProps.codPaciente }} 
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 
       <div class="col-md-4 nomeMov">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input [(ngModel)]="nomePacienteMov" matInput>
-        </mat-form-field>
-      </div>
-
-      <div class="col-md-4">
-        <mat-form-field class="input" appearance="fill">
-          <mat-label>Data Nascimento</mat-label>
-          <input [(ngModel)]="dataNasciemtoMov" type="date" matInput>
+          <input [(ngModel)]="nomePacienteMov" matInput readonly>
         </mat-form-field>
       </div>
     </div>
   </div>
 
   <div class="row infoDados">
-    <div class="col-md-3">
+    <div class="col-md-4 nomeMaeMov">
       <mat-form-field class="input" appearance="fill">
-        <mat-label>Prontuário</mat-label>
-        <input [(ngModel)]="codPacienteMov" matInput>
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-3">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Sequencia</mat-label>
-        <input [(ngModel)]="codSequencia" matInput>
+        <mat-label>Nome da Mãe</mat-label>
+        <input [(ngModel)]="nomeMaePacienteMov" matInput readonly>
       </mat-form-field>
     </div>
 
     <div class="col-md-3">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data</mat-label>
-        <input [(ngModel)]="dataMovimentacao" type="date" matInput>
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-3">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Hora</mat-label>
-        <input [(ngModel)]="horaMovimentacao" type="time" matInput>
+        <input [ngModel]="dataMovimentacao | date:'dd/MM/YYYY'" matInput>
       </mat-form-field>
     </div>
   </div>
 
   <div class="row infoDados">
-    <div class="col-md-3">
+    <div class="col-md-3 motivo">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Motivo</mat-label>
         <input [(ngModel)]="motivo" matInput>
@@ -80,8 +86,8 @@
       <mat-form-field class="input" appearance="fill">
         <mat-label>Centro de Custo</mat-label>
         <mat-select [(ngModel)]="centroCustoMov">
-          <mat-option *ngFor="let CostCenter of costCenters" [value]="CostCenter">
-            {{ CostCenter.codCentroCusto }} - {{ CostCenter.nomeCentroCusto }}
+          <mat-option *ngFor="let CostCenter of costCenters" [value]="CostCenter.nomeCentroCusto">
+            {{ CostCenter.nomeCentroCusto }}
           </mat-option>
         </mat-select>
       </mat-form-field>
