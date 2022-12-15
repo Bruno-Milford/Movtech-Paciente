@@ -4,22 +4,14 @@
       <div class="col-md-6 codCostCenter">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código de centro custo</mat-label>
-          <input [(ngModel)]="codCostCenter" matInput required>
+          <input [(ngModel)]="codCostCenter" matInput readonly>
         </mat-form-field>
-
-        <div class="search">
-          <button>
-            <mat-icon class="material-symbols-outlined">
-              search
-            </mat-icon>
-          </button>
-        </div>
       </div>
 
       <div class="col-md-6 nomeCostCenter">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome centro custo</mat-label>
-          <input [(ngModel)]="nomeCostCenter" matInput required>
+          <input [(ngModel)]="nomeCostCenter" matInput>
         </mat-form-field>
       </div>
     </div>

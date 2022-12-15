@@ -1,3 +1,4 @@
+
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -20,7 +21,6 @@ export class PatientsService {
   }
 
   getPatientById(codPaciente: any): Observable<PatientProps> {
-    // console.log(codPaciente)
     return this.http.get<PatientProps>(`${ Api.baseUrl + this.patientApiURL }/${ codPaciente }`);
   }
 

@@ -18,7 +18,7 @@
       <div class="col-md-4 nome">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome do Paciente</mat-label>
-          <input [(ngModel)]="dataHospitalization.Paciente" matInput readonly>
+          <input [(ngModel)]="dataHospitalization.paciente" matInput readonly>
         </mat-form-field>
       </div>
     </div>
@@ -28,19 +28,19 @@
     <div class="col-md-4 mae">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="dataHospitalization.MaePaciente" matInput readonly>
+        <input [(ngModel)]="dataHospitalization.maePaciente" matInput readonly>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-4 nascimento">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Data de Nascimento</mat-label>
+        <input [ngModel]="dataHospitalization.nascimento | date: 'dd/MM/YYYY'" matInput readonly>
       </mat-form-field>
     </div>
   </div>
 
   <div class="row editInfoDados">
-    <div class="col-md-4 nascimento">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Data de Nascimento</mat-label>
-        <input [ngModel]="dataHospitalization.Nascimento | date: 'dd/MM/YYYY'" matInput readonly>
-      </mat-form-field>
-    </div>
-
     <div class="col-md-4 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Entrada</mat-label>
@@ -54,9 +54,7 @@
         <input [ngModel]="dataHospitalization.dataSaidaInternacao | date: 'dd/MM/YYYY'" matInput readonly>
       </mat-form-field>
     </div>
-  </div>
 
-  <div class="row editInfoDados">
     <div class="col-md-3 cns">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CNS</mat-label>
@@ -67,7 +65,7 @@
     <div class="col-md-3 ClinicaMedica">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Clinica Medica</mat-label>
-        <input [(ngModel)]="dataHospitalization.ClinicaMedica" matInput readonly>
+        <input [(ngModel)]="dataHospitalization.clinicaMedica" matInput readonly>
       </mat-form-field>
     </div>
 
@@ -77,16 +75,16 @@
         <input [(ngModel)]="dataHospitalization.localizacao" matInput readonly>
       </mat-form-field>
     </div>
+  </div>
 
+  <div class="row editInfoDados">
     <div class="col-md-3 leito">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Leito</mat-label>
         <input [(ngModel)]="dataHospitalization.leito" matInput readonly>
       </mat-form-field>
     </div>
-  </div>
 
-  <div class="row editInfoDados">
     <div class="col-md-3 centroCusto">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Centro de Custo</mat-label>

@@ -19,6 +19,7 @@ import { FormHospitalizationDataUpdateComponent } from './components/form-hospit
 import { TableGridMovementComponent } from './components/table-grid-movement/table-grid-movement.component';
 import { FormCostCenterComponent } from './components/form-cost-center/form-cost-center.component';
 import { PatientDataAllInformationComponent } from './components/patient-data-all-information/patient-data-all-information.component';
+import { HospitalizationDataAllInformationComponent } from './components/hospitalization-data-all-information/hospitalization-data-all-information.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
@@ -34,6 +35,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CostCenterComponent } from './pages/cost-center/cost-center.component';
 import { PatientAllInformationComponent } from './pages/patient-all-information/patient-all-information.component';
 import { HospitalizationAllInformationComponent } from './pages/hospitalization-all-information/hospitalization-all-information.component';
+import { MovementDataUpdateComponent } from './pages/movement-data-update/movement-data-update.component';
 
 // angular material
 import { MatCardModule } from '@angular/material/card';
@@ -62,8 +64,7 @@ import { FormsModule } from '@angular/forms';
 // pagination
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxMaskModule } from 'ngx-mask';
-import { HospitalizationDataAllInformationComponent } from './components/hospitalization-data-all-information/hospitalization-data-all-information.component';
-import { MovementDataUpdateComponent } from './pages/movement-data-update/movement-data-update.component';
+import { FormMovementDataUpdateComponent } from './components/form-movement-data-update/form-movement-data-update.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { MovementDataUpdateComponent } from './pages/movement-data-update/moveme
     HospitalizationAllInformationComponent,
     HospitalizationDataAllInformationComponent,
     MovementDataUpdateComponent,
+    FormMovementDataUpdateComponent,
   ],
   imports: [
     BrowserModule,

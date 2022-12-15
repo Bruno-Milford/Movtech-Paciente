@@ -18,7 +18,7 @@
       <div class="col-md-4 nome">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome do Paciente</mat-label>
-          <input [(ngModel)]="dataHospitalization.Paciente" matInput>
+          <input [(ngModel)]="dataHospitalization.paciente" matInput>
         </mat-form-field>
       </div>
     </div>
@@ -28,14 +28,14 @@
     <div class="col-md-4 mae">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="dataHospitalization.MaePaciente"  matInput>
+        <input [(ngModel)]="dataHospitalization.maePaciente" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-4 nascimento">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [ngModel]="dataHospitalization.Nascimento | date:'dd/MM/YYYY'" matInput disabled>
+        <input [ngModel]="dataHospitalization.nascimento | date:'dd/MM/YYYY'" matInput disabled>
       </mat-form-field>
     </div>
   </div>
@@ -65,7 +65,7 @@
     <div class="col-md-3 ClinicaMedica">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Clinica Medica</mat-label>
-        <input [(ngModel)]="dataHospitalization.ClinicaMedica" matInput>
+        <input [(ngModel)]="dataHospitalization.clinicaMedica" matInput>
       </mat-form-field>
     </div>
 

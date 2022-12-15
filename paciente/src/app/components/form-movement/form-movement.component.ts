@@ -5,9 +5,10 @@ import { CostCenter } from 'src/app/models/CostCenter';
 import { Movement } from 'src/app/models/Movement';
 import { PatientProps } from 'src/app/models/Patient';
 
-import { PatientsService } from 'src/services/patients/patients.service';
+import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 import { CostCenterService } from 'src/services/costCenter/cost-center.service';
 import { MovementService } from 'src/services/movement/movement.service';
+import { Hospitalization } from 'src/app/models/Hospitalization';
 
 @Component({
   selector: 'app-form-movement',
@@ -17,7 +18,7 @@ import { MovementService } from 'src/services/movement/movement.service';
 export class FormMovementComponent implements OnInit {
 
   constructor(
-    private patientsService: PatientsService,
+    private hospitalizationService: HospitalizationService,
     private movementService: MovementService,
     private costCenterService: CostCenterService,
     private snackBar: MatSnackBar
@@ -25,7 +26,7 @@ export class FormMovementComponent implements OnInit {
 
   isValid!: boolean;
 
-  patients: PatientProps[] = [];
+  hospitalizations: Hospitalization[] = [];
 
   costCenters: CostCenter[] = [];
 
@@ -36,8 +37,8 @@ export class FormMovementComponent implements OnInit {
       this.costCenters = data;
     })
 
-    this.patientsService.getPatients().subscribe((data) => {
-      this.patients = data;
+    this.hospitalizationService.getHospitalizations().subscribe((data) => {
+      this.hospitalizations = data;
     })
   }
 
@@ -48,12 +49,10 @@ export class FormMovementComponent implements OnInit {
       this.isValid = false;
     }
 
-    this.patientsService.getPatientById(this.codPacienteMov).subscribe((data) => {
-
+    this.hospitalizationService.getHospitalizationById(this.codPacienteMov).subscribe((data) => {
       if(data) {
-        this.codPacienteMov = data.codPaciente;
-        this.nomePacienteMov = data.nomePaciente;
-        this.nomeMaePacienteMov = data.nomeMaePaciente;
+        this.codPacienteMov = data.codInternacao;
+        this.nomePacienteMov = data.paciente;
       }
     })
   }

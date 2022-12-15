@@ -19,8 +19,7 @@ export class TableGridPatientComponent implements OnInit {
 
   displayedColumns: string[] = [
     'ID', 'Nome', 'Nascimento', 'CPF', 'RG', 'CNS',
-    'CEP', 'Endereco', 'Bairro', 'Cidade', 'UF', 'Celular',
-    'Email', 'Opcoes'
+    'CEP', 'Endereco', 'Celular', 'Email', 'Opcoes'
   ];
 
   dataSource: PatientProps[] = [];

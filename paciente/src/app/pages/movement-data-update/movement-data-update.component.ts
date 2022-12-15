@@ -10,6 +10,7 @@ export class MovementDataUpdateComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Movement } from 'src/app/models/Movement';
@@ -21,6 +23,7 @@ export class TableGridMovementComponent implements OnInit {
 
   constructor(
     private movementService: MovementService,
+    private router: Router,
     private snackBar: MatSnackBar
   ) { }
 
@@ -42,6 +45,10 @@ export class TableGridMovementComponent implements OnInit {
       this.onSuccess()
       this.loadMovement()
     })
+  }
+
+  editMovement(codMovimentacao: number) {
+    this.router.navigate([`movimentacao/editar-movimentacao/${ codMovimentacao }`]);
   }
 
   onSuccess() {

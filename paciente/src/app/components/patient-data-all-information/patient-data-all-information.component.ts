@@ -9,6 +9,7 @@ import { PatientsService } from 'src/services/patients/patients.service';
   templateUrl: './patient-data-all-information.component.html',
   styleUrls: ['./patient-data-all-information.component.scss']
 })
+
 export class PatientDataAllInformationComponent implements OnInit {
 
   dataPatient: PatientProps = new PatientProps(

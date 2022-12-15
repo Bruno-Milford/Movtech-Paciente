@@ -1,0 +1,49 @@
+<mat-card-content class="editInfoMovement">
+  <div class="row">
+    <div class="editInfoDados">
+      <div class="col-md-3 codigo">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Código da Movimentação</mat-label>
+          <input [(ngModel)]="dataMovement.codMovimentacao" matInput disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3 codigo">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Código do Paciente</mat-label>
+          <input [(ngModel)]="dataMovement.codSequencia" matInput disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3 codigo">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Nome Completo</mat-label>
+          <input [(ngModel)]="dataMovement.nomePacienteMov" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="editInfoDados">
+      <div class="col-md-3 codigo">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Nome da Mãe</mat-label>
+          <input [(ngModel)]="dataMovement.nomeMaePacienteMov" matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3 codigo">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Data de Nascimento</mat-label>
+          <input [ngModel]="dataMovement.dataMovimentacao | date: 'dd/MM/YYYY'" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn">
+    <button mat-raised-button class="back" (click)="back()">Voltar</button>
+    <button mat-raised-button class="success" (click)="editMovement(dataMovement)">Editar</button>
+  </div>
+</mat-card-content>

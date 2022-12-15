@@ -1,4 +1,4 @@
-.editInfoInternacao {
+.editInfoMovement {
   margin-left: 17px;
 
   .editInfoDados {
@@ -10,18 +10,6 @@
     }
   }
 
-  .nome {
-    width: 60%;
-  }
-
-  .mae {
-    width: 80%;
-  }
-
-  .input {
-    width: 100%;
-  }
-
   .btn {
     display: flex;
     justify-content: flex-end;
@@ -29,6 +17,16 @@
     > button {
       color: white;
       margin-right: 1%;
+    }
+
+    .success {
+      background-color: #24963e;
+    }
+
+    .success:hover {
+      background-color: #28a745;
+
+      transition: all .4s;
     }
 
     .back {

@@ -13,10 +13,10 @@
           <mat-label>Prontuário</mat-label>
           <mat-select [(ngModel)]="codPacienteMov">
             <mat-option
-              *ngFor="let PatientProps of patients"
-              [value]="PatientProps.codPaciente"
+              *ngFor="let Hospitalization of hospitalizations"
+              [value]="Hospitalization.codInternacao"
               (click)="validationCodPatient()">
-              {{ PatientProps.codPaciente }} - {{ PatientProps.nomePaciente }}
+              {{ Hospitalization.codInternacao }} - {{ Hospitalization.paciente }}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -27,9 +27,9 @@
           <mat-label>Prontuário</mat-label>
           <mat-select [(ngModel)]="codPacienteMov">
             <mat-option
-              *ngFor="let PatientProps of patients"
-              [value]="PatientProps.codPaciente">
-              {{ PatientProps.codPaciente }} 
+              *ngFor="let Hospitalization of hospitalizations"
+              [value]="Hospitalization.codInternacao">
+              {{ Hospitalization.codInternacao }}
             </mat-option>
           </mat-select>
         </mat-form-field>

@@ -8,6 +8,7 @@ import { Api } from '../api/api';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MovementService {
 
   constructor(private http: HttpClient) { }
@@ -16,6 +17,11 @@ export class MovementService {
 
   getMovements() {
     return this.http.get<Movement[]>(Api.baseUrl + this.movementApiURL)
+  }
+
+  getMovementById(codMovimentacao: any): Observable<Movement> {
+    // console.log(codMovimentacao)
+    return this.http.get<Movement>(`${ Api.baseUrl + this.movementApiURL }/${ codMovimentacao }`)
   }
 
   createMovement(movements: Movement): Observable<Movement> {

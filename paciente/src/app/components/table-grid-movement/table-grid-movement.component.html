@@ -17,7 +17,7 @@
 
   <ng-container matColumnDef="Sequencia">
     <th mat-header-cell *matHeaderCellDef>Prontuario</th>
-    <td mat-cell *matCellDef="let element">{{ element.codSequencia }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.codInternacao }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Data">
@@ -58,11 +58,11 @@
   <ng-container matColumnDef="Opcoes">
     <th mat-header-cell *matHeaderCellDef>Opções</th>
     <td mat-cell *matCellDef="let element">
-      <!-- <button class="edit">
+      <button class="edit" (click)="editMovement(element.codMovimentacao)">
         <mat-icon class="material-symbols-outlined">
           edit
         </mat-icon>
-      </button> -->
+      </button>
 
       <button (click)="deleteMovement(element.codMovimentacao)" class="delete">
         <mat-icon class="material-symbols-outlined">
