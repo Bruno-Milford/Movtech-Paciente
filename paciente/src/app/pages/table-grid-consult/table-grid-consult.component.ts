@@ -1,27 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  Opções: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', Opções: ''},
-];
+import { Consultation } from 'src/app/models/Consultation';
+import { ConsultationService } from 'src/services/consultation/consultation.service';
 
 @Component({
   selector: 'app-table-grid-consult',
@@ -30,11 +10,25 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TableGridConsulltComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = [
+    // Paciente
+    'Nome', 'CPF', 'RG', 'Email', 'Celular',
+
+    // Internação
+    'dataEntrada', 'localizacao', 'centroCusto', 'Meidco'
+  ];
+
+  // dataSource = Consultation[] = [];
+
+  constructor(public consultationService: ConsultationService) { }
 
   ngOnInit(): void {
+
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'Opções'];
-  dataSource = ELEMENT_DATA;
+  // loadConsultation() {
+  //   this.consultationService.getConsultation().subscribe(consultation => {
+  //     this.dataSource = consultation;
+  //   })
+  // }
 }

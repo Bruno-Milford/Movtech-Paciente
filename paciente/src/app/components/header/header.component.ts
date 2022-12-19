@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { navbarData } from './nav-data';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,4 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  collapsed = false;
+
+  navData = navbarData;
 }

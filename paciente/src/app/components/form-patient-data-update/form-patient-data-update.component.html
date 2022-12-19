@@ -18,6 +18,13 @@
   </div>
 
   <div class="row editInfoDados">
+    <div class="col-md-3 mae">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Nome da Mãe</mat-label>
+        <input [(ngModel)]="dataPatient.nomeMaePaciente" matInput readonly>
+      </mat-form-field>
+    </div>
+
     <div class="col-md-3 responsavel">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Responsável</mat-label>

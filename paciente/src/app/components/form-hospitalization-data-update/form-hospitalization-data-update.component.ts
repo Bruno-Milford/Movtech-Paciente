@@ -4,7 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Hospitalization } from 'src/app/models/Hospitalization';
+import { CostCenter } from 'src/app/models/CostCenter';
+
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
+import { CostCenterService } from 'src/services/costCenter/cost-center.service';
 
 @Component({
   selector: 'app-form-hospitalization-data-update',
@@ -20,16 +23,25 @@ export class FormHospitalizationDataUpdateComponent implements OnInit {
 
   constructor(
     public hospitalizationService: HospitalizationService,
+    public costCenterService: CostCenterService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
     public snackBar: MatSnackBar
   ) { }
+
+  isValid!: boolean;
+
+  costCenter: CostCenter[] = [];
 
   ngOnInit(): void {
     const codInternacao: any = this.activatedRoute.snapshot.paramMap.get("codInternacao");
 
     this.hospitalizationService.getHospitalizationById(codInternacao).subscribe((data) => {
       this.dataHospitalization = data;
+    })
+
+    this.costCenterService.getCostCenter().subscribe((data) => {
+      this.costCenter = data;
     })
   }
 
