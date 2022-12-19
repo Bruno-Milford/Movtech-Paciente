@@ -35,7 +35,7 @@
     <div class="col-md-4 nascimento">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [ngModel]="dataHospitalization.nascimento | date:'dd/MM/YYYY'" matInput disabled>
+        <input [ngModel]="dataHospitalization.nascimento | date:'dd/MM/YYYY'" matInput>
       </mat-form-field>
     </div>
   </div>
@@ -44,7 +44,7 @@
     <div class="col-md-3 dataEntrada">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Entrada</mat-label>
-        <input [ngModel]="dataHospitalization.dataEntradaInternacao | date:'dd/MM/YYYY'" matInput disabled>
+        <input [ngModel]="dataHospitalization.dataEntradaInternacao | date:'dd/MM/YYYY'" matInput>
       </mat-form-field>
     </div>
 
@@ -58,7 +58,7 @@
     <div class="col-md-3 cns">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CNS</mat-label>
-        <input [(ngModel)]="dataHospitalization.cns" matInput disabled>
+        <input [(ngModel)]="dataHospitalization.cns" matInput>
       </mat-form-field>
     </div>
 

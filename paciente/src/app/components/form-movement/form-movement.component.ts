@@ -3,7 +3,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { CostCenter } from 'src/app/models/CostCenter';
 import { Movement } from 'src/app/models/Movement';
-import { PatientProps } from 'src/app/models/Patient';
 
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 import { CostCenterService } from 'src/services/costCenter/cost-center.service';
@@ -49,20 +48,23 @@ export class FormMovementComponent implements OnInit {
       this.isValid = false;
     }
 
-    this.hospitalizationService.getHospitalizationById(this.codPacienteMov).subscribe((data) => {
+    this.hospitalizationService.getHospitalizationById(this.codInternacao).subscribe((data) => {
       if(data) {
-        this.codPacienteMov = data.codInternacao;
+        this.codInternacao = data.codInternacao;
         this.nomePacienteMov = data.paciente;
       }
+
+      console.log(this.codInternacao)
     })
   }
 
   saveMovement() {
+    // console.log(this.codInternacao)
+
     const movements = new Movement(this.codMovimentacao,
-    this.codSequencia, this.codPacienteMov, this.nomePacienteMov,
-    this.nomeMaePacienteMov, new Date(this.dataMovimentacao),
-    this.motivo, this.localizacao, this.leitoMov, this.centroCustoMov,
-    this. medicoMov, this.crmMov)
+    this.codInternacao, this.codSequencia, this.nomePacienteMov,
+    new Date(this.dataMovimentacao), this.motivo, this.localizacao,
+    this.leitoMov, this.centroCustoMov, this. medicoMov, this.crmMov)
 
     this.movementService.createMovement(movements)
     .subscribe(data => {
@@ -78,10 +80,9 @@ export class FormMovementComponent implements OnInit {
   }
 
   codMovimentacao = 0;
-  codPacienteMov = 0;
+  codInternacao = 0;
   codSequencia = 0;
   nomePacienteMov = "";
-  nomeMaePacienteMov = "";
   dataMovimentacao = Date();
   motivo = "";
   localizacao = "";

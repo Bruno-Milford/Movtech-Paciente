@@ -11,34 +11,73 @@
       <div class="col-md-3 codigo">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Código do Paciente</mat-label>
-          <input [(ngModel)]="dataMovement.codSequencia" matInput disabled>
+          <input [(ngModel)]="dataMovement.codInternacao" matInput disabled>
         </mat-form-field>
       </div>
 
-      <div class="col-md-3 codigo">
+      <div class="col-md-3 nomeMov">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Nome Completo</mat-label>
-          <input [(ngModel)]="dataMovement.nomePacienteMov" matInput>
+          <input [(ngModel)]="dataMovement.nomePacienteMov" matInput readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Data</mat-label>
+          <input [ngModel]="dataMovement.dataMovimentacao | date: 'dd/MM/YYYY'" matInput>
         </mat-form-field>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="editInfoDados">
-      <div class="col-md-3 codigo">
-        <mat-form-field class="input" appearance="fill">
-          <mat-label>Nome da Mãe</mat-label>
-          <input [(ngModel)]="dataMovement.nomeMaePacienteMov" matInput>
-        </mat-form-field>
-      </div>
+  <div class="row editInfoDados">
+    <div class="col-md-3 motivo">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Motivo</mat-label>
+        <input [(ngModel)]="dataMovement.motivo" matInput>
+      </mat-form-field>
+    </div>
 
-      <div class="col-md-3 codigo">
-        <mat-form-field class="input" appearance="fill">
-          <mat-label>Data de Nascimento</mat-label>
-          <input [ngModel]="dataMovement.dataMovimentacao | date: 'dd/MM/YYYY'" matInput>
-        </mat-form-field>
-      </div>
+    <div class="col-md-3">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Localização</mat-label>
+        <input [(ngModel)]="dataMovement.localizacao" matInput>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Leito</mat-label>
+        <input [(ngModel)]="dataMovement.leitoMov" matInput>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Centro de Custo</mat-label>
+        <mat-select [(ngModel)]="dataMovement.centroCustoMov">
+          <mat-option *ngFor="let CostCenter of costCenters" [value]="CostCenter.nomeCentroCusto">
+            {{ CostCenter.nomeCentroCusto }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row editInfoDados">
+    <div class="col-md-4 medico">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Médico</mat-label>
+        <input [(ngModel)]="dataMovement.medicoMov" matInput>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-4">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>CRM</mat-label>
+        <input [(ngModel)]="dataMovement.crmMov" matInput>
+      </mat-form-field>
     </div>
   </div>
 

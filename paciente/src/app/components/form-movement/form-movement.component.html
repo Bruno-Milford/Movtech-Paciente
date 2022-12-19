@@ -11,7 +11,7 @@
       <div class="col-md-4" *ngIf="!isValid">
         <mat-form-field class="input" appearance="fill">
           <mat-label>Prontuário</mat-label>
-          <mat-select [(ngModel)]="codPacienteMov">
+          <mat-select [(ngModel)]="codInternacao">
             <mat-option
               *ngFor="let Hospitalization of hospitalizations"
               [value]="Hospitalization.codInternacao"
@@ -25,7 +25,7 @@
       <div class="col-md-4" *ngIf="isValid">
         <mat-form-field class="input" appearance="fill" (click)="validationCodPatient()">
           <mat-label>Prontuário</mat-label>
-          <mat-select [(ngModel)]="codPacienteMov">
+          <mat-select [(ngModel)]="codInternacao">
             <mat-option
               *ngFor="let Hospitalization of hospitalizations"
               [value]="Hospitalization.codInternacao">
@@ -41,22 +41,13 @@
           <input [(ngModel)]="nomePacienteMov" matInput readonly>
         </mat-form-field>
       </div>
-    </div>
-  </div>
 
-  <div class="row infoDados">
-    <div class="col-md-4 nomeMaeMov">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="nomeMaePacienteMov" matInput readonly>
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-3">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Data</mat-label>
-        <input [ngModel]="dataMovimentacao | date:'dd/MM/YYYY'" matInput>
-      </mat-form-field>
+      <div class="col-md-3">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Data</mat-label>
+          <input [(ngModel)]="dataMovimentacao" matInput type="date">
+        </mat-form-field>
+      </div>
     </div>
   </div>
 

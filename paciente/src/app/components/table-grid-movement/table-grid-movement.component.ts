@@ -15,7 +15,7 @@ import { MovementService } from 'src/services/movement/movement.service';
 export class TableGridMovementComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'ID', 'Nome', 'Sequencia', 'Data', 'Motivo', 'Localizacao',
+    'ID', 'Nome', 'Prontuario', 'Data', 'Motivo', 'Localizacao',
     'Leito', 'Centro de Custo', 'Medico', 'CRM', 'Opcoes'
   ];
 

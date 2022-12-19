@@ -4,7 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Movement } from 'src/app/models/Movement';
+import { CostCenter } from 'src/app/models/CostCenter';
+
 import { MovementService } from 'src/services/movement/movement.service';
+import { CostCenterService } from 'src/services/costCenter/cost-center.service';
 
 @Component({
   selector: 'app-form-movement-data-update',
@@ -15,11 +18,14 @@ import { MovementService } from 'src/services/movement/movement.service';
 export class FormMovementDataUpdateComponent implements OnInit {
 
   dataMovement: Movement = new Movement(
-    0, 0, 0, "", "", new Date(), "", "", "", "", "", ""
+    0, 0, 0, "", new Date(), "", "", "", "", "", ""
   );
+
+  costCenters: CostCenter[] = [];
 
   constructor(
     public MovementService: MovementService,
+    public costCenterService: CostCenterService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
     public snackBar: MatSnackBar
@@ -30,6 +36,10 @@ export class FormMovementDataUpdateComponent implements OnInit {
 
     this.MovementService.getMovementById(codMovimentacao).subscribe((data) => {
       this.dataMovement = data;
+    })
+
+    this.costCenterService.getCostCenter().subscribe((data) => {
+      this.costCenters = data;
     })
   }
 

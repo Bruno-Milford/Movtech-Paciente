@@ -18,13 +18,6 @@
   </div>
 
   <div class="row editInfoDados">
-    <div class="col-md-3 mae">
-      <mat-form-field class="input" appearance="fill">
-        <mat-label>Nome da Mãe</mat-label>
-        <input [(ngModel)]="dataPatient.nomeMaePaciente" matInput>
-      </mat-form-field>
-    </div>
-
     <div class="col-md-3 responsavel">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Responsável</mat-label>
@@ -37,21 +30,21 @@
     <div class="col-md-3 nascimento">
       <mat-form-field class="input" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="dataPatient.dataNascimento" matInput disabled mask="0000/00/00">
+        <input [ngModel]="dataPatient.dataNascimento | date:'dd/MM/YYYY' " matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 cpf">
       <mat-form-field class="input" appearance="fill">
         <mat-label>CPF</mat-label>
-        <input [(ngModel)]="dataPatient.cpfPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.cpfPaciente" matInput>
       </mat-form-field>
     </div>
 
     <div class="col-md-3 rg">
       <mat-form-field class="input" appearance="fill">
         <mat-label>RG</mat-label>
-        <input [(ngModel)]="dataPatient.rgPaciente" matInput disabled>
+        <input [(ngModel)]="dataPatient.rgPaciente" matInput>
       </mat-form-field>
     </div>
 
