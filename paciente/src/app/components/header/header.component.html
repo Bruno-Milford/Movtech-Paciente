@@ -1,39 +1,72 @@
-<header class="header">
-  <div class="logo">
-    <img src="../../../assets/images/paciente-logo.png" alt="Logo">
-  </div>
+<mat-sidenav #sidenav mode="side" opened="true">
+  <mat-nav-list>
+    <mat-list-item class="logo">
+      <img src="../../../images/logo.png" />
+    </mat-list-item>
 
-  <div class="menu">
-    <nav class="links">
-      <a routerLink="/">Cadastro de Paciente</a>
-      <a routerLink="/pacientes">Lista de Pacientes</a>
-      <a routerLink="/internacao">Cadastro de Internação</a>
-      <a routerLink="/internacoes">Lista de Internações</a>
-      <a routerLink="/movimentacao">Movimentação</a>
-      <a routerLink="/centro-custo">Centro de custo</a>
-      <a routerLink="/consulta">Consulta</a>
-      <!-- <a routerLink="/grafico">Gráfico</a> -->
-    </nav>
-  </div>
-</header>
+    <mat-list-item class="open" (click)="isExpanded = !isExpanded">
+      <mat-icon
+        [ngClass]="{'rotated': isExpanded}"
+        class="menu-btn"
+        >
+        menu
+      </mat-icon>
+    </mat-list-item>
 
-<!-- <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
-  <div class="logo">
-    <button class="logo">
-      <img src="../../../assets/images/paciente-logo.png" alt="Logo">
-    </button>
-    <div class="logo-text" *ngIf="collapsed"></div>
-    <button class="btn-close" *ngIf="collapsed">
-      <i class="fal fa-times close-icon"></i>
-    </button>
-  </div>
+    <a routerLink="/">
+      <mat-list-item class="home">
+        <mat-icon>home</mat-icon>
+        <span *ngIf="isExpanded">Home</span>
+      </mat-list-item>
+    </a>
 
-  <ul class="sidenav-nav">
-    <li class="sidenav-nav-item" *ngFor="let data of navData">
-      <a class="sidenav-nav-link" [routerLink]="data.routeLink">
-        <i class="class-link-icon" [class]="data.icon"></i>
-        <span class="sidenav-link-text" *ngIf="collapsed">{{ data.label }}</span>
-      </a>
-    </li>
-  </ul>
-</div> -->
+    <a routerLink="/paciente">
+      <mat-list-item class="supervisor_account">
+        <mat-icon>supervisor_account</mat-icon>
+        <span *ngIf="isExpanded">Cadastro de Pacientes</span>
+      </mat-list-item>
+    </a>
+
+    <a routerLink="/pacientes">
+      <mat-list-item class="supervisor_account">
+        <mat-icon>list_aut</mat-icon>
+        <span *ngIf="isExpanded">Lista de Pacientes</span>
+      </mat-list-item>
+    </a>
+
+    <a routerLink="/internacao">
+      <mat-list-item class="supervisor_account">
+        <mat-icon>app_registration</mat-icon>
+        <span *ngIf="isExpanded">Cadastro de internação</span>
+      </mat-list-item>
+    </a>
+
+    <a routerLink="/internacoes">
+      <mat-list-item class="supervisor_account">
+        <mat-icon>list_aut</mat-icon>
+        <span *ngIf="isExpanded">Lista de internação</span>
+      </mat-list-item>
+    </a>
+
+    <a routerLink="/centro-custo">
+      <mat-list-item class="supervisor_account">
+        <mat-icon>app_registration</mat-icon>
+        <span *ngIf="isExpanded">Centro de custo</span>
+      </mat-list-item>
+    </a>
+
+    <a routerLink="/consulta">
+      <mat-list-item class="supervisor_account">
+        <mat-icon>app_registration</mat-icon>
+        <span *ngIf="isExpanded">Consulta</span>
+      </mat-list-item>
+    </a>
+
+    <a routerLink="/grafico">
+      <mat-list-item class="supervisor_account">
+        <mat-icon>dashboard</mat-icon>
+        <span *ngIf="isExpanded">Gráfico</span>
+      </mat-list-item>
+    </a>
+  </mat-nav-list>
+</mat-sidenav>

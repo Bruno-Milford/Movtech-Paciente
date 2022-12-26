@@ -14,10 +14,15 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PatientAllInformationComponent } from './pages/patient-all-information/patient-all-information.component';
 import { HospitalizationAllInformationComponent } from './pages/hospitalization-all-information/hospitalization-all-information.component';
 import { MovementDataUpdateComponent } from './pages/movement-data-update/movement-data-update.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'paciente',
     component: PatientRecordComponent
   },
   {

@@ -8,7 +8,7 @@ import { ConsultationService } from 'src/services/consultation/consultation.serv
   templateUrl: './table-grid-consult.component.html',
   styleUrls: ['./table-grid-consult.component.scss']
 })
-export class TableGridConsulltComponent implements OnInit {
+export class TableGridConsultComponent implements OnInit {
 
   displayedColumns: string[] = [
     // Paciente

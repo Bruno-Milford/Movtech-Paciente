@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
 import { PatientsService } from 'src/services/patients/patients.service';
@@ -13,14 +12,9 @@ export class FormPatientConsultationComponent implements OnInit {
 
   constructor(
     public patientsService: PatientsService,
-    public hospitalizationService: HospitalizationService,
-    public router: Router
+    public hospitalizationService: HospitalizationService
   ) { }
 
   ngOnInit(): void { }
-
-  dashboard() {
-    this.router.navigate(["grafico"]);
-  }
 
 }

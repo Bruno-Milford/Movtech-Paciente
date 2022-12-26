@@ -20,12 +20,13 @@ import { TableGridMovementComponent } from './components/table-grid-movement/tab
 import { FormCostCenterComponent } from './components/form-cost-center/form-cost-center.component';
 import { PatientDataAllInformationComponent } from './components/patient-data-all-information/patient-data-all-information.component';
 import { HospitalizationDataAllInformationComponent } from './components/hospitalization-data-all-information/hospitalization-data-all-information.component';
+import { FormMovementDataUpdateComponent } from './components/form-movement-data-update/form-movement-data-update.component';
 
 // pages
 import { PatientRecordComponent } from './pages/patient-record/patient-record.component';
 import { HospitalizationComponent } from './pages/hospitalization/hospitalization.component';
 import { TableGridPatientComponent } from './pages/table-grid-patient/table-grid-patient.component';
-import { TableGridConsulltComponent } from './pages/table-grid-consult/table-grid-consult.component';
+import { TableGridConsultComponent } from './pages/table-grid-consult/table-grid-consult.component';
 import { TableGridHospitalizationComponent } from './pages/table-grid-hospitalization/table-grid-hospitalization.component';
 import { MovementComponent } from './pages/movement/movement.component';
 import { PatientConsultationComponent } from './pages/patient-consultation/patient-consultation.component';
@@ -60,11 +61,7 @@ import { HospitalizationService } from 'src/services/hospitalization/hospitaliza
 // http
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
-// pagination
-import { NgxPaginationModule } from 'ngx-pagination';
-import { NgxMaskModule } from 'ngx-mask';
-import { FormMovementDataUpdateComponent } from './components/form-movement-data-update/form-movement-data-update.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +78,7 @@ import { FormMovementDataUpdateComponent } from './components/form-movement-data
     TableGridHospitalizationComponent,
     FormMovementComponent,
     FormPatientConsultationComponent,
-    TableGridConsulltComponent,
+    TableGridConsultComponent,
     TableGridCostCenterComponent,
     PatientDataUpdateComponent,
     FormPatientDataUpdateComponent,
@@ -97,6 +94,7 @@ import { FormMovementDataUpdateComponent } from './components/form-movement-data
     HospitalizationDataAllInformationComponent,
     MovementDataUpdateComponent,
     FormMovementDataUpdateComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -118,10 +116,6 @@ import { FormMovementDataUpdateComponent } from './components/form-movement-data
     HttpClientModule,
     FormsModule,
     MatSelectModule,
-    NgxPaginationModule,
-    NgxMaskModule.forRoot({
-      dropSpecialCharacters: false
-    }),
   ],
   providers: [
     HttpClientModule,

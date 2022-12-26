@@ -11,6 +11,7 @@ import { HospitalizationService } from 'src/services/hospitalization/hospitaliza
   templateUrl: './table-grid-hospitalization.component.html',
   styleUrls: ['./table-grid-hospitalization.component.scss']
 })
+
 export class TableGridHospitalizationComponent implements OnInit {
 
   displayedColumns: string[] = [
