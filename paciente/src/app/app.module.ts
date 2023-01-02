@@ -45,7 +45,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
-import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -57,11 +56,16 @@ import { MatSelectModule } from '@angular/material/select';
 // service
 import { PatientsService } from 'src/services/patients/patients.service';
 import { HospitalizationService } from 'src/services/hospitalization/hospitalization.service';
+import { ConsultationService } from './../services/consultation/consultation.service';
+import { CostCenterService } from './../services/costCenter/cost-center.service';
+import { MovementService } from './../services/movement/movement.service';
 
 // http
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
+
+// input ([ngModel])
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -106,7 +110,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    ScrollingModule,
+    // ScrollingModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
@@ -120,7 +124,10 @@ import { HomeComponent } from './pages/home/home.component';
   providers: [
     HttpClientModule,
     PatientsService,
-    HospitalizationService
+    HospitalizationService,
+    MovementService,
+    CostCenterService,
+    ConsultationService
   ],
   bootstrap: [AppComponent]
 })

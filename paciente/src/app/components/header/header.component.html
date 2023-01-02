@@ -1,8 +1,5 @@
 <mat-sidenav #sidenav mode="side" opened="true">
   <mat-nav-list>
-    <mat-list-item class="logo">
-      <img src="../../../images/logo.png" />
-    </mat-list-item>
 
     <mat-list-item class="open" (click)="isExpanded = !isExpanded">
       <mat-icon
@@ -52,6 +49,13 @@
       <mat-list-item class="supervisor_account">
         <mat-icon>app_registration</mat-icon>
         <span *ngIf="isExpanded">Centro de custo</span>
+      </mat-list-item>
+    </a>
+
+    <a routerLink="/movimentacao">
+      <mat-list-item>
+        <mat-icon>social_distance</mat-icon>
+        <span *ngIf="isExpanded">Movimentação</span>
       </mat-list-item>
     </a>
 
